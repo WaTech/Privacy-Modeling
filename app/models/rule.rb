@@ -1,5 +1,5 @@
 class Rule < ApplicationRecord
-  enum status: %i(allowed limitations forbidden)
+  enum restriction: %i(allowed limitations forbidden)
 
   belongs_to :category
   belongs_to :personal_information_item
