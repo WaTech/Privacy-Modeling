@@ -39,16 +39,16 @@ ActiveRecord::Schema.define(version: 20160919144733) do
   create_table "rules", force: :cascade do |t|
     t.integer  "category_id"
     t.integer  "personal_information_item_id"
-    t.integer  "use_id"
+    t.integer  "use_item_id"
     t.integer  "restriction"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.index ["category_id"], name: "index_rules_on_category_id", using: :btree
     t.index ["personal_information_item_id"], name: "index_rules_on_personal_information_item_id", using: :btree
-    t.index ["use_id"], name: "index_rules_on_use_id", using: :btree
+    t.index ["use_item_id"], name: "index_rules_on_use_item_id", using: :btree
   end
 
-  create_table "uses", force: :cascade do |t|
+  create_table "use_items", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -57,5 +57,5 @@ ActiveRecord::Schema.define(version: 20160919144733) do
   add_foreign_key "context_items", "rules"
   add_foreign_key "rules", "categories"
   add_foreign_key "rules", "personal_information_items"
-  add_foreign_key "rules", "uses"
+  add_foreign_key "rules", "use_items"
 end
