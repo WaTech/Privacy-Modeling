@@ -1,0 +1,23 @@
+table
+  thead
+    tr
+      th Category
+      th PII
+      th Use
+      th Restriction
+      th Context
+      th Add Context
+  tbody
+    - @rules.each do |rule|
+      tr
+        td = rule.category.name
+        td = rule.personal_information_item.name
+        td = rule.use_item.name
+        td = rule.restriction
+        td
+          - rule.context_items.each do |context_item|
+            p = context_item.description
+        td
+
+
+
