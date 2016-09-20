@@ -1,3 +1,11 @@
+h1 Dashboard
+.actions
+  .actions-generate_scenario
+    = link_to 'Generate scenarios', '#'
+  .actions-export_csv
+    = link_to 'Export CSV', '#'
+  .actions-import_csv
+    = link_to 'Import CSV', '#'
 table
   thead
     tr
@@ -19,5 +27,5 @@ table
             p = context_item.description
         td
 
-
+= paginate @rules
 

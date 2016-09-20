@@ -1,6 +1,6 @@
 class Admin::RulesController < ApplicationController
   def index
-    @rules = Rule.all
+    @rules = Rule.all.page params[:page]
   end
 
   def update
