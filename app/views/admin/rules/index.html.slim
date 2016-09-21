@@ -1,31 +1,26 @@
-h1 Dashboard
-.actions
-  .actions-generate_scenario
-    = link_to 'Generate scenarios', '#'
-  .actions-export_csv
-    = link_to 'Export CSV', '#'
-  .actions-import_csv
-    = link_to 'Import CSV', '#'
-table
-  thead
-    tr
-      th Category
-      th PII
-      th Use
-      th Restriction
-      th Context
-      th Add Context
-  tbody
-    - @rules.each do |rule|
-      tr
-        td = rule.category.name
-        td = rule.personal_information_item.name
-        td = rule.use_item.name
-        td = rule.restriction
-        td
-          - rule.context_items.each do |context_item|
-            p = context_item.description
-        td
-
-= paginate @rules
-
+.container-fluid
+  .row
+    .col-sm-3
+      h1 Dashboard
+    .col-sm-5.offset-sm-4
+      .row
+        .col-sm-4
+          .actions-generate_scenario
+            = link_to 'Generate scenarios', '#', class: 'btn'
+        .col-sm-4
+          .actions-export_csv
+            = link_to 'Export CSV', '#', class: 'btn'
+        .col-sm-4
+          .actions-import_csv
+            = link_to 'Import CSV', '#', class: 'btn'
+  .row
+    .col-sm-12
+      table#rules.table.table-striped
+        thead
+          tr
+            th id
+            th Category
+            th PII
+            th Use
+            th Restriction
+            th Context

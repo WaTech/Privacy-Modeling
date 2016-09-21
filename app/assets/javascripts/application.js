@@ -17,3 +17,30 @@
 //= require bootstrap
 //= require datatables
 //= require_tree .
+$(document).ready(function() {
+    var table = $('#rules').DataTable({
+      'serverSide': true,
+      'ordering':  false,
+      'searching': false,
+      'ajax': {
+        'url': '/admin/rules',
+        'type': 'GET',
+        'datatype': 'JSON'
+      },
+      'processing': true,
+      'pageLength': 5,
+      'lengthChange': false,
+      'pagingType': 'simple_numbers',
+      'info': false,
+      'columns': [
+        { 'data': 'id' },
+        { 'data': 'category_name' },
+        { 'data': 'personal_information_item_name' },
+        { 'data': 'use_item_name' },
+        { 'data': 'restriction' },
+        { 'data': 'context_items' }
+      ]
+    });
+
+
+} );

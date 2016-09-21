@@ -5,4 +5,9 @@ class Rule < ApplicationRecord
   belongs_to :personal_information_item
   belongs_to :use_item
   has_many   :context_items
+
+  delegate :name, to: :category, prefix: true
+  delegate :name, to: :personal_information_item, prefix: true
+  delegate :name, to: :use_item, prefix: true
+
 end
