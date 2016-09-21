@@ -4,7 +4,7 @@ class Rule < ApplicationRecord
   belongs_to :category
   belongs_to :personal_information_item
   belongs_to :use_item
-  has_many   :context_items
+  has_many   :context_items, dependent: :destroy
 
   delegate :name, to: :category, prefix: true
   delegate :name, to: :personal_information_item, prefix: true
