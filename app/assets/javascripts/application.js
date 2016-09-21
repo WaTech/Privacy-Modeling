@@ -33,7 +33,6 @@ $(document).ready(function() {
       'pagingType': 'simple_numbers',
       'info': false,
       'columns': [
-        { 'data': 'id' },
         { 'data': 'category_name' },
         { 'data': 'personal_information_item_name' },
         { 'data': 'use_item_name' },
