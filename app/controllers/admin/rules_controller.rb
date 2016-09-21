@@ -8,11 +8,22 @@ class Admin::RulesController < ApplicationController
   end
 
   def update
+    @rule = Rule.find params[:id]
+
+    if @rule.update rule_params
+      render json: {}, status: :ok
+    else
+      render json: {}, status: :unprocessable_entity
+    end
   end
 
   private
 
   def page_number
     params[:start].to_i / PAGE_LENGTH + 1
+  end
+
+  def rule_params
+    params.require(:rule).permit(:restriction)
   end
 end

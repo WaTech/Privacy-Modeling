@@ -16,36 +16,5 @@
 //= require turbolinks
 //= require bootstrap
 //= require datatables
+//= require best_in_place
 //= require_tree .
-$(document).ready(function() {
-  var restrictionIndex = 3;
-  var table = $('#rules').DataTable({
-    'serverSide': true,
-    'ordering':  false,
-    'searching': false,
-    'ajax': {
-      'url': '/admin/rules',
-      'type': 'GET',
-      'datatype': 'JSON'
-    },
-    'processing': true,
-    'pageLength': 5,
-    'lengthChange': false,
-    'pagingType': 'simple_numbers',
-    'info': false,
-    'columns': [
-      { 'data': 'category_name' },
-      { 'data': 'personal_information_item_name' },
-      { 'data': 'use_item_name' },
-      { 'data': 'restriction' },
-      { 'data': 'context_items' },
-      {
-          "targets": -1,
-          "data": null,
-          "defaultContent": "<button>Click!</button>"
-      }
-    ]
-  });
-
-
-} );
