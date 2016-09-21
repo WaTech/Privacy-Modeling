@@ -1,5 +1,5 @@
 json.extract! rule, :id, :category_name, :personal_information_item_name, :use_item_name, :restriction
-json.url admin_rule_url(rule, format: :json)
+json.url admin_rule_url(rule)
 json.DT_RowId "row_#{ rule.id }"
 json.DT_RowData do
   json.pkey rule.id
