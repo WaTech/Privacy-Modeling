@@ -1,1 +1,1 @@
-json.extract! context_item, :category, :description
+json.extract! context_item, :category, :description, :source

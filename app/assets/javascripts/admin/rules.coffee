@@ -33,8 +33,15 @@ $(document).ready ->
       }
       {
         'render': (data, type, row) ->
-          context_items = (context_item.description for context_item in row.context_items)
-          ('<p>' + conext_item + '</p>' for conext_item in context_items).join('')
+          context_items = row.context_items.map (context_item) ->
+            if context_item.category == 'applicable_law'
+              ['<p><a href="', context_item.source, '">', context_item.description, '</a></p>'].join('')
+            else
+              ['<p>', context_item.description, '</p>'].join('')
+          context_items.join('')
+          # context_items = (context_item.description for context_item in row.context_items)
+
+          # ('<p>' + conext_item + '</p>' for conext_item in context_items).join('')
         'targets': 0
       }
       {

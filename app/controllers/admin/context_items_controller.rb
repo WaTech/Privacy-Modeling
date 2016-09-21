@@ -12,6 +12,6 @@ class Admin::ContextItemsController < ApplicationController
   private
 
   def context_item_params
-    params.require(:context_item).permit(:category, :description)
+    params.require(:context_item).permit(:category, :description, :source)
   end
 end
