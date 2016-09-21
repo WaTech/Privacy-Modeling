@@ -58,7 +58,6 @@ $(document).ready ->
   # update rule restriction after changing it's value in select
   $('body').on 'change', 'select', ->
     row_id = $(this).parents('tr').attr('id').replace('row_', '') - 1
-    log row_id
     log table.page.info()
     data = table.row(row_id).data()
     serialized_data = $(this).serialize()
