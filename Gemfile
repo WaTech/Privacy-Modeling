@@ -36,7 +36,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'ffaker'
   gem 'factory_girl'
-  # gem 'pry'
   gem 'awesome_print'
 end
 
@@ -64,4 +63,4 @@ gem 'bootstrap', '~> 4.0.0.alpha4'
 
 gem 'rails-assets-tether', source: 'https://rails-assets.org'
 gem 'rails-assets-datatables', source: 'https://rails-assets.org'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
