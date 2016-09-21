@@ -57,3 +57,7 @@ gem 'slim-rails'
 gem 'kaminari'
 
 gem 'bootstrap', '~> 4.0.0.alpha4'
+
+gem 'rails-assets-tether', source: 'https://rails-assets.org'
+gem 'rails-assets-datatables', source: 'https://rails-assets.org'
+
