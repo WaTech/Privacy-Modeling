@@ -1,6 +1,6 @@
 $(document).ready ->
-  icon_allow = '<i class="fa fa-exclamation-circle fa-3x pull-left" data-id="" data-toggle="modal" data-target=".bd_law_context"></i>'
-  icon_restriction = '<i class="fa fa-times-circle fa-3x pull-left" data-id="" data-toggle="modal" data-target=".bd_law_context"></i>'
+  icon_allow = '<i class="fa fa-exclamation-circle fa-3x pull-left" data-id="" data-toggle="modal" data-target=".bd_law_context" data-category="limitation" ></i>'
+  icon_restriction = '<i class="fa fa-times-circle fa-3x pull-left" data-id="" data-toggle="modal" data-target=".bd_law_context" data-category="restriction" ></i>'
   icon_forbidden = '<i class="fa fa-gavel fa-3x pull-left" data-id="" data-toggle="modal" data-target=".bd_law_context" data-category="applicable_law"></i>'
 
   log = (value) ->
