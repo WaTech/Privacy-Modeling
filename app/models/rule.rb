@@ -12,4 +12,13 @@ class Rule < ApplicationRecord
 
   accepts_nested_attributes_for :context_items
 
+  def self.generate!
+    Category.all.each do |category|
+      PersonalInformationItem.all.each do |pii|
+        UseItem.all.each do |use_item|
+          rule = Rule.find_or_create_by! category: category, personal_information_item: pii, use_item: use_item
+        end
+      end
+    end
+  end
 end
