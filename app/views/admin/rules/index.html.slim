@@ -8,12 +8,12 @@
               button.close aria-label='Close' data-dismiss='modal' type='button'
                 = fa_icon 'times', class: 'close-modal'
               h4.modal-title New context
-            form#new_law_context_item.form-horizontal accept-charset="UTF-8" action="/admin/rules/1/context_items" data-remote="true" method="post"
+            form#new_law_context_item.form-horizontal accept-charset="UTF-8" data-action="" data-remote="true" method="post"
               .modal-body
                 input name="utf8" type="hidden" value="✓"
 
                 .form-group
-                  input#context_item_category.form-control name="context_item[category]" type="hidden" value='applicable_law'
+                  input#context_item_category.form-control name="context_item[category]" type="hidden" value=''
                 .form-group#context_item_source_form_group
                   label.form-control-label for='recipient-name' Source:
                   input#context_item_source.form-control.string.optional name="context_item[source]" type="url"

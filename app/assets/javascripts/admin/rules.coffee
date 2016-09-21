@@ -57,7 +57,8 @@ $(document).ready ->
 
   # update rule restriction after changing it's value in select
   $('body').on 'change', 'select', ->
-    row_id = $(this).parents('tr').attr('id').replace('row_', '') - 1
+    row_id = table.row($(this).parents('tr')).index()
+
     log table.page.info()
     data = table.row(row_id).data()
     serialized_data = $(this).serialize()
@@ -71,9 +72,18 @@ $(document).ready ->
     table.draw()
 
   # hide soure url for context item modals except with applicable_law category
+  # set real rule id for form's action
+  # set real context item categoru
   $('#new_law_context').on 'show.bs.modal', (event) ->
     modal = $(this)
+    form = modal.find('form')
     relatedTarget = $(event.relatedTarget)
+    row_id = table.row(relatedTarget.parents('tr')).index()
+    data = table.row(row_id).data()
+
+    form.attr('action', ['/admin/rules/', data.id, '/context_items'].join(''))
+    context_item_category_input = form.find('#context_item_category')
+    context_item_category_input.attr('value', relatedTarget.data('category'))
     is_applicable_law_category = relatedTarget.data('category')
     source = modal.find('#context_item_source_form_group')
     if is_applicable_law_category == 'applicable_law'
