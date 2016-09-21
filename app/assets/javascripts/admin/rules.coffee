@@ -1,5 +1,9 @@
 $(document).ready ->
   restrictionIndex = 3
+  icon_allow = '<i class="fa fa-exclamation-circle fa-3x pull-left"></i>'
+  icon_restriction = '<i class="fa fa-times-circle fa-3x pull-left"></i>'
+  icon_forbidden = '<i class="fa fa-gavel fa-3x pull-left"></i>'
+
   table = $('#rules').DataTable(
     'serverSide': true
     'ordering': false
@@ -29,6 +33,11 @@ $(document).ready ->
         'render': (data, type, row) ->
           context_items = (context_item.description for context_item in row.context_items)
           ('<p>' + conext_item + '</p>' for conext_item in context_items).join('')
+        'targets': 0
+      }
+      {
+        'render': (data, type, row) ->
+          [icon_allow, icon_restriction, icon_forbidden].join('')
         'targets': 0
       }
     ])
