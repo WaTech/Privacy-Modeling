@@ -65,6 +65,8 @@ GEM
       activesupport (>= 3.0.0)
     ffaker (2.2.0)
     ffi (1.9.14)
+    font-awesome-rails (4.6.3.1)
+      railties (>= 3.2, < 5.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -211,6 +213,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   factory_girl
   ffaker
+  font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
   kaminari

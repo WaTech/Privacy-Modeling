@@ -36,6 +36,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'ffaker'
   gem 'factory_girl'
+  # gem 'pry'
   gem 'awesome_print'
 end
 
@@ -46,6 +47,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # access to rails/routes
+  # gem 'sextant'
   gem 'rails-erd'
 end
 
@@ -61,4 +64,4 @@ gem 'bootstrap', '~> 4.0.0.alpha4'
 
 gem 'rails-assets-tether', source: 'https://rails-assets.org'
 gem 'rails-assets-datatables', source: 'https://rails-assets.org'
-
+gem "font-awesome-rails"
