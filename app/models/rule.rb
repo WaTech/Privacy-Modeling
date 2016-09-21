@@ -10,4 +10,6 @@ class Rule < ApplicationRecord
   delegate :name, to: :personal_information_item, prefix: true
   delegate :name, to: :use_item, prefix: true
 
+  accepts_nested_attributes_for :context_items
+
 end
