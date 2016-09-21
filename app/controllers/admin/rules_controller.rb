@@ -4,7 +4,7 @@ class Admin::RulesController < ApplicationController
   def index
     @records_total = Rule.count
     @draw = params[:draw].to_i
-    @rules = Rule.all.page(page_number)
+    @rules = Rule.all.order(:id).page(page_number)
   end
 
   def update
