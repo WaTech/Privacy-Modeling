@@ -64,3 +64,5 @@ gem 'bootstrap', '~> 4.0.0.alpha4'
 gem 'rails-assets-tether', source: 'https://rails-assets.org'
 gem 'rails-assets-datatables', source: 'https://rails-assets.org'
 gem 'font-awesome-rails'
+
+ruby '2.3.1'
