@@ -5,6 +5,13 @@ class Admin::RulesController < ApplicationController
     @records_total = Rule.count
     @draw = params[:draw].to_i
     @rules = Rule.all.order(:id).page(page_number)
+
+    respond_to do |format|
+      format.html
+      format.json
+      format.csv { render text: Rule.to_csv }
+    end
+
   end
 
   def update
