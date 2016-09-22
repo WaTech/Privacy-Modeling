@@ -69,7 +69,7 @@ $(document).on 'turbolinks:load', ->
   # reload datatable after new context item added
   $('body').on 'ajax:success', '#new_law_context_item', ->
     $('#new_law_context').modal('toggle')
-    table.draw()
+    table.draw('page')
 
   # hide soure url for context item modals except with applicable_law category
   # set real rule id for form's action
