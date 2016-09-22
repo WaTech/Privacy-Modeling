@@ -11,3 +11,19 @@ i {
 .close-modal {
   font-size: 0.7em;
 }
+
+.logo {
+  max-width: 177px;
+}
+
+.navbar .navbar-nav a.nav-link {
+  color: #000000;
+}
+
+.navbar .navbar-nav a.active.nav-link {
+  color: rgba(#000000, 0.6);
+  &:hover {
+    color: rgba(#000000, 0.6);
+  }
+}
+

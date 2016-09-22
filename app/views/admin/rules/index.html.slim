@@ -10,54 +10,53 @@
       span aria-hidden='true'  &times;
     = flash[:notice]
 
-.container-fluid
-  .row
-    .col-sm-12
-      #new_law_context.modal.fade.bd_law_context aria-hidden='true' aria-labelledby='addRegularContextModal' role='dialog' tabindex='-1'
-        .modal-dialog
-          .modal-content
-            .modal-header
-              button.close aria-label='Close' data-dismiss='modal' type='button'
-                = fa_icon 'times', class: 'close-modal'
-              h4.modal-title New context
-            form#new_law_context_item.form-horizontal accept-charset="UTF-8" data-action="" data-remote="true" method="post"
-              .modal-body
-                input name="utf8" type="hidden" value="✓"
+.row
+  .col-sm-12
+    #new_law_context.modal.fade.bd_law_context aria-hidden='true' aria-labelledby='addRegularContextModal' role='dialog' tabindex='-1'
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close aria-label='Close' data-dismiss='modal' type='button'
+              = fa_icon 'times', class: 'close-modal'
+            h4.modal-title New context
+          form#new_law_context_item.form-horizontal accept-charset="UTF-8" data-action="" data-remote="true" method="post"
+            .modal-body
+              input name="utf8" type="hidden" value="✓"
 
-                .form-group
-                  input#context_item_category.form-control name="context_item[category]" type="hidden" value=''
-                .form-group#context_item_source_form_group
-                  label.form-control-label for='recipient-name' Source:
-                  input#context_item_source.form-control.string.optional name="context_item[source]" type="url"
-                .form-group
-                  label.form-control-label.string.optional for="context_item_description"  Description:
-                  input#context_item_description.form-control.string.optional name="context_item[description]" type="text"
-              .modal-footer
-                button.btn.btn-secondary data-dismiss='modal' type='button' Close
-                input.btn.btn-primary data-disable-with="Save" name="commit" type="submit" value="Save"
-.container-fluid
-  .row
-    .col-sm-3
-      h1 Dashboard
-    .col-sm-5.offset-sm-4
-      .row
-        .col-sm-4
-          .actions-generate_scenario
-            = link_to 'Generate scenarios', generate_admin_rules_url, class: 'btn'
-        .col-sm-4
-          .actions-export_csv
-            = link_to 'Export CSV', admin_rules_url(format: :csv), class: 'btn'
-        .col-sm-4
-          .actions-import_csv
-            = link_to 'Import CSV', '#', class: 'btn'
-  .row
-    .col-sm-12
-      table#rules.table.table-striped
-        thead
-          tr
-            th Category
-            th PII
-            th Use
-            th Restriction
-            th Context
-            th Add context
+              .form-group
+                input#context_item_category.form-control name="context_item[category]" type="hidden" value=''
+              .form-group#context_item_source_form_group
+                label.form-control-label for='recipient-name' Source:
+                input#context_item_source.form-control.string.optional name="context_item[source]" type="url"
+              .form-group
+                label.form-control-label.string.optional for="context_item_description"  Description:
+                input#context_item_description.form-control.string.optional name="context_item[description]" type="text"
+            .modal-footer
+              button.btn.btn-secondary data-dismiss='modal' type='button' Close
+              input.btn.btn-primary data-disable-with="Save" name="commit" type="submit" value="Save"
+
+.row
+  .col-sm-3
+    h1 Dashboard
+  .col-sm-5.offset-sm-4
+    .row
+      .col-sm-4
+        .actions-generate_scenario
+          = link_to 'Generate scenarios', generate_admin_rules_url, class: 'btn'
+      .col-sm-4
+        .actions-export_csv
+          = link_to 'Export CSV', admin_rules_url(format: :csv), class: 'btn'
+      .col-sm-4
+        .actions-import_csv
+          = link_to 'Import CSV', '#', class: 'btn'
+.row
+  .col-sm-12
+    table#rules.table.table-striped.table-bordered
+      thead
+        tr
+          th Category
+          th PII
+          th Use
+          th Restriction
+          th Context
+          th Add context

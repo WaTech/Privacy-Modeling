@@ -27,7 +27,7 @@ $(document).on 'turbolinks:load', ->
         'render': (data, type, row) ->
           options = [['allowed', 'Allowed'], ['limitations', 'Limitations'], ['forbidden', 'Forbidden']]
           option_elements = (['<option value="', option[0], '" ', (if option[0] == row.restriction then 'selected="selected"' else ''), ' ">', option[1], '</option>'].join('') for option in options).join('')
-          ['<select size="1" id="rule[restriction]" name="rule[restriction]">', option_elements, '</select></td>'].join('')
+          ['<div class="form-group"><select class="form-control" size="1" id="rule[restriction]" name="rule[restriction]">', option_elements, '</select></div>'].join('')
         'targets': 0
 
       }
