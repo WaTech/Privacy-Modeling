@@ -64,5 +64,7 @@ gem 'bootstrap', '~> 4.0.0.alpha4'
 gem 'rails-assets-tether', source: 'https://rails-assets.org'
 gem 'rails-assets-datatables', source: 'https://rails-assets.org'
 gem 'font-awesome-rails'
+# configuration app witin ENV variables passed to yml file
+gem 'figaro'
 
 ruby '2.3.1'
