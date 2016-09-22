@@ -14,6 +14,7 @@ class Rule < ApplicationRecord
   accepts_nested_attributes_for :context_items
 
   def self.generate!
+    rules_size_was = Rule.count
     Category.all.each do |category|
       PersonalInformationItem.all.each do |pii|
         UseItem.all.each do |use_item|
@@ -21,6 +22,7 @@ class Rule < ApplicationRecord
         end
       end
     end
+    Rule.count - rules_size_was
   end
 
   def self.to_csv

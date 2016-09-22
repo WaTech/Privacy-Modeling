@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :rules, only: [:index, :update] do
+      collection do
+        get :generate
+      end
       resources :context_items, only: :create
     end
   end

@@ -11,7 +11,17 @@ class Admin::RulesController < ApplicationController
       format.json
       format.csv { render text: Rule.to_csv }
     end
+  end
 
+  def generate
+    new_records_size = Rule.generate!
+    if new_records_size > 0
+      flash[:sucess] = "New #{ new_records_size } #{ 'rule'.pluralize(new_records_size) } generated."
+    else
+      flash[:notice] = "No new rules generated"
+    end
+
+    return redirect_to admin_rules_url
   end
 
   def update

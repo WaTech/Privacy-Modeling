@@ -1,3 +1,15 @@
+- if flash[:success]
+  .alert.alert-success.alert-dismissible.fade.in role='alert'
+    button.close aria-label='Close' data-dismiss='alert' type='button'
+      span aria-hidden='true'  &times;
+    = flash[:success]
+
+- if flash[:notice]
+  .alert.alert-info.alert-dismissible.fade.in role='alert'
+    button.close aria-label='Close' data-dismiss='alert' type='button'
+      span aria-hidden='true'  &times;
+    = flash[:notice]
+
 .container-fluid
   .row
     .col-sm-12
@@ -23,7 +35,6 @@
               .modal-footer
                 button.btn.btn-secondary data-dismiss='modal' type='button' Close
                 input.btn.btn-primary data-disable-with="Save" name="commit" type="submit" value="Save"
-
 .container-fluid
   .row
     .col-sm-3
@@ -32,7 +43,7 @@
       .row
         .col-sm-4
           .actions-generate_scenario
-            = link_to 'Generate scenarios', '#', class: 'btn'
+            = link_to 'Generate scenarios', generate_admin_rules_url, class: 'btn'
         .col-sm-4
           .actions-export_csv
             = link_to 'Export CSV', admin_rules_url(format: :csv), class: 'btn'
