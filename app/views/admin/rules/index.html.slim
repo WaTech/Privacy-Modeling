@@ -1,15 +1,3 @@
-- if flash[:success]
-  .alert.alert-success.alert-dismissible.fade.in role='alert'
-    button.close aria-label='Close' data-dismiss='alert' type='button'
-      span aria-hidden='true'  &times;
-    = flash[:success]
-
-- if flash[:notice]
-  .alert.alert-info.alert-dismissible.fade.in role='alert'
-    button.close aria-label='Close' data-dismiss='alert' type='button'
-      span aria-hidden='true'  &times;
-    = flash[:notice]
-
 .row
   .col-sm-12
     #new_law_context.modal.fade.bd_law_context aria-hidden='true' aria-labelledby='addRegularContextModal' role='dialog' tabindex='-1'
