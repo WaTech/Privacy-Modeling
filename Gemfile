@@ -66,5 +66,6 @@ gem 'rails-assets-datatables', source: 'https://rails-assets.org'
 gem 'font-awesome-rails'
 # configuration app witin ENV variables passed to yml file
 gem 'figaro'
+gem 'devise'
 
 ruby '2.3.1'
