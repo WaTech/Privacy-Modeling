@@ -24,11 +24,16 @@ class Admin::UseItemsController < Admin::BaseController
   end
 
   def destroy
-    raise NotImplementedError
+    if @use_item.destroy
+      flash.now[:success] = 'Use item succefully deleted.'
+    else
+      flash.now[:error] = @use_item.errors.join('. ')
+    end
   end
 
   def create
     @use_item = UseItem.new(use_item_params)
+
     if @use_item.save
       flash.now[:success] = 'Use item succefully created.'
     else

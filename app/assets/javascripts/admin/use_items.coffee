@@ -21,7 +21,9 @@ $(document).on 'turbolinks:load', ->
       {
         'render': (data, type, row) ->
           dataId = ['data-id="', row.id, '"'].join('')
-          ['<i class="edit-use-item fa fa-pencil fa-1x pull-left"', dataId, '></i>'].join(' ')
+          editIcon = ['<i class="edit-use-item fa fa-pencil fa-1x pull-left"', dataId, '></i>'].join(' ')
+          destroyIcon = ['<i class="remove-use-item fa fa-remove fa-1x pull-left"', dataId, '></i>'].join(' ')
+          [editIcon, destroyIcon].join('')
         'targets': 0
       }
     ])
@@ -34,3 +36,18 @@ $(document).on 'turbolinks:load', ->
     row_id = table.row($(this).parents('tr')).index()
     data = table.row(row_id).data()
     $.get [data.url, 'edit'].join('/')
+
+  $('body').on 'click', '.edit-use-item', ->
+    row_id = table.row($(this).parents('tr')).index()
+    data = table.row(row_id).data()
+    $.get [data.url, 'edit'].join('/')
+
+  $('body').on 'click', '.remove-use-item', ->
+    row_id = table.row($(this).parents('tr')).index()
+    data = table.row(row_id).data()
+    if confirm('Do you really want to destroy?')
+      $.ajax
+        url: data.url
+        type: 'DELETE'
+        success: (result) ->
+          table.draw('page')
