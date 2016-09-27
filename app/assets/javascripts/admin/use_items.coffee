@@ -17,6 +17,15 @@ $(document).on 'turbolinks:load', ->
     'info': false
     'columns': [
       { 'data': 'id' },
-      { 'data': 'name' }
+      { 'data': 'name' },
+      {
+        'render': (data, type, row) ->
+          dataId = ['data-id="', row.id, '"'].join('')
+          ['<i class="fa fa-pencil fa-1x pull-left"', dataId, '></i>'].join(' ')
+        'targets': 0
+      }
     ])
 
+  # reload datatable after new context item added
+  $('body').on 'ajax:success', '#new_use_item', ->
+    table.draw('page')
