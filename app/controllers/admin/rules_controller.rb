@@ -1,4 +1,4 @@
-class Admin::RulesController < ApplicationController
+class Admin::RulesController < Admin::BaseController
   PAGE_LENGTH = 5
 
   def index
