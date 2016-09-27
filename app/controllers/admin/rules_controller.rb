@@ -1,5 +1,7 @@
-class Admin::RulesController < ApplicationController
+class Admin::RulesController < Admin::BaseController
   PAGE_LENGTH = 5
+
+  load_and_authorize_resource
 
   def index
     @records_total = Rule.count

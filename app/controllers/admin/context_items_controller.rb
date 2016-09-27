@@ -1,4 +1,6 @@
-class Admin::ContextItemsController < ApplicationController
+class Admin::ContextItemsController < Admin::BaseController
+  load_and_authorize_resource
+
   def create
     context_item = ContextItem.new context_item_params.merge(rule_id: params[:rule_id])
 

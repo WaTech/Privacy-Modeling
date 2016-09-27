@@ -59,7 +59,7 @@ $(document).on 'turbolinks:load', ->
   $('body').on 'change', 'select', ->
     row_id = table.row($(this).parents('tr')).index()
 
-    log table.page.info()
+    log table.page.info().page
     data = table.row(row_id).data()
     serialized_data = $(this).serialize()
     $.post({ 'url': data.url, 'data': serialized_data, 'type': 'PUT' }, ->).fail(->

@@ -19,3 +19,8 @@ Category.all.each do |category|
     end
   end
 end
+
+unless Rails.env.production?
+  user = User.find_or_initialize_by email: 'yuriy@testnest.co'
+  user.update!(password: 'vK0v2Xpv6KCEU9tG9f78')
+end
