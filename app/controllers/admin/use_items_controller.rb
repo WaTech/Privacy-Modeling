@@ -9,4 +9,10 @@ class Admin::UseItemsController < Admin::BaseController
     @use_items = @use_items.order(:id).page(page_number)
   end
 
+  private
+
+  def page_number
+    params[:start].to_i / PAGE_LENGTH + 1
+  end
+
 end
