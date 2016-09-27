@@ -7,7 +7,7 @@ $(document).on 'turbolinks:load', ->
     'ordering': false
     'searching': false
     'ajax':
-      'url': '/admin/use_items'
+      'url': '/admin/uses'
       'type': 'GET'
       'datatype': 'JSON'
     'processing': true
