@@ -9,6 +9,24 @@ class Admin::UseItemsController < Admin::BaseController
     @use_items = @use_items.order(:id).page(page_number)
   end
 
+  def new
+  end
+
+  def edit
+  end
+
+  def update
+    if @use_item.update(use_item_params)
+      flash.now[:success] = 'Use item succefully updated.'
+    else
+      flash.now[:error] = @use_item.error.messages.join('. ')
+    end
+  end
+
+  def destroy
+    raise NotImplementedError
+  end
+
   def create
     @use_item = UseItem.new(use_item_params)
     if @use_item.save

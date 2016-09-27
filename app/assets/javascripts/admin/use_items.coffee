@@ -21,11 +21,16 @@ $(document).on 'turbolinks:load', ->
       {
         'render': (data, type, row) ->
           dataId = ['data-id="', row.id, '"'].join('')
-          ['<i class="fa fa-pencil fa-1x pull-left"', dataId, '></i>'].join(' ')
+          ['<i class="edit-use-item fa fa-pencil fa-1x pull-left"', dataId, '></i>'].join(' ')
         'targets': 0
       }
     ])
 
   # reload datatable after new context item added
-  $('body').on 'ajax:success', '#new_use_item', ->
+  $('body').on 'ajax:success', '#new_use_item, .edit_use_item', ->
     table.draw('page')
+
+  $('body').on 'click', '.edit-use-item', ->
+    row_id = table.row($(this).parents('tr')).index()
+    data = table.row(row_id).data()
+    $.get [data.url, 'edit'].join('/')
