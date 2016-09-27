@@ -1,6 +1,3 @@
-#TODO
-# - Reload databale on adding use item without page dropping
-
 $(document).on 'turbolinks:load', ->
   table = $('#use_items').DataTable(
     'serverSide': true
