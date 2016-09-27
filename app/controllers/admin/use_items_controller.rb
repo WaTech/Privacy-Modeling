@@ -14,7 +14,7 @@ class Admin::UseItemsController < Admin::BaseController
     if @use_item.save
       flash.now[:success] = 'Use item succefully created.'
     else
-      flash.now[:error] = @user_item.error.messages.join('. ')
+      flash.now[:error] = @use_item.error.messages.join('. ')
     end
   end
 
