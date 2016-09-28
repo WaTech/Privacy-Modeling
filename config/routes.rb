@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :use_items, only: %w(index new edit update destroy create), path: 'uses'
+    resources :categories, only: %w(index new edit update destroy create)
     resources :rules, only: [:index, :update] do
       collection do
         get :generate
