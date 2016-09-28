@@ -1,0 +1,55 @@
+doctype html
+html
+  head
+    title Watech
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    .container-fluid
+      nav.navbar.navbar-light.bg-faded
+        - if current_user
+          button.navbar-toggler.hidden-sm-up aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label=("Toggle navigation") data-target="#exCollapsingNavbar2" data-toggle="collapse" type="button"
+            | ☰
+        #exCollapsingNavbar2.collapse.navbar-toggleable-xs
+          a.navbar-brand href="#"
+            img.logo src='https://uc.uxpin.com/files/552025/549473/logoFlyIn_0.png'
+          - if current_user
+            ul.nav.navbar-nav.pull-xs-right
+              li.nav-item
+                = link_to admin_categories_path, class: 'nav-link' do
+                  | Categories
+              li.nav-item
+                a.nav-link href="#" PIIs
+              li.nav-item
+                = link_to admin_use_items_path, class: 'nav-link' do
+                  | Uses
+              li.nav-item
+                = link_to admin_rules_path, class: 'nav-link active' do
+                  | Rules
+                  span.sr-only (current)
+              li.nav-item
+                = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link'
+      .row
+        .col-sm-12
+          - if flash[:success]
+            .alert.alert-success.alert-dismissible.fade.in role='alert'
+              button.close aria-label='Close' data-dismiss='alert' type='button'
+                span aria-hidden='true'  &times;
+              = flash[:success]
+
+          - if notice
+            .alert.alert-info.alert-dismissible.fade.in role='alert'
+              button.close aria-label='Close' data-dismiss='alert' type='button'
+                span aria-hidden='true'  &times;
+              = notice
+
+          - if alert
+            .alert.alert-info.alert-dismissible.fade.in role='alert'
+              button.close aria-label='Close' data-dismiss='alert' type='button'
+                span aria-hidden='true'  &times;
+              = alert
+      .row#alerts
+      .row
+        .col-sm-12
+          = yield
