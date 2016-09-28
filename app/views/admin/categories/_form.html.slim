@@ -1,0 +1,20 @@
+#new_category_modal.modal.fade.bd_law_context aria-hidden='true' aria-labelledby='addUseItemModal' role='dialog' tabindex='-1'
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close aria-label='Close' data-dismiss='modal' type='button'
+          = fa_icon 'times', class: 'close-modal'
+        h4.modal-title New category
+      = form_for ['admin', @category], remote: true, input_html: {} do |f|
+        .modal-body
+          - if @category.errors.any?
+            #error_explanation
+              h2 = "#{ pluralize(@category.errors.count, 'error') } prohibited this use item from being saved:"
+              ul
+                - @category.errors.full_messages.each do |message|
+                  li = message
+          .field
+            = f.label :name
+            = f.text_field :name
+        .modal-footer
+          .actions = f.submit

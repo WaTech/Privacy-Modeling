@@ -17,3 +17,7 @@ $(document).on 'turbolinks:load', ->
       { 'data': 'name' },
     ])
 
+  # reload datatable after new context item added
+  $('body').on 'ajax:success', '#new_category_modal, .edit_use_item', ->
+    table.draw('page')
+
