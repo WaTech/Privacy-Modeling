@@ -16,18 +16,21 @@ class Admin::CategoriesController < Admin::BaseController
     @category = Category.new(category_params)
 
     if @category.save
-      flash.now[:success] = 'Use item succefully created.'
+      flash.now[:success] = 'Category succefully created.'
     else
       flash.now[:error] = @category.error.messages.join('. ')
     end
   end
 
   def edit
-    raise NotImplementedError
   end
 
   def update
-    raise NotImplementedError
+    if @category.update(category_params)
+      flash.now[:success] = 'Category succefully updated.'
+    else
+      flash.now[:error] = @category.error.messages.join('. ')
+    end
   end
 
   def destroy
