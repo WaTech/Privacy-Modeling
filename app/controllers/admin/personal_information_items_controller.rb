@@ -17,7 +17,7 @@ class Admin::PersonalInformationItemsController < Admin::BaseController
     @personal_information_item = PersonalInformationItem.new(personal_information_item_params)
 
     if @personal_information_item.save
-      flash.now[:success] = 'personal_information_item succefully created.'
+      flash.now[:success] = 'Personal information item succefully created.'
     else
       flash.now[:error] = @personal_information_item.error.messages.join('. ')
     end
@@ -28,7 +28,7 @@ class Admin::PersonalInformationItemsController < Admin::BaseController
 
   def update
     if @personal_information_item.update(personal_information_item_params)
-      flash.now[:success] = 'personal_information_item succefully updated.'
+      flash.now[:success] = 'Personal information item succefully updated.'
     else
       flash.now[:error] = @personal_information_item.error.messages.join('. ')
     end
@@ -36,7 +36,7 @@ class Admin::PersonalInformationItemsController < Admin::BaseController
 
   def destroy
     if @personal_information_item.destroy
-      flash.now[:success] = 'personal_information_item succefully deleted.'
+      flash.now[:success] = 'Personal information item succefully deleted.'
     else
       flash.now[:error] = @personal_information_item.errors.join('. ')
     end
