@@ -3,6 +3,10 @@ $(document).on 'turbolinks:load', ->
   icon_restriction = '<i class="fa fa-times-circle fa-2x pull-left" data-id="" data-toggle="modal" data-target=".bd_law_context" data-category="restriction" ></i>'
   icon_forbidden = '<i class="fa fa-gavel fa-2x pull-left" data-id="" data-toggle="modal" data-target=".bd_law_context" data-category="applicable_law"></i>'
 
+  context_item_icon_allow = '<i class="fa fa-exclamation-circle pull-left"></i>'
+  context_item_icon_restriction = '<i class="fa fa-times-circle pull-left"></i>'
+  context_item_icon_forbidden = '<i class="fa fa-gavel pull-left"></i>'
+
   log = (value) ->
     console.log value
 
@@ -34,10 +38,12 @@ $(document).on 'turbolinks:load', ->
       {
         'render': (data, type, row) ->
           context_items = row.context_items.map (context_item) ->
+            description = ['<span>', context_item.description, '</span>'].join('')
             if context_item.category == 'applicable_law'
-              ['<p><a href="', context_item.source, '">', context_item.description, '</a></p>'].join('')
+              ['<p class="rules_context_item_description">', context_item_icon_allow, '<a href="', context_item.source, '">', description, '</a></p>'].join('')
             else
-              ['<p>', context_item.description, '</p>'].join('')
+              icon = if context_item.category == 'limitation' then context_item_icon_restriction else context_item_icon_allow
+              ['<p class="rules_context_item_description">', icon,  description, '</p>'].join('')
           context_items.join('')
           # context_items = (context_item.description for context_item in row.context_items)
 
