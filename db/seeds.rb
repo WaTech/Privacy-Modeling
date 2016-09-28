@@ -23,4 +23,7 @@ end
 unless Rails.env.production?
   user = User.find_or_initialize_by email: 'yuriy@testnest.co'
   user.update!(password: 'vK0v2Xpv6KCEU9tG9f78')
+
+  yuriy = User.find_or_initialize_by email: 'yuri.kurat@n3wnormal.com'
+  yuriy.update!(password: 'Q$Kg5BH*9j91Xm1OoXxxzw07')
 end
