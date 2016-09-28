@@ -34,3 +34,12 @@ $(document).on 'turbolinks:load', ->
     data = table.row(row_id).data()
     $.get [data.url, 'edit'].join('/')
 
+  $('body').on 'click', '.remove-category', ->
+    row_id = table.row($(this).parents('tr')).index()
+    data = table.row(row_id).data()
+    if confirm('Do you really want to destroy this category?')
+      $.ajax
+        url: data.url
+        type: 'DELETE'
+        success: (result) ->
+          table.draw('page')

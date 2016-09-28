@@ -34,7 +34,11 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def destroy
-    raise NotImplementedError
+    if @category.destroy
+      flash.now[:success] = 'Category succefully deleted.'
+    else
+      flash.now[:error] = @category.errors.join('. ')
+    end
   end
 
   private
