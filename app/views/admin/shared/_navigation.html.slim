@@ -8,13 +8,13 @@ nav.navbar.navbar-light.bg-faded
     - if current_user
       ul.nav.navbar-nav.pull-xs-right
         li.nav-item
-          = link_to admin_categories_path, class: 'nav-link' do
+          = link_to admin_categories_path, class: "nav-link #{ request.fullpath.include?(admin_categories_path) ? 'active' : '' }" do
             | Categories
         li.nav-item
-          = link_to admin_use_items_path, class: 'nav-link' do
+          = link_to admin_use_items_path, class: "nav-link #{ request.fullpath.include?(admin_use_items_path) ? 'active' : '' }" do
             | Uses
         li.nav-item
-          = link_to admin_rules_path, class: 'nav-link active' do
+          = link_to admin_rules_path, class: "nav-link #{ request.fullpath.include?(admin_rules_path) ? 'active' : '' }" do
             | Rules
             span.sr-only (current)
         li.nav-item
