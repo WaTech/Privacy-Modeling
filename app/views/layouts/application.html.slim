@@ -17,7 +17,8 @@ html
           - if current_user
             ul.nav.navbar-nav.pull-xs-right
               li.nav-item
-                a.nav-link href="#" Categories
+                = link_to admin_categories_path, class: 'nav-link' do
+                  | Categories
               li.nav-item
                 a.nav-link href="#" PIIs
               li.nav-item
