@@ -27,8 +27,12 @@
   .col-sm-3
     h1 Dashboard
   .col-sm-5.offset-sm-4
-    = link_to 'Export CSV', admin_rules_url(format: :csv), class: 'btn pull-right padding-right-0'
-    = link_to 'Generate scenarios', generate_admin_rules_url, class: 'btn btn-primary pull-right'
+    .row.margin-top-6
+      .col-sm-4.offset-sm-4
+        = link_to 'Generate scenarios', generate_admin_rules_url, class: 'btn btn-primary'
+      .col-sm-4
+        = link_to 'Export CSV', admin_rules_url(format: :csv), class: 'btn'
+
 .row
   .col-sm-12
     table#rules.table.table-striped
