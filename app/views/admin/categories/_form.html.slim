@@ -1,4 +1,4 @@
-#new_category_modal.modal.fade.bd_law_context aria-hidden='true' aria-labelledby='addUseItemModal' role='dialog' tabindex='-1'
+#new_category_modal.modal.fade.bd_law_context aria-hidden='true' aria-labelledby='addCategoryModal' role='dialog' tabindex='-1'
   .modal-dialog
     .modal-content
       .modal-header
@@ -9,7 +9,7 @@
         .modal-body
           - if @category.errors.any?
             #error_explanation
-              h2 = "#{ pluralize(@category.errors.count, 'error') } prohibited this use item from being saved:"
+              h2 = "#{ pluralize(@category.errors.count, 'error') } prohibited this category from being saved:"
               ul
                 - @category.errors.full_messages.each do |message|
                   li = message
