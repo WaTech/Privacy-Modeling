@@ -40,7 +40,7 @@ $(document).on 'turbolinks:load', ->
           context_items = row.context_items.map (context_item) ->
             description = ['<span>', context_item.description, '</span>'].join('')
             if context_item.category == 'applicable_law'
-              ['<p class="rules_context_item_description">', context_item_icon_allow, '<a href="', context_item.source, '">', description, '</a></p>'].join('')
+              ['<p class="rules_context_item_description">', context_item_icon_forbidden, '<a href="', context_item.source, '">', description, '</a></p>'].join('')
             else
               icon = if context_item.category == 'limitation' then context_item_icon_restriction else context_item_icon_allow
               ['<p class="rules_context_item_description">', icon,  description, '</p>'].join('')
