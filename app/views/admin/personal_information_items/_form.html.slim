@@ -4,7 +4,7 @@
       .modal-header
         button.close aria-label='Close' data-dismiss='modal' type='button'
           = fa_icon 'times', class: 'close-modal'
-        h4.modal-title New personal_information_item
+        h4.modal-title New personal information item
       = form_for ['admin', @personal_information_item], remote: true, input_html: {} do |f|
         .modal-body
           - if @personal_information_item.errors.any?
