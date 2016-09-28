@@ -28,9 +28,9 @@
     h1 Dashboard
   .col-sm-5.offset-sm-4
     .row
-      .col-sm-4
+      .col-sm-4.offset-sm-4
         .actions-generate_scenario
-          = link_to 'Generate scenarios', generate_admin_rules_url, class: 'btn'
+          = link_to 'Generate scenarios', generate_admin_rules_url, class: 'btn btn-primary'
       .col-sm-4
         .actions-export_csv
           = link_to 'Export CSV', admin_rules_url(format: :csv), class: 'btn'
