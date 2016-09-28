@@ -25,3 +25,26 @@ thead {
   background-color: #373A3C;
   color: #FFFFFF;
 }
+
+#content {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-top: 8px;
+}
+
+.padding-right-0 {
+  padding-right: 0 !important;
+}
+
+td {
+  padding-left: 18px !important;
+}
+
+.dataTables_paginate {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
