@@ -75,6 +75,9 @@ $(document).on 'turbolinks:load', ->
   # reload datatable after new context item added
   $('body').on 'ajax:success', '#new_law_context_item', ->
     $('#new_law_context').modal('toggle')
+    $('#context_item_category').val('')
+    $('#context_item_source').val('')
+    $('#context_item_description').val('')
     table.draw('page')
 
   # hide soure url for context item modals except with applicable_law category
