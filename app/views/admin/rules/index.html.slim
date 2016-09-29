@@ -13,12 +13,12 @@
 
               .form-group
                 input#context_item_category.form-control name="context_item[category]" type="hidden" value=''
-              .form-group#context_item_source_form_group
-                label.form-control-label for='recipient-name' Source:
-                input#context_item_source.form-control.string.optional name="context_item[source]" type="url"
               .form-group
                 label.form-control-label.string.optional for="context_item_description"  Description:
                 input#context_item_description.form-control.string.optional name="context_item[description]" type="text"
+              .form-group#context_item_source_form_group
+                label.form-control-label for='recipient-name' Source:
+                input#context_item_source.form-control.string.optional name="context_item[source]" type="url"
             .modal-footer
               button.btn.btn-secondary data-dismiss='modal' type='button' Close
               input.btn.btn-primary data-disable-with="Save" name="commit" type="submit" value="Save"
