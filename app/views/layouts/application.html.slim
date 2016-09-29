@@ -6,14 +6,6 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    .container-fluid
-      nav.navbar.navbar-light.bg-faded
-        - if current_user
-          button.navbar-toggler.hidden-sm-up aria-controls='exCollapsingNavbar2' aria-expanded='false' aria-label=('Toggle navigation') data-target='#exCollapsingNavbar2' data-toggle='collapse' type='button'
-            | ☰
-        #exCollapsingNavbar2.collapse.navbar-toggleable-xs
-          = link_to root_path, class: 'navbar-brand' do
-            = image_tag 'https://uc.uxpin.com/files/552025/549473/logoFlyIn_0.png', class: 'logo'
-      .row
-        .col-sm-12
-          = yield
+    .row
+      .col-sm-12
+        = yield
