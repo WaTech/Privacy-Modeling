@@ -1,7 +1,7 @@
 $(document).on 'turbolinks:load', ->
-  icon_allow = '<i class="fa fa-exclamation-circle fa-2x pull-left" data-id="" data-toggle="modal" data-target=".bd_law_context" data-category="limitation" ></i>'
-  icon_restriction = '<i class="fa fa-times-circle fa-2x pull-left" data-id="" data-toggle="modal" data-target=".bd_law_context" data-category="restriction" ></i>'
-  icon_forbidden = '<i class="fa fa-gavel fa-2x pull-left" data-id="" data-toggle="modal" data-target=".bd_law_context" data-category="applicable_law"></i>'
+  icon_allow = '<i class="fa fa-exclamation-circle fa-2x pull-left" data-id=""  data-label="limitation" data-toggle="modal" data-target=".bd_law_context" data-category="limitation" ></i>'
+  icon_restriction = '<i class="fa fa-times-circle fa-2x pull-left" data-id=""  data-label="restriction" data-toggle="modal" data-target=".bd_law_context" data-category="restriction" ></i>'
+  icon_forbidden = '<i class="fa fa-gavel fa-2x pull-left" data-id=""  data-label="applicable law" data-toggle="modal" data-target=".bd_law_context" data-category="applicable_law"></i>'
 
   context_item_icon_allow = '<i class="fa fa-exclamation-circle pull-left"></i>'
   context_item_icon_restriction = '<i class="fa fa-times-circle pull-left"></i>'
@@ -89,6 +89,9 @@ $(document).on 'turbolinks:load', ->
     relatedTarget = $(event.relatedTarget)
     row_id = table.row(relatedTarget.parents('tr')).index()
     data = table.row(row_id).data()
+
+    modal_title = ['New', relatedTarget.data('label'), 'context'].join(' ')
+    modal.find('.modal-title').text(modal_title)
 
     form.attr('action', ['/admin/rules/', data.id, '/context_items'].join(''))
     context_item_category_input = form.find('#context_item_category')
