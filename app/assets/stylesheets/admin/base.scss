@@ -49,11 +49,8 @@ td {
   margin-bottom: 10px;
 }
 
-.margin-top-6 {
-  margin-top: 6px;
-}
-
-.rules_context_item_description i {
-  margin-top: 5px;
-
+.vertical-center {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
 }
