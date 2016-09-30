@@ -8,6 +8,9 @@ nav.navbar.navbar-light.bg-faded
     - if current_user
       ul.nav.navbar-nav.pull-xs-right
         li.nav-item
+          = link_to admin_personal_information_items_path, class: "nav-link #{ request.fullpath.include?(admin_personal_information_items_path) ? 'active' : '' }" do
+            | PIIs
+        li.nav-item
           = link_to admin_categories_path, class: "nav-link #{ request.fullpath.include?(admin_categories_path) ? 'active' : '' }" do
             | Categories
         li.nav-item
@@ -19,3 +22,4 @@ nav.navbar.navbar-light.bg-faded
             span.sr-only (current)
         li.nav-item
           = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link'
+
