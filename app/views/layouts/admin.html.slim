@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title Watech
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    .container-fluid
+      = render 'admin/shared/navigation'
+      .row
+        .col-sm-12
+          - if flash[:success]
+            .alert.alert-success.alert-dismissible.fade.in role='alert'
+              button.close aria-label='Close' data-dismiss='alert' type='button'
+                span aria-hidden='true'  &times;
+              = flash[:success]
+
+          - if notice
+            .alert.alert-info.alert-dismissible.fade.in role='alert'
+              button.close aria-label='Close' data-dismiss='alert' type='button'
+                span aria-hidden='true'  &times;
+              = notice
+
+          - if alert
+            .alert.alert-info.alert-dismissible.fade.in role='alert'
+              button.close aria-label='Close' data-dismiss='alert' type='button'
+                span aria-hidden='true'  &times;
+              = alert
+      .row#alerts
+      .row#content
+        .col-sm-12
+          = yield

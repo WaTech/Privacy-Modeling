@@ -1,7 +1,11 @@
 $(document).on 'turbolinks:load', ->
-  icon_allow = '<i class="fa fa-exclamation-circle fa-3x pull-left" data-id="" data-toggle="modal" data-target=".bd_law_context" data-category="limitation" ></i>'
-  icon_restriction = '<i class="fa fa-times-circle fa-3x pull-left" data-id="" data-toggle="modal" data-target=".bd_law_context" data-category="restriction" ></i>'
-  icon_forbidden = '<i class="fa fa-gavel fa-3x pull-left" data-id="" data-toggle="modal" data-target=".bd_law_context" data-category="applicable_law"></i>'
+  icon_allow = '<i class="fa fa-exclamation-circle fa-2x pull-left" data-id=""  data-label="limitation" data-toggle="modal" data-target=".bd_law_context" data-category="limitation" ></i>'
+  icon_restriction = '<i class="fa fa-times-circle fa-2x pull-left" data-id=""  data-label="restriction" data-toggle="modal" data-target=".bd_law_context" data-category="restriction" ></i>'
+  icon_forbidden = '<i class="fa fa-gavel fa-2x pull-left" data-id=""  data-label="applicable law" data-toggle="modal" data-target=".bd_law_context" data-category="applicable_law"></i>'
+
+  context_item_icon_allow = '<i class="fa fa-exclamation-circle pull-left vertical-center"></i>'
+  context_item_icon_restriction = '<i class="fa fa-times-circle pull-left vertical-center"></i>'
+  context_item_icon_forbidden = '<i class="fa fa-gavel pull-left vertical-center"></i>'
 
   log = (value) ->
     console.log value
@@ -15,7 +19,7 @@ $(document).on 'turbolinks:load', ->
       'type': 'GET'
       'datatype': 'JSON'
     'processing': true
-    'pageLength': 5
+    'pageLength': 15
     'lengthChange': false
     'pagingType': 'simple_numbers'
     'info': false
@@ -34,10 +38,12 @@ $(document).on 'turbolinks:load', ->
       {
         'render': (data, type, row) ->
           context_items = row.context_items.map (context_item) ->
+            description = ['<span class="vertical-center">', context_item.description, '</span>'].join('')
             if context_item.category == 'applicable_law'
-              ['<p><a href="', context_item.source, '">', context_item.description, '</a></p>'].join('')
+              ['<p class="rules_context_item_description">', context_item_icon_forbidden, '<a href="', context_item.source, '" target="_blank">', description, '</a></p>'].join('')
             else
-              ['<p>', context_item.description, '</p>'].join('')
+              icon = if context_item.category == 'limitation' then context_item_icon_allow else context_item_icon_restriction
+              ['<p class="rules_context_item_description">', icon,  description, '</p>'].join('')
           context_items.join('')
           # context_items = (context_item.description for context_item in row.context_items)
 
@@ -69,6 +75,9 @@ $(document).on 'turbolinks:load', ->
   # reload datatable after new context item added
   $('body').on 'ajax:success', '#new_law_context_item', ->
     $('#new_law_context').modal('toggle')
+    $('#context_item_category').val('')
+    $('#context_item_source').val('')
+    $('#context_item_description').val('')
     table.draw('page')
 
   # hide soure url for context item modals except with applicable_law category
@@ -80,6 +89,9 @@ $(document).on 'turbolinks:load', ->
     relatedTarget = $(event.relatedTarget)
     row_id = table.row(relatedTarget.parents('tr')).index()
     data = table.row(row_id).data()
+
+    modal_title = ['New', relatedTarget.data('label'), 'context'].join(' ')
+    modal.find('.modal-title').text(modal_title)
 
     form.attr('action', ['/admin/rules/', data.id, '/context_items'].join(''))
     context_item_category_input = form.find('#context_item_category')
