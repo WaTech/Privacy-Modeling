@@ -1,52 +1,107 @@
-categories:
-  - Credit Information
-  - Student Information
-  - Financial Records
-  - Electronic Communication
-  - Online Services direct at children under 13
-  - Medical Information
-  - Personal Financial Information
-  - Video Tape Service Consumer Information
-  - Driver’s Information
-  - Cable Account Information
-  - Domestic Violence Victim Information
-  - Private Conversations
-  - Image/Photographs of individuals for commercial/marketing purposes
-  - Intimate Images
-  - Court/Law Enforcement Information
-  - Franchisee Customer Information
-  - Veteran’s Benefit Information
-  - Insurance Information
-  - Homeless Information
-pi_items:
-  - Name
-  - SSN
-  - DL
-  - Citizenship
-  - Legal status
-  - Gender
-  - Race/ethnicity
-  - DOB
-  - Place of birth
-  - Contact Information
-  - Security Clearance
-  - Marital status
-  - Biometrics
-  - Family information
-  - Financial information
-  - Medical information
-  - Disability information
-  - Law enforcement information
-  - Employment information
-  - State personnel records
-  - Emergency contact information
-  - Education information
-  - Geolocation
-uses:
-  - Store
-  - Sell/rent
-  - Share
-  - Publish/Disclose
-  - ID or Grant a license
-  - Protection/shield
-  - Benefits Services
+v1:
+  categories:
+    - Credit Information
+    - Student Information
+    - Financial Records
+    - Electronic Communication
+    - Online Services direct at children under 13
+    - Medical Information
+    - Personal Financial Information
+    - Video Tape Service Consumer Information
+    - Driver’s Information
+    - Cable Account Information
+    - Domestic Violence Victim Information
+    - Private Conversations
+    - Image/Photographs of individuals for commercial/marketing purposes
+    - Intimate Images
+    - Court/Law Enforcement Information
+    - Franchisee Customer Information
+    - Veteran’s Benefit Information
+    - Insurance Information
+    - Homeless Information
+  pi_items:
+    - Name
+    - SSN
+    - DL
+    - Citizenship
+    - Legal status
+    - Gender
+    - Race/ethnicity
+    - DOB
+    - Place of birth
+    - Contact Information
+    - Security Clearance
+    - Marital status
+    - Biometrics
+    - Family information
+    - Financial information
+    - Medical information
+    - Disability information
+    - Law enforcement information
+    - Employment information
+    - State personnel records
+    - Emergency contact information
+    - Education information
+    - Geolocation
+  uses:
+    - Store
+    - Sell/rent
+    - Share
+    - Publish/Disclose
+    - ID or Grant a license
+    - Protection/shield
+    - Benefits Services
+v2:
+  categories:
+    - Credit and Banking Information
+    - Student Information
+    - Driver and Vehicle Information
+    - Court and Law Enforcement Information
+    - Medical and Health Information
+    - Personal Financial Information
+    - Franchise Information (business)
+    - Licensing Information
+    - Veterans' Benefit Information
+    - Insurance Information
+    - Online Services Directed at Children
+    - General
+  pi_items:
+    - Name
+    - SSN
+    - DL
+    - Citizenship
+    - Legal status
+    - Gender
+    - Race/ethnicity
+    - DOB
+    - Place of birth
+    - Contact Information
+    - Security Clearance
+    - Marital status
+    - Biometrics
+    - Family information
+    - Financial information
+    - Medical information
+    - Disability information
+    - Law enforcement information
+    - Employment information
+    - State personnel records
+    - Emergency contact information
+    - Education information
+    - Geolocation
+    - Cable TV Account Information
+    - Electronic Communications (e.g. Email)
+    - Domestic Violence Victim Information
+    - Video Tape Service Consumer Information
+    - Photographs and Images
+    - Homeless Status
+  uses:
+    - Store
+    - Sell/rent
+    - Share
+    - Publish/Disclose
+    - ID or Grant a license
+    - Protection/shield
+    - Benefits Services
+
+
