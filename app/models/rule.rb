@@ -57,7 +57,9 @@ class Rule < ApplicationRecord
 
       rule.update restriction: row['restriction']
 
-      context_item = ContextItem.find_or_create_by rule: rule, category: row['context_item_category'], description: row['context_item_description'], source: row['context_item_source']
+      if row.slice('context_item_category', 'context_item_description', 'context_item_source').any? &:present?
+        context_item = ContextItem.find_or_create_by rule: rule, category: row['context_item_category'], description: row['context_item_description'], source: row['context_item_source']
+      end
     end
   end
 end
