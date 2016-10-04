@@ -102,3 +102,9 @@ $(document).on 'turbolinks:load', ->
       source.show()
     else
       source.hide()
+
+  $('body').on 'click', '.import-csv-button', (event) ->
+    $('#file').click()
+    event.preventDefault()
+  $('body').on 'change', '#file', ->
+    $('#submit_import_form').click()

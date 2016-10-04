@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :rules, only: [:index, :update] do
       collection do
         get :generate
+        post :import
       end
       resources :context_items, only: :create
     end
