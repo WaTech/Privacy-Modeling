@@ -24,6 +24,12 @@ class Admin::RulesController < Admin::BaseController
     return redirect_to admin_rules_url
   end
 
+  def import
+    file = import_params[:file]
+    Rule.import file
+    redirect_to root_path
+  end
+
   def update
     @rule = Rule.find params[:id]
 
@@ -42,5 +48,9 @@ class Admin::RulesController < Admin::BaseController
 
   def rule_params
     params.require(:rule).permit(:restriction)
+  end
+
+  def import_params
+    params.permit(:file)
   end
 end
