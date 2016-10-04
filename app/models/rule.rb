@@ -39,8 +39,26 @@ class Rule < ApplicationRecord
             csv << rule_attributes + [:category, :description, :source].map { |attr| context_item.public_send attr }
           end
         else
-           csv<< attribute_names.map { |attr| rule.public_send attr }
+           csv << attribute_names.map { |attr| rule.public_send attr }
         end
+      end
+    end
+  end
+
+  def self.import(file)
+    csv_text = File.read(file.path)
+    csv = CSV.parse(csv_text, headers: true)
+    csv.each do |row|
+      category = Category.find_or_create_by! name: row['category_name']
+      personal_information_item = PersonalInformationItem.find_or_create_by! name: row['personal_information_item_name']
+      use_item = UseItem.find_or_create_by! name: row['uses_name']
+
+      rule = Rule.find_or_create_by! category: category, personal_information_item: personal_information_item, use_item: use_item
+
+      rule.update restriction: row['restriction']
+
+      if row.slice('context_item_category', 'context_item_description', 'context_item_source').any? &:present?
+        context_item = ContextItem.find_or_create_by rule: rule, category: row['context_item_category'], description: row['context_item_description'], source: row['context_item_source']
       end
     end
   end
