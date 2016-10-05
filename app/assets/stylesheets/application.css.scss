@@ -18,13 +18,16 @@
 
 .context-item-limitation-icon {
   background: url('/limitation_context_icon.svg');
+  background-size: 26px 26px;
   margin-right: 3px;
 }
 
 .context-item-restriction-icon {
+  background-size: 26px 26px;
   background: url('/restriction_context_icon.svg');
 }
 .context-item-applicable-law-icon {
+  background-size: 26px 26px;
   background: url('/applicable_law_context_icon.svg');
 }
 
@@ -47,8 +50,8 @@
 }
 
 .ca-2x {
-  width: 32px;
-  height: 32px;
+  width: 26px;
+  height: 26px;
 }
 
 .ca-x {
