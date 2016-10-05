@@ -1,0 +1,2 @@
+class GenerateDashboardController < ApplicationController
+end
