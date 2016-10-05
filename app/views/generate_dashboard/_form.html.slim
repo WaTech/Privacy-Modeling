@@ -1,0 +1,5 @@
+- url = next_wizard_path rescue wizard_path(:select_piis)
+= form_tag url, method: :get do |f|
+  = yield
+  .actions
+    = submit_tag 'Next'
