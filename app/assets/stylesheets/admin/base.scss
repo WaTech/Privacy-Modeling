@@ -4,6 +4,10 @@
 @import 'bootstrap';
 @import 'rules';
 .admin_content {
+  .rules_context_item_description {
+    cursor: pointer;
+  }
+
   i {
     color: black;
     cursor: pointer;

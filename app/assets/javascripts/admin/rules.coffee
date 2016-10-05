@@ -40,10 +40,10 @@ $(document).on 'turbolinks:load', ->
           context_items = row.context_items.map (context_item) ->
             description = ['<span class="vertical-center">', context_item.description, '</span>'].join('')
             if context_item.category == 'applicable_law'
-              ['<p class="rules_context_item_description">', context_item_icon_forbidden, '<a href="', context_item.source, '" target="_blank">', description, '</a></p>'].join('')
+              ['<p class="rules_context_item_description" data-destroy_url="' + context_item.destroy_url + '">', context_item_icon_forbidden, '<a href="', context_item.source, '" target="_blank">', description, '</a></p>'].join('')
             else
               icon = if context_item.category == 'limitation' then context_item_icon_allow else context_item_icon_restriction
-              ['<p class="rules_context_item_description">', icon,  description, '</p>'].join('')
+              ['<p class="rules_context_item_description" data-destroy_url="' + context_item.destroy_url + '">', icon,  description, '</p>'].join('')
           context_items.join('')
           # context_items = (context_item.description for context_item in row.context_items)
 
@@ -108,3 +108,53 @@ $(document).on 'turbolinks:load', ->
     event.preventDefault()
   $('body').on 'change', '#file', ->
     $('#submit_import_form').click()
+
+
+
+  # reload datatable after edit context item
+  # $('body').on 'ajax:success', '#edit_law_context_item', ->
+  #   $('#edit_law_context').modal('toggle')
+  #   $('#context_item_category').val('')
+  #   $('#context_item_source').val('')
+  #   $('#context_item_description').val('')
+  #   table.draw('page')
+
+  # hide soure url for context item modals except with applicable_law category
+  # set real rule id for form's action
+  # set real context item categoru
+  $('#edit_law_context').on 'show.bs.modal', (event) ->
+    modal = $(this)
+    form = modal.find('form')
+    relatedTarget = $(event.relatedTarget)
+    row_id = table.row(relatedTarget.parents('tr')).index()
+    data = table.row(row_id).data()
+
+    modal_title = ['Edit', relatedTarget.data('label'), 'context'].join(' ')
+    modal.find('.modal-title').text(modal_title)
+
+    form.attr('action', ['/admin/rules/', data.id, '/context_items'].join(''))
+    context_item_category_input = form.find('#context_item_category')
+    context_item_category_input.attr('value', relatedTarget.data('category'))
+    is_applicable_law_category = relatedTarget.data('category')
+    source = modal.find('#context_item_source_form_group')
+    if is_applicable_law_category == 'applicable_law'
+      source.show()
+    else
+      source.hide()
+
+  $('body').on 'click', '.rules_context_item_description', (event) ->
+    $('#edit_law_context').attr('data-destroy_url', $(this).data('destroy_url'))
+    $('#edit_law_context').modal('toggle')
+
+
+  $('body').on 'click', '.destroy_context_item_button', (event) ->
+    destroy_url = $('#edit_law_context').attr('data-destroy_url')
+    if confirm('Do you really want to destroy this category?')
+      $.ajax
+        url: destroy_url
+        type: 'DELETE'
+        success: (result) ->
+          table.draw('page')
+          $('#edit_law_context').modal('toggle')
+
+

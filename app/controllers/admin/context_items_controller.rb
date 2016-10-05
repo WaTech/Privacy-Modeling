@@ -11,6 +11,14 @@ class Admin::ContextItemsController < Admin::BaseController
     end
   end
 
+  def destroy
+    if @context_item.destroy
+      flash.now[:success] = 'Context item succefully deleted.'
+    else
+      flash.now[:error] = @context_item.errors.join('. ')
+    end
+  end
+
   private
 
   def context_item_params
