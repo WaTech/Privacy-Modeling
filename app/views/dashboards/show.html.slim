@@ -1,0 +1,16 @@
+h1 Step 4. Results
+
+- @grouped_rules.each do |restriction, rules|
+  h2 = restriction.humanize
+  - rules.each do |rule|
+    .rule
+      p = rule.category_name
+      - rule.context_items.each do |context_item|
+        - icon = case context_item.category
+        - when 'limitation' then 'exclamation-circle'
+        - when 'restriction' then 'times-circle'
+        - when 'applicable_law' then 'gavel'
+        p
+          = fa_icon icon, class: 'pull-left vertical-center'
+          span.vertical-center = context_item.description
+

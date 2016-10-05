@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'admin/rules#index'
+  resource :dashboard, only: :show
 
   namespace :admin do
     resources :personal_information_items, only: %w(index new edit update destroy create)
