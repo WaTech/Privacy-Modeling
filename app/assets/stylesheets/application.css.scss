@@ -1,1 +1,8 @@
-@import 'admin/base'
+@import 'admin/base';
+
+#header {
+  overflow: hidden;
+  width: 1440px;
+  height: 240px;
+  background-color: #06385b;
+}

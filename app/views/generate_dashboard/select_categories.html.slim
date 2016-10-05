@@ -1,3 +1,5 @@
+h1 Step 1: Select Category
+
 = render layout: 'form' do |f|
   .field
     = collection_check_boxes(:dashboard, :category_ids, Category.all, :id, :name) do |b|

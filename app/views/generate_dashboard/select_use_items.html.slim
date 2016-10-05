@@ -1,3 +1,5 @@
+h1 Step 2: Personal Information Items
+
 = render layout: 'form' do |f|
   .field
     = collection_check_boxes(:dashboard, :use_item_ids, UseItem.all, :id, :name) do |b|
