@@ -1,6 +1,6 @@
 class DashboardsController < ApplicationController
   def show
-    @grouped_rules = Rule.order(id: :asc).limit(5).to_a.group_by(&:restriction)
+    @grouped_rules = Rule.where(category_id: dashboard_params[:category_ids]).where(personal_information_item_id: dashboard_params[:pii_ids]).where(use_item_id: dashboard_params[:use_item_ids]).group_by(&:restriction)
   end
 
   def dashboard_params

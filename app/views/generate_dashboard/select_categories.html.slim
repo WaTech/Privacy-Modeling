@@ -1,0 +1,6 @@
+= render layout: 'form' do |f|
+  .field
+    = collection_check_boxes(:dashboard, :category_ids, Category.all, :id, :name) do |b|
+      p
+        = b.check_box
+        = b.label

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'admin/rules#index'
+  root to: 'generate_dashboard#select_categories'
+
   resource :dashboard, only: :show
   resources :generate_dashboard
 

@@ -3,81 +3,81 @@
 @import 'font-awesome';
 @import 'bootstrap';
 @import 'rules';
+#admin_content {
+  i {
+    color: black;
+    cursor: pointer;
+  }
 
-i {
-  color: black;
-  cursor: pointer;
-}
+  .close-modal {
+    font-size: 0.7em;
+  }
 
-.close-modal {
-  font-size: 0.7em;
-}
+  .logo {
+    max-width: 100px;
+  }
 
-.logo {
-  max-width: 100px;
-}
+  .login-logo {
+    max-width: 250px;
+  }
 
-.login-logo {
-  max-width: 250px;
-}
+  tr td:last-child {
+    vertical-align:middle;
+  }
 
-tr td:last-child {
-  vertical-align:middle;
-}
+  thead {
+    background-color: #373A3C;
+    color: #FFFFFF;
+  }
 
-thead {
-  background-color: #373A3C;
-  color: #FFFFFF;
-}
+  #content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 
-#content {
-  padding-left: 16px;
-  padding-right: 16px;
-}
+  h1 {
+    font-size: 2rem;
+    margin-top: 8px;
+  }
 
-h1 {
-  font-size: 2rem;
-  margin-top: 8px;
-}
+  .padding-right-0 {
+    padding-right: 0 !important;
+  }
 
-.padding-right-0 {
-  padding-right: 0 !important;
-}
+  td {
+    padding-left: 18px !important;
+  }
 
-td {
-  padding-left: 18px !important;
-}
+  .dataTables_paginate {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 
-.dataTables_paginate {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+  .vertical-center {
+      display: inline-block;
+      vertical-align: middle;
+      float: none;
+  }
 
-.vertical-center {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
-}
+  .modal-footer {
+    .btn {
+      margin-left: 6px;
+    }
+  }
 
-.modal-footer {
-  .btn {
-    margin-left: 6px;
+  .text-center {
+    text-align: center;
+  }
+
+  .main {
+    margin-top: 75px;
+  }
+
+  #user_remember_me {
+    margin-right: 6px;
+  }
+
+  .login-title {
+    margin-top: 32px;
   }
 }
-
-.text-center {
-  text-align: center;
-}
-
-.main {
-  margin-top: 75px;
-}
-
-#user_remember_me {
-  margin-right: 6px;
-}
-
-.login-title {
-  margin-top: 32px;
-}
-

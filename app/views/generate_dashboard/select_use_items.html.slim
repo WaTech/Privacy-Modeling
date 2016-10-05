@@ -1,0 +1,12 @@
+= render layout: 'form' do |f|
+  .field
+    = collection_check_boxes(:dashboard, :use_item_ids, UseItem.all, :id, :name) do |b|
+      p
+        = b.check_box
+        = b.label
+  - @dashboard.category_ids.each do |category_id|
+    = hidden_field_tag "dashboard[category_ids][]", category_id
+  - @dashboard.pii_ids.each do |pii_id|
+    = hidden_field_tag "dashboard[pii_ids][]", pii_id
+
+
