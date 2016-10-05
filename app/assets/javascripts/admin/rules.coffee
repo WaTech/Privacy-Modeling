@@ -3,9 +3,9 @@ $(document).on 'turbolinks:load', ->
   icon_restriction = '<i class="context-item-restriction-icon ca-2x pull-left" data-id=""  data-label="restriction" data-toggle="modal" data-target=".bd_law_context" data-category="restriction" ></i>'
   icon_forbidden = '<i class="context-item-applicable-law-icon ca-2x  pull-left" data-id=""  data-label="applicable law" data-toggle="modal" data-target=".bd_law_context" data-category="applicable_law"></i>'
 
-  context_item_icon_allow = '<i class="fa fa-exclamation-circle pull-left vertical-center"></i>'
-  context_item_icon_restriction = '<i class="fa fa-times-circle pull-left vertical-center"></i>'
-  context_item_icon_forbidden = '<i class="fa fa-gavel pull-left vertical-center"></i>'
+  context_item_icon_allow = '<i class="ca-x context-item-limitation-icon_x pull-left vertical-center"></i>'
+  context_item_icon_restriction = '<i class="ca-x context-item-restriction-icon_x pull-left vertical-center"></i>'
+  context_item_icon_forbidden = '<i class="ca-x context-item-applicable-law-icon_x pull-left vertical-center"></i>'
 
   log = (value) ->
     console.log value
