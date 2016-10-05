@@ -1,8 +1,13 @@
 @import 'admin/base';
 
 #header {
+  width:100%;
   overflow: hidden;
-  width: 1440px;
   height: 240px;
   background-color: #06385b;
+}
+
+.rule {
+  border: 1px black solid;
+  margin: 5px;
 }

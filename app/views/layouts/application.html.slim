@@ -6,10 +6,7 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    .containter
-      .row
-        .col-sm-12#header
-
-      .row
-        .col-sm-12
-          = yield
+    #header
+    .row
+      .col-sm-12
+        = yield
