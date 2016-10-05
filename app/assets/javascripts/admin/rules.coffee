@@ -149,7 +149,7 @@ $(document).on 'turbolinks:load', ->
 
   $('body').on 'click', '.destroy_context_item_button', (event) ->
     destroy_url = $('#edit_law_context').attr('data-destroy_url')
-    if confirm('Do you really want to destroy this category?')
+    if confirm('Do you really want to destroy this context item?')
       $.ajax
         url: destroy_url
         type: 'DELETE'
