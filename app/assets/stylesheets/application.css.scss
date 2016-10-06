@@ -1,10 +1,36 @@
-@import 'admin/base';
+@import 'fonts';
+// @import 'admin/base';
+// @import 'bootstrap';
 
 #header {
   width:100%;
   overflow: hidden;
   height: 240px;
   background-color: #06385b;
+  color: #ffffff;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: center;
+
+  .logo {
+    margin: 26px 0px;
+
+    img {
+      max-width: 253px;
+      max-height: 66px;
+    }
+  }
+
+  .title {
+    margin: 0px;
+    font-size: 50px;
+  }
+
+  .description {
+    margin: 0px;
+    font-size: 17px;
+    max-height: 44px;
+    max-width: 960px;
+  }
 }
 
 .rule {
