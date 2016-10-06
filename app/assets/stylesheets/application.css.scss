@@ -32,55 +32,231 @@
     max-width: 960px;
   }
 }
-
-.rule {
-  border: 1px black solid;
-  margin: 5px;
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #f3f4f9;
 }
 
-.margin-left-6 {
-  margin-left: 6px;
+header, main {
+  display: block;
 }
 
-.context-item-limitation-icon {
-  background: url('/limitation_context_icon.svg');
-  background-size: 26px 26px;
-  margin-right: 3px;
+* {
+  box-sizing: border-box;
 }
 
-.context-item-restriction-icon {
-  background: url('/restriction_context_icon.svg');
-  background-size: 26px 26px;
-}
-.context-item-applicable-law-icon {
-  background: url('/applicable_law_context_icon.svg');
-  background-size: 26px 26px;
+body {
+  > header {
+    background-color: #013152;
+    text-align: center;
+    padding-bottom: 1px;
+
+    > img {
+      width: 253px;
+      margin: 26px auto 0 auto;
+    }
+    > h1 {
+      margin: 26px auto 0 auto;
+      color: white;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 50px;
+      font-weight: 300;
+      letter-spacing: 1.57px;
+      line-height: 63px;
+    }
+    > p {
+      margin: 15px auto 47px auto;
+      padding: 0 10px;
+      max-width: 950px;
+      color: white;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 17px;
+      font-weight: 300;
+      letter-spacing: 0.53px;
+      line-height: 22px;
+    }
+  }
+
+  > main {
+    .nav-wrapper {
+      max-width: 934px;
+      margin: 1px auto;
+      padding: 20px 0 10px 0;
+      overflow: hidden;
+
+      > nav {
+        height: 40px;
+        border-bottom: solid 2px #d9dbe3;
+        margin: auto;
+
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+
+        > section {
+          @media only screen and (max-width: 600px) {
+            font-size: 12px;
+            line-height: 12px;
+          }
+
+          -webkit-box-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+
+
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+
+          padding-bottom: 8px;
+
+
+          height: 40px;
+          color: #c6c8cf;
+          text-align: center;
+          font-family: 'Source Sans Pro', sans-serif;
+          font-size: 14px;
+          font-weight: 700;
+          letter-spacing: 0.44px;
+          line-height: 18px;
+          //margin-top: 20px;
+          position: relative;
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 34px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            background-color: #d9dbe3;
+            border-radius: 12px;
+          }
+
+          &.active {
+            color: #3e9cdd;
+
+            &:after {
+              background-color: #1467a0;
+            }
+            &:before {
+              content: '';
+              display: block;
+              position: absolute;
+              top: 38px;
+              right: 50%;
+              width: 1000px;
+              height: 2px;
+              background-color: #1467a0;
+            }
+          }
+        }
+      }
+    }
+
+    .content {
+      text-align: center;
+      max-width: 960px;
+      margin: auto;
+      > h1 {
+        color: #06385b;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 28px;
+        font-weight: 600;
+        letter-spacing: 0.88px;
+        line-height: 36px;
+      }
+      > p {
+        color: #06385b;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 17px;
+        font-weight: 400;
+        letter-spacing: 0.53px;
+        line-height: 22px;
+      }
+
+      .container-categories {
+        > label {
+          display: inline-block;
+          margin: 10px;
+          width: 218px;
+          height: 116px;
+          overflow: hidden;
+          > input {
+            display: none;
+          }
+
+          > input[type=checkbox]:checked + div {
+            > p {
+              color: white;
+            }
+            background-color: #1467a0;
+          }
+
+          > div {
+            cursor: pointer;
+            background-color: white;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+            width: 100%;
+            height: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            padding: 0 25px;
+            > p {
+              color: #333;
+              font-family: 'Source Sans Pro', sans-serif;
+              font-size: 17px;
+              font-weight: 400;
+              letter-spacing: 0.53px;
+              line-height: 22px;
+            }
+          }
+        }
+
+      }
+
+      .submit-button {
+        margin: 20px 0 50px 0;
+        width: 160px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background-color: #3e9cdd;
+        color: white;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 17px;
+        font-weight: 500;
+        letter-spacing: 0.53px;
+        outline: none;
+        box-shadow: none;
+        border: none;
+      }
+    }
+
+  }
 }
 
 
-.context-item-limitation-icon_x {
-  background: url('/limitation_context_icon.svg');
-  background-size: 13.719px 16px;
-  margin-right: 3px;
-}
 
-.context-item-restriction-icon_x {
-  background: url('/restriction_context_icon.svg');
-  background-size: 13.719px 16px;
-  margin-right: 3px;
-}
-.context-item-applicable-law-icon_x {
-  background: url('/applicable_law_context_icon.svg');
-  background-size: 13.719px 16px;
-  margin-right: 3px;
-}
 
-.ca-2x {
-  width: 26px;
-  height: 26px;
-}
-
-.ca-x {
-  width: 13.719px;
-  height: 16px;
-}

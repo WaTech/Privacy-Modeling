@@ -85,4 +85,58 @@
   .login-title {
     margin-top: 32px;
   }
+
+
+  .rule {
+    border: 1px black solid;
+    margin: 5px;
+  }
+
+  .margin-left-6 {
+    margin-left: 6px;
+  }
+
+  .context-item-limitation-icon {
+    background: url('/limitation_context_icon.svg');
+    background-size: 26px 26px;
+    margin-right: 3px;
+  }
+
+  .context-item-restriction-icon {
+    background: url('/restriction_context_icon.svg');
+    background-size: 26px 26px;
+  }
+  .context-item-applicable-law-icon {
+    background: url('/applicable_law_context_icon.svg');
+    background-size: 26px 26px;
+  }
+
+
+  .context-item-limitation-icon_x {
+    background: url('/limitation_context_icon.svg');
+    background-size: 13.719px 16px;
+    margin-right: 3px;
+  }
+
+  .context-item-restriction-icon_x {
+    background: url('/restriction_context_icon.svg');
+    background-size: 13.719px 16px;
+    margin-right: 3px;
+  }
+  .context-item-applicable-law-icon_x {
+    background: url('/applicable_law_context_icon.svg');
+    background-size: 13.719px 16px;
+    margin-right: 3px;
+  }
+
+  .ca-2x {
+    width: 26px;
+    height: 26px;
+  }
+
+  .ca-x {
+    width: 13.719px;
+    height: 16px;
+  }
+
 }
