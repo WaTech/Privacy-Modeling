@@ -5,6 +5,6 @@
     - @categories = Category.all
     = collection_check_boxes(:dashboard, :category_ids, @categories , :id, :name) do |b|
       label
-        = b.check_box
+        = b.check_box(class: 'category-checkbox')
         div
           p = @categories[b.value - 1].name

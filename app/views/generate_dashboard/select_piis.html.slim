@@ -1,11 +1,14 @@
-h1 Step 2: Personal Information Items
+.content.step-1
+  h1 Step 2: Personal Information Items
 
-= render layout: 'form' do |f|
-  .field
-    = collection_check_boxes(:dashboard, :pii_ids, PersonalInformationItem.all, :id, :name) do |b|
-      p
-        = b.check_box
-        = b.label
-  - @dashboard.category_ids.each do |category_id|
-    = hidden_field_tag "dashboard[category_ids][]", category_id
+  p Please input or select the type of personal information your agency is working with
+  = render layout: 'form' do |f|
+    - @piis = PersonalInformationItem.all
+    = collection_check_boxes(:dashboard, :pii_ids, @piis, :id, :name) do |b|
+      label
+        = b.check_box(class: 'pii-checkbox')
+        div
+          p = @piis[b.value - 1].name
+    - @dashboard.category_ids.each do |category_id|
+      = hidden_field_tag "dashboard[category_ids][]", category_id
 
