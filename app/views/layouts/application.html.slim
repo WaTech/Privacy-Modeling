@@ -22,7 +22,7 @@ html lang="en"
         .nav-wrapper
           nav
             section.active Select Category
-            section Personal Information Items
-            section Uses
-            section Results
+            = section_nav_tag :select_piis
+            = section_nav_tag :select_use_items
+            = section_nav_tag :results
       = yield
