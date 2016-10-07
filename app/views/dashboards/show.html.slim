@@ -19,4 +19,46 @@
                   .wrapper
                     h1 = rule.category_name
                     p = rule.personal_information_item_name
-    = link_to 'Start over', root_path, class: 'btn btn-primary'
+    .actions
+      = link_to 'Start over', root_path, class: 'back-button'
+
+    / section.no-restriction
+    /   .header
+    /     | No Restriction
+    /   .list
+    /     .block
+    /       .wrapper
+    /         h1 Name
+    /         p Student Information
+    /     .block
+    /       .wrapper
+    /         h1 Name
+    /         p Student Information
+    /     .block
+    /       .wrapper
+    /         h1 Name
+    /         p Student Information
+    / section.limitations-apply
+    /   .header
+    /     | Limitations Apply
+    /   .list
+    /     .block
+    /       h1 Place of birth
+    /       p Student Information
+    /       ul
+    /         li Store for a limited time
+    /         li Share with Restriction
+    /         li Do not share publicly
+    /       span.info
+    /     .block
+    /       .wrapper
+    /         h1 Name
+    /         p Student Information
+    /     .block
+    /       .wrapper
+    /         h1 Name
+    /         p Student Information
+
+
+
+
