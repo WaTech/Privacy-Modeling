@@ -1,10 +1,9 @@
-.row
-  .col-sm-12
-    h1 Step 4. Results
+.content
+  h1 Step 4. Results
+  p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
 - @grouped_rules.each do |restriction, rules|
-  .row
-    .col-sm-12
-      h2 = restriction.humanize
+  h2 = restriction.humanize
 
   - regrouped_rules = rules.each_with_index.inject([[]]) do |container, (rule, index)|
     - container.last << rule
@@ -12,22 +11,18 @@
     - container
 
   - regrouped_rules.each do |rules|
-    .row
-      - rules.each do |rule|
-          .col-sm-3.rule
-            p Category name: #{ rule.category_name }
-            p Use item: #{ rule.use_item_name }
-            p PII: #{ rule.personal_information_item_name }
-            - rule.context_items.each do |context_item|
-              - icon = case context_item.category
-              - when 'limitation' then 'exclamation-circle'
-              - when 'restriction' then 'times-circle'
-              - when 'applicable_law' then 'gavel'
-              p
-                = fa_icon icon, class: 'pull-left vertical-center'
-                span.vertical-center = context_item.description
+    - rules.each do |rule|
+      p Category name: #{ rule.category_name }
+      p Use item: #{ rule.use_item_name }
+      p PII: #{ rule.personal_information_item_name }
+      - rule.context_items.each do |context_item|
+        - icon = case context_item.category
+        - when 'limitation' then 'exclamation-circle'
+        - when 'restriction' then 'times-circle'
+        - when 'applicable_law' then 'gavel'
+        p
+          = fa_icon icon, class: 'pull-left vertical-center'
+          span.vertical-center = context_item.description
 
-.row
-  .col-sm-3
     = link_to 'Start over', root_path, class: 'btn btn-primary'
 
