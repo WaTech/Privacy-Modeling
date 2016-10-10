@@ -70,5 +70,6 @@ gem 'devise'
 gem 'cancancan'
 
 gem 'wicked'
+gem 'pry'
 
 ruby '2.3.1'

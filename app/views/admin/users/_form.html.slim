@@ -1,0 +1,23 @@
+#new_user_modal.modal.fade.bd_law_context aria-hidden='true' aria-labelledby='addUserModal' role='dialog' tabindex='-1'
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close aria-label='Close' data-dismiss='modal' type='button'
+          = fa_icon 'times', class: 'close-modal'
+        h4.modal-title New user
+      = form_for ['admin', @user], remote: true, input_html: { class: "form-horizontal center" }  do |f|
+        .modal-body
+          - if @user.errors.any?
+            #error_explanation
+              h2 = "#{ pluralize(@user.errors.count, 'error') } prohibited this user from being saved:"
+              ul
+                - @user.errors.full_messages.each do |message|
+                  li = message
+          .form-group
+            = f.label :email, class: 'form-control-label'
+            = f.text_field :email, class: 'form-control'
+          .form-group
+            = f.label :role, class: 'form-control-label'
+            = f.select :role, ['admin', 'super_admin'], include_blank: false, input_html: { class: 'form-control selectpicker' }
+        .modal-footer
+          .actions = f.submit

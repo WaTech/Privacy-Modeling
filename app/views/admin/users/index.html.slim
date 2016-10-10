@@ -1,0 +1,14 @@
+.row
+  .col-sm-3
+    h1 Categories
+  .offset-sm-6.col-sm-3
+    = link_to 'Add new user', new_admin_user_path, remote: true, class: 'btn btn-primary pull-right'
+.row
+  .col-sm-12
+    table#users.table.table-striped
+      thead
+        tr
+          th ID
+          th Email
+          th
+
