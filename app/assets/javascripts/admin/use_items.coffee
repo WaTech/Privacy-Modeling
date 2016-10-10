@@ -34,11 +34,6 @@ $(document).on 'turbolinks:load', ->
     data = table.row(row_id).data()
     $.get [data.url, 'edit'].join('/')
 
-  $('body').on 'click', '.edit-use-item', ->
-    row_id = table.row($(this).parents('tr')).index()
-    data = table.row(row_id).data()
-    $.get [data.url, 'edit'].join('/')
-
   $('body').on 'click', '.remove-use-item', ->
     row_id = table.row($(this).parents('tr')).index()
     data = table.row(row_id).data()
