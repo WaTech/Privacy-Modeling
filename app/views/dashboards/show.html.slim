@@ -1,0 +1,64 @@
+.content.step-4
+  h1 Step 4. Results
+  p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+  .container-result
+    - @grouped_rules.each do |restriction, rules|
+
+      section class="#{ restriction }"
+        .header = restriction.humanize
+
+        - regrouped_rules = rules.each_with_index.inject([[]]) do |container, (rule, index)|
+          - container.last << rule
+          - container << [] if (index + 1) % 3 == 0
+          - container
+        .list
+          - regrouped_rules.each do |rules|
+            - rules.each do |rule|
+                .block
+                  .wrapper
+                    h1 = rule.category_name
+                    p = rule.personal_information_item_name
+    .actions
+      = link_to 'Start over', root_path, class: 'back-button'
+
+    / section.no-restriction
+    /   .header
+    /     | No Restriction
+    /   .list
+    /     .block
+    /       .wrapper
+    /         h1 Name
+    /         p Student Information
+    /     .block
+    /       .wrapper
+    /         h1 Name
+    /         p Student Information
+    /     .block
+    /       .wrapper
+    /         h1 Name
+    /         p Student Information
+    / section.limitations-apply
+    /   .header
+    /     | Limitations Apply
+    /   .list
+    /     .block
+    /       h1 Place of birth
+    /       p Student Information
+    /       ul
+    /         li Store for a limited time
+    /         li Share with Restriction
+    /         li Do not share publicly
+    /       span.info
+    /     .block
+    /       .wrapper
+    /         h1 Name
+    /         p Student Information
+    /     .block
+    /       .wrapper
+    /         h1 Name
+    /         p Student Information
+
+
+
+

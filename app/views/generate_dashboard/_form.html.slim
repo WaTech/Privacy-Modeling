@@ -1,0 +1,11 @@
+- url = next_wizard_path rescue wizard_path(:select_piis)
+- previous_url = previous_wizard_path rescue nil
+= form_tag url, method: :get do |f|
+  .container-categories
+    = yield
+  .actions
+    - if previous_url
+      = link_to 'Back', :back, class: 'back-button'
+    = submit_tag 'Continue', class: 'submit-button margin-left-6'
+    / button.submit-button type="submit"  Continue
+

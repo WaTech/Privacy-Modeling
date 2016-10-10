@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <title>Limitation context icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Limitation-context-icon">
+            <g id="Group-2">
+                <path d="M16,0 C7.18222222,0 0,7.18222222 0,16 C0,24.8177778 7.18222222,32 16,32 C24.8177778,32 32,24.8177778 32,16 C32,7.18222222 24.8177778,0 16,0 L16,0 Z" id="Shape-Copy" fill="#000000"></path>
+                <g id="Group" transform="translate(14.545455, 5.818182)" fill="#FFFFFF">
+                    <path d="M0,13.5447273 L0,1.45454545 C0,0.650666667 0.650666667,0 1.45454545,0 C2.25842424,0 2.90909091,0.650666667 2.90909091,1.45454545 L2.90909091,13.5447273 C2.90909091,14.3486061 2.25842424,14.9992727 1.45454545,14.9992727 C0.650666667,14.9992727 0,14.3486061 0,13.5447273 Z" id="Shape"></path>
+                    <path d="M1.45454545,19.8477576 C0.650666667,19.8477576 0,19.1970909 0,18.3932121 L0,17.9393939 C0,17.1355152 0.650666667,16.4848485 1.45454545,16.4848485 C2.25842424,16.4848485 2.90909091,17.1355152 2.90909091,17.9393939 L2.90909091,18.3932121 C2.90909091,19.1970909 2.25842424,19.8477576 1.45454545,19.8477576 L1.45454545,19.8477576 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
