@@ -22,7 +22,7 @@
               = f.text_field :password, class: 'form-control', required: true, type: :password
           .form-group
             = f.label :role, class: 'form-control-label'
-            = f.select :role, ['admin', 'super_admin'], include_blank: false, class: 'form-control', required: true
-            / input_html: { class: 'form-control selectpicker' },
+            br
+            = f.select :role, [['Admin', 'admin'], ['Creator', 'super_admin']], include_blank: false, required: true,  class: 'form-control'
         .modal-footer
           .actions = f.submit
