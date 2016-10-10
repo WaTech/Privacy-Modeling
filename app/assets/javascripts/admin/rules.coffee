@@ -6,6 +6,7 @@ $(document).on 'turbolinks:load', ->
   context_item_icon_allow = '<i class="ca-x context-item-limitation-icon_x pull-left vertical-center"></i>'
   context_item_icon_restriction = '<i class="ca-x context-item-restriction-icon_x pull-left vertical-center"></i>'
   context_item_icon_forbidden = '<i class="ca-x context-item-applicable-law-icon_x pull-left vertical-center"></i>'
+  preview_context_item_icon_forbidden = '<i class="ca-x preview-context-item-applicable-law-icon pull-left vertical-center"></i>'
 
   log = (value) ->
     console.log value
@@ -40,7 +41,7 @@ $(document).on 'turbolinks:load', ->
           context_items = row.context_items.map (context_item) ->
             description = ['<span class="vertical-center">', context_item.description, '</span>'].join('')
             if context_item.category == 'applicable_law'
-              ['<p class="rules_context_item_description" data-destroy_url="' + context_item.destroy_url + '">', context_item_icon_forbidden, '<a href="', context_item.source, '" target="_blank">', description, '</a></p>'].join('')
+              ['<p class="rules_context_item_description" data-destroy_url="' + context_item.destroy_url + '">', preview_context_item_icon_forbidden, '<a href="', context_item.source, '" target="_blank">', description, '</a></p>'].join('')
             else
               icon = if context_item.category == 'limitation' then context_item_icon_allow else context_item_icon_restriction
               ['<p class="rules_context_item_description" data-destroy_url="' + context_item.destroy_url + '">', icon,  description, '</p>'].join('')
