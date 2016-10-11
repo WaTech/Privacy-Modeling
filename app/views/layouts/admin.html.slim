@@ -8,7 +8,8 @@ html
 
   body
     .container-fluid.admin_content
-      = render 'admin/shared/navigation'
+      - if current_user
+        = render 'admin/shared/navigation'
       .row
         .col-sm-12
           - if flash[:success]

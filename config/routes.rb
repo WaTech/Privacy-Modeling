@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'sessions/sessions'
+  }
+
   root to: 'generate_dashboard#select_categories'
 
   resource :dashboard, only: :show
