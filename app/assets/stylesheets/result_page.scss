@@ -1,147 +1,307 @@
-.container-result {
-  .allowed, .limitations, .forbidden {
-    background-color: #e7e8ee;
-    .header {
-      height: 50px;
-      background-color: #094d7c;
-      line-height: 50px;
+body {
+  > header {
+    background-color: #013152;
+    text-align: center;
+    padding-bottom: 1px;
+
+    > img {
+      width: 253px;
+      margin: 26px auto 0 auto;
+    }
+    > h1 {
+      margin: 26px auto 0 auto;
       color: white;
-      font-family: "Source Sans Pro", sans-serif;
-      font-size: 21px;
-      font-weight: 600;
-      letter-spacing: 0.66px;
-      padding: 0 0 0 44px;
-      margin: 28px 0 0 0;
-      background-position: left 10px center;
-      background-repeat: no-repeat;
-      background-size: 17px 17px;
-      text-align: left;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 50px;
+      font-weight: 300;
+      letter-spacing: 1.57px;
+      line-height: 63px;
+    }
+    > p {
+      margin: 15px auto 47px auto;
+      padding: 0 10px;
+      max-width: 950px;
+      color: white;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 17px;
+      font-weight: 300;
+      letter-spacing: 0.53px;
+      line-height: 22px;
     }
   }
 
-  .allowed {
-    background-color: #e7e8ee;
-    .header {
-      background-image: url('/no-restriction-group-icon.png');
-    }
-    .list {
-      padding: 10px 0;
+  > main {
 
-      &:after {
-        display: block;
-        content: '';
-        clear: both;
+    .content {
+      max-width: 950px;
+      margin: auto;
+      > h1 {
+        color: #06385b;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 28px;
+        font-weight: 600;
+        letter-spacing: 0.88px;
+        line-height: 36px;
+      }
+      > p {
+        color: #06385b;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 17px;
+        font-weight: 400;
+        letter-spacing: 0.53px;
+        line-height: 22px;
       }
 
-      > .block {
-        float: left;
-        margin: 10px;
-        width: 218px;
-        height: 116px;
-        background-color: white;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
-
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-
-        > .wrapper {
-          padding: 0 10px;
-          > h1 {
-            margin: 0;
-            padding: 0;
-            color: #333;
+      .container-result {
+        .allowed, .limitations, .forbidden {
+          background-color: #e7e8ee;
+          .header {
+            height: 50px;
+            background-color: #094d7c;
+            line-height: 50px;
+            color: white;
             font-family: "Source Sans Pro", sans-serif;
-            font-size: 17px;
+            font-size: 21px;
             font-weight: 600;
-            letter-spacing: 0.53px;
-            line-height: 22px;
-          }
-          > p {
-            margin: 4px 0 0 0;
-            padding: 0;
-            color: #333;
-            font-family: "Source Sans Pro", sans-serif;
-            font-size: 12px;
-            font-weight: 400;
-            letter-spacing: 0.38px;
-            line-height: 15px;
-          }
-        }
-      }
-    }
-
-  }
-
-  .limitations, .forbidden {
-    background-color: #e7e8ee;
-    .header {
-      background-image: url('/no-restriction-group-icon-copy.png');
-    }
-    .list {
-      padding: 10px 0;
-      &:after {
-        display: block;
-        content: '';
-        clear: both;
-      }
-
-      > .block {
-        float: left;
-        margin: 10px;
-        width: 218px;
-        background-color: white;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
-        padding: 20px 10px;
-        > h1 {
-          margin: 0;
-          padding: 0;
-          color: #333;
-          font-family: "Source Sans Pro", sans-serif;
-          font-size: 17px;
-          font-weight: 600;
-          letter-spacing: 0.53px;
-          line-height: 22px;
-        }
-        > p {
-          margin: 4px 0 0 0;
-          padding: 0;
-          color: #333;
-          font-family: "Source Sans Pro", sans-serif;
-          font-size: 12px;
-          font-weight: 400;
-          letter-spacing: 0.38px;
-          line-height: 15px;
-        }
-        > ul {
-          list-style: none;
-          text-align: left;
-          margin: 20px 0 0 0;
-          padding: 0 0 0 10px;
-          > li {
-            font-family: "Source Sans Pro", sans-serif;
-            font-size: 14px;
-            font-weight: 400;
-            letter-spacing: 0.01px;
-            line-height: 18px;
-            padding: 0 0 0 20px;
-
-            background-position: left center;
+            letter-spacing: 0.66px;
+            padding: 0 0 0 44px;
+            margin: 28px 0 0 0;
+            background-position: left 10px center;
             background-repeat: no-repeat;
-            background-size: 13px 13px;
-            background-image: url('/limitation-icon-copy.png');
+            background-size: 17px 17px;
+            text-align: left;
+          }
 
+          .info {
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+
+            width: 15px;
+            height: 15px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 15px 15px;
+            background-image: url('/laws-icon-copy-3.png');
+
+            .tooltip {
+              display: none;
+            }
+            &:hover {
+              background-image: url('/laws-icon-copy-4.png');
+            }
+            &.active {
+              background-image: url('/laws-icon-copy-4.png');
+              .tooltip {
+                background-color: white;
+                z-index: 100;
+                display: block;
+                position: absolute;
+                top: 20px;
+                left: 0;
+                padding: 10px 10px 15px 20px;
+                box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+                &:before {
+                  display: block;
+                  transform: rotate(45deg);
+                  content: '';
+                  position: absolute;
+                  top: -5px;
+                  left: 2.5px;
+                  width: 10px;
+                  height: 10px;
+                  background-color: white;
+                }
+
+                h1 {
+                  color: #333;
+                  font-family: "Source Sans Pro", sans-serif;
+                  font-size: 14px;
+                  font-weight: 600;
+                  letter-spacing: 0.44px;
+                  line-height: 18px;
+                  margin: 0 30px;
+                  padding: 0 0 5px 0;
+                  white-space: nowrap;
+                }
+                a {
+                  text-align: left;
+                  display: block;
+                  color: #3e9cdd;
+                  font-family: "Source Sans Pro", sans-serif;
+                  font-size: 12px;
+                  font-weight: 400;
+                  letter-spacing: 0.01px;
+                  line-height: 20px;
+                  text-decoration: underline;
+                  white-space: nowrap;
+                }
+              }
+            }
+          }
+
+          ul {
+            list-style: none;
+            text-align: left;
+            margin: 20px 0 0 0;
+            padding: 0 0 0 10px;
+            > li {
+              &.restriction-item {
+                background-image: url('/restriction-iocn-copy.png');
+              }
+
+              font-family: "Source Sans Pro", sans-serif;
+              font-size: 14px;
+              font-weight: 400;
+              letter-spacing: 0.01px;
+              line-height: 18px;
+              padding: 0 0 0 20px;
+
+              background-position: left center;
+              background-repeat: no-repeat;
+              background-size: 13px 13px;
+              background-image: url('/limitation-icon-copy.png');
+
+            }
           }
         }
+        .allowed {
+          background-color: #e7e8ee;
+          .header {
+            background-image: url('/no-restriction-group-icon.png');
+          }
+          .list {
+            padding: 10px 0;
+
+            &:after {
+              display: block;
+              content: '';
+              clear: both;
+            }
+
+            > .block {
+              float: left;
+              margin: 10px;
+              width: 218px;
+              height: 116px;
+              background-color: white;
+              box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
+              justify-content: center;
+
+              > .wrapper {
+                padding: 0 10px;
+                > h1 {
+                  margin: 0;
+                  padding: 0;
+                  color: #333;
+                  font-family: "Source Sans Pro", sans-serif;
+                  font-size: 17px;
+                  font-weight: 600;
+                  letter-spacing: 0.53px;
+                  line-height: 22px;
+                }
+                > p {
+                  margin: 4px 0 0 0;
+                  padding: 0;
+                  color: #333;
+                  font-family: "Source Sans Pro", sans-serif;
+                  font-size: 12px;
+                  font-weight: 400;
+                  letter-spacing: 0.38px;
+                  line-height: 15px;
+                }
+              }
+            }
+          }
+
+        }
+
+        .limitations {
+          .header {
+            background-image: url('/no-restriction-group-icon-copy.png');
+          }
+        }
+        .forbidden {
+          .header {
+            background-image: url('/no-restriction-group-icon-copy-2.png');
+          }
+        }
+
+        .limitations, .forbidden {
+          background-color: #e7e8ee;
+          .list {
+            padding: 10px 0;
+            &:after {
+              display: block;
+              content: '';
+              clear: both;
+            }
+
+            > .block {
+              float: left;
+              margin: 10px;
+              width: 218px;
+              background-color: white;
+              box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+              padding: 20px 10px;
+              position: relative;
+
+              > h1 {
+                margin: 0;
+                padding: 0;
+                color: #333;
+                font-family: "Source Sans Pro", sans-serif;
+                font-size: 17px;
+                font-weight: 600;
+                letter-spacing: 0.53px;
+                line-height: 22px;
+              }
+              > p {
+                margin: 4px 0 0 0;
+                padding: 0;
+                color: #333;
+                font-family: "Source Sans Pro", sans-serif;
+                font-size: 12px;
+                font-weight: 400;
+                letter-spacing: 0.38px;
+                line-height: 15px;
+              }
+            }
+          }
+
+        }
+
+      }
+
+      .submit-button {
+        margin: 20px 0 50px 0;
+        width: 160px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background-color: #3e9cdd;
+        color: white;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 17px;
+        font-weight: 500;
+        letter-spacing: 0.53px;
+        outline: none;
+        box-shadow: none;
+        border: none;
       }
     }
 
   }
-
 }
+
+

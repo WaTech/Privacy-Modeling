@@ -1,7 +1,7 @@
 class DashboardsController < ApplicationController
   def show
     condition = {
-      category_id: dashboard_params[:category_ids],
+      category_id: dashboard_params[:category_ids] || Category.pluck(:id),
       personal_information_item_id: dashboard_params[:pii_ids],
       use_item_id: dashboard_params[:use_item_ids]
     }
