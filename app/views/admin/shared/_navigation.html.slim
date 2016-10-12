@@ -8,18 +8,21 @@ nav.navbar.navbar-light.bg-faded
     - if current_user
       ul.nav.navbar-nav.pull-xs-right
         li.nav-item
-          = link_to admin_personal_information_items_path, class: "nav-link #{ request.fullpath.include?(admin_personal_information_items_path) ? 'active' : '' }" do
-            | PIIs
+          - is_admin_categories_path_active = request.fullpath.include?(admin_categories_path) ? 'active' : ''
+          = link_to 'Categories', admin_categories_path, class: "nav-link #{ is_admin_categories_path_active }"
         li.nav-item
-          = link_to admin_categories_path, class: "nav-link #{ request.fullpath.include?(admin_categories_path) ? 'active' : '' }" do
-            | Categories
+          - is_admin_pii_path_active = request.fullpath.include?(admin_personal_information_items_path) ? 'active' : ''
+          = link_to 'PIIs', admin_personal_information_items_path, class: "nav-link #{ is_admin_pii_path_active }"
         li.nav-item
-          = link_to admin_use_items_path, class: "nav-link #{ request.fullpath.include?(admin_use_items_path) ? 'active' : '' }" do
-            | Uses
+          - is_admin_use_item_active = request.fullpath.include?(admin_use_items_path) ? 'active' : ''
+          = link_to 'Uses', admin_use_items_path, class: "nav-link #{ is_admin_use_item_active }"
         li.nav-item
-          = link_to admin_rules_path, class: "nav-link #{ request.fullpath.include?(admin_rules_path) || request.fullpath == '/' ? 'active' : '' }" do
-            | Rules
-            span.sr-only (current)
+          - is_admin_rules_path_active = request.fullpath.include?(admin_rules_path) || request.fullpath == '/' ? 'active' : ''
+          = link_to 'Rules', admin_rules_path, class: "nav-link #{ is_admin_rules_path_active }"
+        - if can? :manage, User
+          li.nav-item
+            - is_admin_user_path_active = request.fullpath.include?(admin_users_path) ? 'active' : ''
+            = link_to 'Users', admin_users_path, class: "nav-link #{ is_admin_user_path_active }"
         li.nav-item
           = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link'
 
