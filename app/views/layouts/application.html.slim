@@ -21,7 +21,7 @@ html lang="en"
       - unless devise_controller?
         .nav-wrapper
           nav
-            section.active Select Category
+            = section_nav_tag :select_categories
             = section_nav_tag :select_piis
             = section_nav_tag :select_use_items
             = section_nav_tag :results

@@ -9,7 +9,7 @@ class GenerateDashboardController < ApplicationController
   end
 
   def generate_dashboard_params
-    params.require(:dashboard).permit(category_ids: [], pii_ids: [], use_item_ids: [])
+    @generate_dashboard_params ||= params.require(:dashboard).permit(category_ids: [], pii_ids: [], use_item_ids: [])
   end
 
   def finish_wizard_path
