@@ -33,13 +33,14 @@ class Rule < ApplicationRecord
       csv << headers
 
       Rule.all.each do |rule|
+        rule_attributes = attribute_names.map { |attr| rule.public_send attr }.map { |i| i == 'forbidden' ? 'restricted' : i }
+
         if rule.context_items.count > 0
-          rule_attributes = attribute_names.map { |attr| rule.public_send attr }
           rule.context_items.each do |context_item|
             csv << rule_attributes + [:category, :description, :source].map { |attr| context_item.public_send attr }
           end
         else
-           csv << attribute_names.map { |attr| rule.public_send attr }
+           csv << rule_attributes
         end
       end
     end
@@ -55,7 +56,9 @@ class Rule < ApplicationRecord
 
       rule = Rule.find_or_create_by! category: category, personal_information_item: personal_information_item, use_item: use_item
 
-      rule.update restriction: row['restriction']
+      restriction = row['restriction']
+      restriction = 'forbidden' if restriction == 'restricted'
+      rule.update restriction: restriction
 
       if row['context_item_description'].present?
         context_item = ContextItem.find_or_create_by rule: rule, category: row['context_item_category'], description: row['context_item_description'], source: row['context_item_source']
