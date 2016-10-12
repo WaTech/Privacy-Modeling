@@ -48,7 +48,8 @@ class Rule < ApplicationRecord
 
   def self.import(file)
     csv_text = File.read(file.path)
-    csv = CSV.parse(csv_text, headers: true)
+    csv = CSV.parse(csv_text.encode("UTF-8", "Windows-1252"), headers: true)
+
     csv.each do |row|
       category = Category.find_or_create_by! name: row['category_name']
       personal_information_item = PersonalInformationItem.find_or_create_by! name: row['personal_information_item_name']
