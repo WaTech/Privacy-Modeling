@@ -12,6 +12,10 @@ $(document).on 'turbolinks:load', ->
     'lengthChange': false
     'pagingType': 'simple_numbers'
     'info': false
+    'columnDefs': [
+      { "width": "5%", "targets": 0 }
+      { "width": "80%", "targets": 1 }
+    ]
     'columns': [
       { 'data': 'id' },
       { 'data': 'email' },
