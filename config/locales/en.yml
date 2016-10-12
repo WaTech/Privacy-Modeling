@@ -24,6 +24,7 @@ en:
     allowed: No restrictions
     limitations: Limitation apply
     forbidden: Do not use
+  select_categories: Select Category
   select_piis: Personal Information Item
   select_use_items: Uses
   results: Results

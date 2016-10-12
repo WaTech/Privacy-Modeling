@@ -100,7 +100,9 @@ body {
         -ms-flex-pack: center;
         justify-content: center;
 
-        > section {
+        > section, .section {
+          text-decoration: none;
+
           @media only screen and (max-width: 600px) {
             font-size: 12px;
             line-height: 12px;

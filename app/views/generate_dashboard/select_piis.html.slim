@@ -5,10 +5,11 @@
   = render layout: 'form' do |f|
     - @piis = PersonalInformationItem.all
     = collection_check_boxes(:dashboard, :pii_ids, @piis, :id, :name) do |b|
+      - is_checked = is_item_active :pii_ids, b.object.id
       label
-        = b.check_box(class: 'pii-checkbox')
+        = b.check_box(class: 'pii-checkbox', checked: is_checked)
         div
           p = @piis[b.value - 1].name
     - @dashboard.category_ids.each do |category_id|
-      = hidden_field_tag "dashboard[category_ids][]", category_id
+      = hidden_field_tag 'dashboard[category_ids][]', category_id
 
