@@ -1,6 +1,6 @@
 module ApplicationHelper
   def section_nav_tag nav_step
-    content_tag_class = nav_step == @step || past_step?(nav_step) ? 'active' : nil rescue 'active'
+    content_tag_class = nav_step == @step || past_step?(nav_step) || nav_step == :select_categories ? 'active' : nil rescue 'active'
     condition = past_step?(nav_step) rescue false
     if condition
       link_to I18n.t(nav_step), wizard_path(nav_step, dashboard: step_params_for(nav_step)), class: [content_tag_class, :section].join(' ')
