@@ -11,7 +11,7 @@
               - @grouped_rules[restriction].each do |rule|
                 .block
                   .wrapper
-                    h1 #{ rule.use_item_name } #{ rule.personal_information_item_name }
+                    h3 #{ rule.use_item_name } #{ rule.personal_information_item_name }
                     p = rule.category_name
                     ul
                       - [:limitation, :restriction].each do |category|
@@ -19,7 +19,7 @@
                           li class="#{ context_item.category }-item"  = context_item.description
                     span.info onclick=("this.className === 'info' ? this.className='info active': this.className='info'")
                       .tooltip
-                        h1 Applicable Laws
+                        h3 Applicable Laws
                         - rule.context_items.applicable_law.each do |context_item|
                           = link_to context_item.description, context_item.source
 
