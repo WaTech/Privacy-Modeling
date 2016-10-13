@@ -83,16 +83,16 @@ body {
             background-position: center;
             background-repeat: no-repeat;
             background-size: 15px 15px;
-            background-image: url('/laws-icon-copy-3.png');
+            background-image: url('/laws-icon-copy-3.svg');
 
             .tooltip {
               display: none;
             }
             &:hover {
-              background-image: url('/laws-icon-copy-4.png');
+              background-image: url('/laws-icon-copy-4.svg');
             }
             &.active {
-              background-image: url('/laws-icon-copy-4.png');
+              background-image: url('/laws-icon-copy-4.svg');
               .tooltip {
                 background-color: white;
                 z-index: 100;
@@ -148,7 +148,7 @@ body {
             padding: 0 0 0 10px;
             > li {
               &.restriction-item {
-                background-image: url('/restriction-iocn-copy.png');
+                background-image: url('/restriction-iocn-copy.svg');
               }
 
               font-family: "Source Sans Pro", sans-serif;
@@ -161,7 +161,7 @@ body {
               background-position: left center;
               background-repeat: no-repeat;
               background-size: 13px 13px;
-              background-image: url('/limitation-icon-copy.png');
+              background-image: url('/limitation-icon-copy.svg');
 
             }
           }
@@ -169,7 +169,7 @@ body {
         .allowed {
           background-color: #e7e8ee;
           .header {
-            background-image: url('/no-restriction-group-icon.png');
+            background-image: url('/no-restriction-group-icon.svg');
           }
           .list {
             padding: 10px 0;
@@ -228,12 +228,12 @@ body {
 
         .limitations {
           .header {
-            background-image: url('/no-restriction-group-icon-copy.png');
+            background-image: url('/no-restriction-group-icon-copy.svg');
           }
         }
         .forbidden {
           .header {
-            background-image: url('/no-restriction-group-icon-copy-2.png');
+            background-image: url('/no-restriction-group-icon-copy-2.svg');
           }
         }
 
