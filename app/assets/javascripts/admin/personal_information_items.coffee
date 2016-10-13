@@ -8,7 +8,7 @@ $(document).on 'turbolinks:load', ->
       'type': 'GET'
       'datatype': 'JSON'
     'processing': false
-    'pageLength': 5
+    'pageLength': 15
     'lengthChange': false
     'pagingType': 'simple_numbers'
     'info': false
