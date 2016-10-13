@@ -29,11 +29,12 @@
   .col-sm-5.offset-sm-4.vertical-center
     .row
       .col-sm-4
-        = link_to 'Generate scenarios', generate_admin_rules_url, class: 'btn btn-primary'
-      .col-sm-4
         = link_to 'Export CSV', admin_rules_url(format: :csv), class: 'btn'
       .col-sm-4
         = link_to 'Improt CSV', '#', class: 'btn import-csv-button'
+      .col-sm-4
+        = link_to 'Generate scenarios', generate_admin_rules_url, class: 'btn btn-primary'
+
 .row
   .col-sm-12
     table#rules.table.table-striped

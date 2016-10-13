@@ -1,11 +1,11 @@
 .row
-  .col-sm-3
+  .col-sm-4.vertical-center
     h1 Personal information items
-  .offset-sm-6.col-sm-3
+  .offset-sm-5.col-sm-3.vertical-center.skip-padding-right
     = link_to 'Add new personal information item', new_admin_personal_information_item_path, remote: true, class: 'btn btn-primary pull-right'
 .row
   .col-sm-12
-    table#personal_information_items.table.table-striped.table-bordered
+    table#personal_information_items.table.table-striped
       thead
         tr
           th ID
