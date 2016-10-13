@@ -6,6 +6,6 @@
   .actions
     - if previous_url && @step != :select_categories
       = link_to 'Back', :back, class: 'back-button'
-    = submit_tag 'Continue', class: 'submit-button margin-left-6'
-    / button.submit-button type="submit"  Continue
+    - is_continue_tag_disabled = @step && @step != :select_categories
+    = submit_tag 'Continue', class: 'submit-button margin-left-6', disabled: is_continue_tag_disabled
 

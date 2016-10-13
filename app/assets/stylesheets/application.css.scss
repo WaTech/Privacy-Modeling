@@ -293,6 +293,10 @@ body {
           box-shadow: none;
           border: none;
           padding: 0;
+          &:disabled {
+            background-color: #5a5f69;
+            cursor: initial;
+          }
         }
 
         .back-button {

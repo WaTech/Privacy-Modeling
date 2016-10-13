@@ -298,6 +298,11 @@ body {
         outline: none;
         box-shadow: none;
         border: none;
+
+        &:disabled {
+          background-color: #5a5f69;
+          cursor: initial;
+        }
       }
     }
 
