@@ -22,6 +22,6 @@
                         .tooltip
                           h3 Applicable Laws
                           - rule.context_items.applicable_law.each do |context_item|
-                            = link_to context_item.description, context_item.source
+                            = link_to context_item.description, context_item.source, target: '_blank'
     .actions
       = link_to 'Start over', root_path, class: 'back-button'
