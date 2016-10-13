@@ -1,6 +1,4 @@
 class Admin::PersonalInformationItemsController < Admin::BaseController
-  PAGE_LENGTH = 5
-
   load_and_authorize_resource
 
   def index
@@ -47,7 +45,6 @@ class Admin::PersonalInformationItemsController < Admin::BaseController
   def personal_information_item_params
     params.require(:personal_information_item).permit(:name)
   end
-
 
 
   def page_number
