@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.2 (33826) - http://www.bohemiancoding.com/sketch -->
+    <title>limitation icon copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Step-4---Desktop-HD" transform="translate(-274.000000, -858.000000)">
+            <g id="Group-7" transform="translate(234.000000, 490.000000)">
+                <g id="Group-5" transform="translate(0.000000, 218.000000)">
+                    <g id="Group-3" transform="translate(40.000000, 147.000000)">
+                        <g id="Limitation-icon" transform="translate(0.000000, 3.000000)">
+                            <path d="M5,0 C2.24444444,0 0,2.24444444 0,5 C0,7.75555556 2.24444444,10 5,10 C7.75555556,10 10,7.75555556 10,5 C10,2.24444444 7.75555556,0 5,0 L5,0 Z" id="Shape-Copy" fill="#619CC5"></path>
+                            <g id="Group" stroke-width="1" transform="translate(4.545455, 1.818182)" fill="#FFFFFF">
+                                <path d="M0,4.23272727 L0,0.454545455 C0,0.203333333 0.203333333,0 0.454545455,0 C0.705757576,0 0.909090909,0.203333333 0.909090909,0.454545455 L0.909090909,4.23272727 C0.909090909,4.48393939 0.705757576,4.68727273 0.454545455,4.68727273 C0.203333333,4.68727273 0,4.48393939 0,4.23272727 Z" id="Shape"></path>
+                                <path d="M0.454545455,6.20242424 C0.203333333,6.20242424 0,5.99909091 0,5.74787879 L0,5.60606061 C0,5.35484848 0.203333333,5.15151515 0.454545455,5.15151515 C0.705757576,5.15151515 0.909090909,5.35484848 0.909090909,5.60606061 L0.909090909,5.74787879 C0.909090909,5.99909091 0.705757576,6.20242424 0.454545455,6.20242424 L0.454545455,6.20242424 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
