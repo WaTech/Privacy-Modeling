@@ -11,7 +11,7 @@
               - @grouped_rules[restriction].each do |rule|
                 .block
                   .wrapper
-                    h1 = rule.personal_information_item_name
+                    h1 #{ rule.use_item_name } #{ rule.personal_information_item_name }
                     p = rule.category_name
                     ul
                       - [:limitation, :restriction].each do |category|
