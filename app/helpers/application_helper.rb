@@ -20,6 +20,12 @@ module ApplicationHelper
     params.require(:dashboard).permit(params_keys[step]).to_h rescue {}
   end
 
+  def previous_step_path
+    if @previous_step
+      wizard_path(@previous_step, dashboard: step_params_for(@previous_step))
+    end
+  end
+
   def is_item_active(collection_name, id)
     @generate_dashboard_params[collection_name].include?(id.to_s) rescue false
   end
