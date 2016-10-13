@@ -10,6 +10,9 @@ class GenerateDashboardController < ApplicationController
 
   def generate_dashboard_params
     @generate_dashboard_params ||= params.require(:dashboard).permit(category_ids: [], pii_ids: [], use_item_ids: [])
+    @generate_dashboard_params[:category_ids] = @generate_dashboard_params[:category_ids].select(&:present?)
+    @generate_dashboard_params[:category_ids] = Category.pluck(:id).map(&:to_s) unless @generate_dashboard_params[:category_ids].present?
+    @generate_dashboard_params
   end
 
   def finish_wizard_path
