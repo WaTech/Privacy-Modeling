@@ -7,7 +7,7 @@ $(document).on 'turbolinks:load', ->
       'url': '/admin/users'
       'type': 'GET'
       'datatype': 'JSON'
-    'processing': true
+    'processing': false
     'pageLength': 15
     'lengthChange': false
     'pagingType': 'simple_numbers'

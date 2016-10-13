@@ -155,17 +155,17 @@ body {
             color: #3e9cdd;
             &:nth-child(2){
               &:after {
-                background-color: #e8bf43;
+                background-color: #944487;
               }
             }
             &:nth-child(3){
               &:after {
-                background-color: #7cae15;
+                background-color: #636975;
               }
             }
             &:nth-child(4){
               &:after {
-                background-color: #822ae3;
+                background-color: #3b867b;
               }
               &:before {
                 right: -200%;
@@ -174,7 +174,7 @@ body {
             }
 
             &:after {
-              background-color: #1467a0;
+              background-color: #3b5ab0;
               z-index: 2;
             }
             &:before {
@@ -234,15 +234,15 @@ body {
           }
 
           > input.category-checkbox[type=checkbox]:checked + div {
-            background-color: #1467a0;
+            background-color: #2f4993;
           }
 
           > input.pii-checkbox[type=checkbox]:checked + div {
-            background-color: #e8bf43;
+            background-color: #823e77;
           }
 
           > input.use-item-checkbox[type=checkbox]:checked + div {
-            background-color: #7cae15;
+            background-color: #5a5f69;
           }
 
           > div {
@@ -293,6 +293,10 @@ body {
           box-shadow: none;
           border: none;
           padding: 0;
+          &:disabled {
+            background-color: #5a5f69;
+            cursor: initial;
+          }
         }
 
         .back-button {
