@@ -257,25 +257,27 @@ body {
               padding: 20px 10px;
               position: relative;
 
-              > h3 {
-                margin: 0;
-                padding: 0;
-                color: #333;
-                font-family: "Source Sans Pro", sans-serif;
-                font-size: 17px;
-                font-weight: 600;
-                letter-spacing: 0.53px;
-                line-height: 22px;
-              }
-              > p {
-                margin: 4px 0 0 0;
-                padding: 0;
-                color: #333;
-                font-family: "Source Sans Pro", sans-serif;
-                font-size: 12px;
-                font-weight: 400;
-                letter-spacing: 0.38px;
-                line-height: 15px;
+              > .wrapper {
+                > h3 {
+                  margin: 0;
+                  padding: 0;
+                  color: #333;
+                  font-family: "Source Sans Pro", sans-serif;
+                  font-size: 17px;
+                  font-weight: 600;
+                  letter-spacing: 0.53px;
+                  line-height: 22px;
+                }
+                > p {
+                  margin: 4px 0 0 0;
+                  padding: 0;
+                  color: #333;
+                  font-family: "Source Sans Pro", sans-serif;
+                  font-size: 12px;
+                  font-weight: 400;
+                  letter-spacing: 0.38px;
+                  line-height: 15px;
+                }
               }
             }
           }
