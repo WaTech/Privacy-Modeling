@@ -7,7 +7,7 @@
       - if @grouped_rules[restriction]
         section class="#{ restriction }"
           .header = restriction.humanize
-          .list
+          .list data-masonry='{ "itemSelector": ".block", "columnWidth": 218px }'
               - @grouped_rules[restriction].each do |rule|
                 .block
                   .wrapper
