@@ -7,7 +7,7 @@ $(document).on 'turbolinks:load', ->
       'url': '/admin/personal_information_items'
       'type': 'GET'
       'datatype': 'JSON'
-    'processing': true
+    'processing': false
     'pageLength': 5
     'lengthChange': false
     'pagingType': 'simple_numbers'
