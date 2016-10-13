@@ -17,7 +17,7 @@
                       - [:limitation, :restriction].each do |category|
                         - rule.context_items.public_send(category).each do |context_item|
                           li class="#{ context_item.category }-item"  = context_item.description
-                    - unless rule.allowed?
+                    - if !rule.allowed? && rule.context_items.applicable_law.present?
                       span.info onclick=("this.className === 'info' ? this.className='info active': this.className='info'")
                         .tooltip
                           h3 Applicable Laws
