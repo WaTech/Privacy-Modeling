@@ -16,4 +16,4 @@
 //= require turbolinks
 //= require datatables
 //= require bootstrap
-//= require_tree .
+//= require masonry.pkgd.min
