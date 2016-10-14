@@ -11,6 +11,7 @@
   text-align: center;
 
   .logo {
+    cursor: pointer;
     margin: 26px 0px;
 
     img {
@@ -52,7 +53,7 @@ body {
     text-align: center;
     padding-bottom: 1px;
 
-    > img {
+    > a > img {
       width: 253px;
       margin: 26px auto 0 auto;
     }
