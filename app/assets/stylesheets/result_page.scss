@@ -165,6 +165,22 @@ body {
 
             }
           }
+
+          .list {
+            @media only screen and (max-width: 600px) {
+              text-align: center !important;
+            }
+
+            > .block {
+              @media only screen and (max-width: 600px) {
+                float: none !important;
+                display: inline-block !important;
+                position: inherit !important;
+                top: 0 !important;
+              }
+            }
+          }
+
         }
         .allowed {
           background-color: #e7e8ee;
@@ -175,10 +191,6 @@ body {
             padding: 10px;
             margin: 0 auto;
 
-            @media only screen and (max-width: 600px) {
-              text-align: center;
-            }
-
             &:after {
               display: block;
               content: '';
@@ -187,14 +199,6 @@ body {
 
             > .block {
               float: left;
-
-              @media only screen and (max-width: 600px) {
-                float: none;
-                display: inline-block;
-                position: inherit !important;
-                top: 0 !important;
-              }
-
               margin-bottom: 20px;
               width: 218px;
               padding: 27px 10px;
