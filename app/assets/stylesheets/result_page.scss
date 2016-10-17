@@ -172,7 +172,7 @@ body {
             background-image: url('/no-restriction-group-icon.svg');
           }
           .list {
-            padding: 10px 0;
+            padding: 10px;
 
             &:after {
               display: block;
@@ -182,22 +182,13 @@ body {
 
             > .block {
               float: left;
-              margin: 10px;
+
+              margin-bottom: 20px;
               width: 218px;
               padding: 27px 10px;
 
               background-color: white;
               box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
-
-              display: -webkit-box;
-              display: -ms-flexbox;
-              display: flex;
-              -webkit-box-align: center;
-              -ms-flex-align: center;
-              align-items: center;
-              -webkit-box-pack: center;
-              -ms-flex-pack: center;
-              justify-content: center;
 
               > .wrapper {
                 padding: 0 10px;
@@ -241,7 +232,8 @@ body {
         .limitations, .forbidden {
           background-color: #e7e8ee;
           .list {
-            padding: 10px 0;
+            padding: 10px;
+
             &:after {
               display: block;
               content: '';
@@ -250,7 +242,7 @@ body {
 
             > .block {
               float: left;
-              margin: 10px;
+              margin-bottom: 20px;
               width: 218px;
               background-color: white;
               box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);

@@ -29,6 +29,16 @@ module ApplicationHelper
   def is_item_active(collection_name, id)
     @generate_dashboard_params[collection_name].include?(id.to_s) rescue false
   end
+
+  def is_continue_tag_disabled
+    @step && @step != :select_categories && !step_parameter
+  end
+
+  def step_parameter
+    step_params = { select_piis: :pii_ids, select_use_items: :use_item_ids }
+    @generate_dashboard_params[step_params[@step]].present?
+  end
+
 end
 
 
