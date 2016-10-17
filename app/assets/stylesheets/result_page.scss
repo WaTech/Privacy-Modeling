@@ -290,6 +290,9 @@ body {
       }
 
       .submit-button {
+        -webkit-appearance: none;
+        border-radius: 0px;
+
         margin: 20px 0 50px 0;
         width: 160px;
         height: 40px;

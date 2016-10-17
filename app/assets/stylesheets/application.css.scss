@@ -278,6 +278,9 @@ body {
       .actions {
 
         .submit-button {
+          -webkit-appearance: none;
+          border-radius: 0px;
+
           cursor: pointer;
           margin: 20px 0 50px 10px;
           width: 160px;
