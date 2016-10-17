@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: 'admin/rules#index'
+  devise_for :users, controllers: {
+    sessions: 'sessions/sessions'
+  }
+
+  root to: 'generate_dashboard#select_categories'
+
+  resource :dashboard, only: :show
+  resources :generate_dashboard
 
   namespace :admin do
+    get '/', to: 'rules#index'
+    resources :users, only: %w(index new edit update destroy create)
     resources :personal_information_items, only: %w(index new edit update destroy create)
     resources :use_items, only: %w(index new edit update destroy create), path: 'uses'
     resources :categories, only: %w(index new edit update destroy create)
@@ -11,7 +19,7 @@ Rails.application.routes.draw do
         get :generate
         post :import
       end
-      resources :context_items, only: :create
+      resources :context_items, only: [:create, :destroy, :edit, :update]
     end
   end
 

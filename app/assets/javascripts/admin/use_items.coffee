@@ -12,6 +12,10 @@ $(document).on 'turbolinks:load', ->
     'lengthChange': false
     'pagingType': 'simple_numbers'
     'info': false
+    'columnDefs': [
+      { "width": "5%", "targets": 0 }
+      { "width": "80%", "targets": 1 }
+    ]
     'columns': [
       { 'data': 'id' },
       { 'data': 'name' },
@@ -28,11 +32,6 @@ $(document).on 'turbolinks:load', ->
   # reload datatable after new context item added
   $('body').on 'ajax:success', '#new_use_item, .edit_use_item', ->
     table.draw('page')
-
-  $('body').on 'click', '.edit-use-item', ->
-    row_id = table.row($(this).parents('tr')).index()
-    data = table.row(row_id).data()
-    $.get [data.url, 'edit'].join('/')
 
   $('body').on 'click', '.edit-use-item', ->
     row_id = table.row($(this).parents('tr')).index()

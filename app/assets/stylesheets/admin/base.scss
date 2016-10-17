@@ -4,80 +4,146 @@
 @import 'bootstrap';
 @import 'rules';
 
-i {
-  color: black;
-  cursor: pointer;
-}
+.admin_content {
+  .rules_context_item_description {
+    cursor: pointer;
+  }
 
-.close-modal {
-  font-size: 0.7em;
-}
+  i {
+    color: black;
+    cursor: pointer;
+  }
 
-.logo {
-  max-width: 100px;
-}
+  .close-modal {
+    font-size: 0.7em;
+  }
 
-.login-logo {
-  max-width: 250px;
-}
+  .logo {
+    max-width: 100px;
+  }
 
-tr td:last-child {
-  vertical-align:middle;
-}
+  .login-logo {
+    max-width: 250px;
+  }
 
-thead {
-  background-color: #373A3C;
-  color: #FFFFFF;
-}
+  tr td:last-child {
+    vertical-align:middle;
+  }
 
-#content {
-  padding-left: 16px;
-  padding-right: 16px;
-}
+  thead {
+    background-color: #373A3C;
+    color: #FFFFFF;
+    padding: 10px 18px;
+    border-bottom: 1px solid #111
+  }
 
-h1 {
-  font-size: 2rem;
-  margin-top: 8px;
-}
+  #content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 
-.padding-right-0 {
-  padding-right: 0 !important;
-}
+  h1 {
+    font-size: 2rem;
+    margin-top: 8px;
+  }
 
-td {
-  padding-left: 18px !important;
-}
+  .padding-right-0 {
+    padding-right: 0 !important;
+  }
 
-.dataTables_paginate {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+  td {
+    padding-left: 18px !important;
+  }
 
-.vertical-center {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
-}
+  .dataTables_paginate {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 
-.modal-footer {
-  .btn {
+  .vertical-center {
+      display: inline-block;
+      vertical-align: middle;
+      float: none;
+  }
+
+  .modal-footer {
+    .btn {
+      margin-left: 6px;
+    }
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .main {
+    margin-top: 75px;
+  }
+
+  #user_remember_me {
+    margin-right: 6px;
+  }
+
+  .login-title {
+    margin-top: 32px;
+  }
+
+
+  .rule {
+    border: 1px black solid;
+    margin: 5px;
+  }
+
+  .margin-left-6 {
     margin-left: 6px;
   }
-}
 
-.text-center {
-  text-align: center;
-}
+  .context-item-limitation-icon {
+    background: url('/limitation_context_icon.svg');
+    background-size: 32.5px 32.5px;
+    margin-right: 3px;
+  }
 
-.main {
-  margin-top: 75px;
-}
+  .context-item-restriction-icon {
+    background: url('/restriction_context_icon.svg');
+    background-size: 32.5px 32.5px;
+  }
+  .context-item-applicable-law-icon {
+    background: url('/applicable_law_context_icon.svg');
+    background-size: 32.5px 32.5px;
+  }
 
-#user_remember_me {
-  margin-right: 6px;
-}
 
-.login-title {
-  margin-top: 32px;
-}
+  .context-item-limitation-icon_x {
+    background: url('/limitation_context_icon.svg');
+    background-size: 20px 22.38px;
+    margin-right: 3px;
+  }
 
+  .context-item-restriction-icon_x {
+    background: url('/restriction_context_icon.svg');
+    background-size: 20px 22.38px;
+    margin-right: 3px;
+  }
+
+  .preview-context-item-applicable-law-icon {
+    background: url('/preview_applicable_law_context_icon.svg');
+    background-size: 20px 22.38px;
+  }
+
+
+
+  .ca-2x {
+    width: 32.5px;
+    height: 32.5px;
+  }
+
+  .ca-x {
+    width: 20px;
+    height: 22.38px;
+  }
+
+  .skip-padding-right {
+    padding-right: 0;
+  }
+}

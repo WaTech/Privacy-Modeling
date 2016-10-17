@@ -1,0 +1,26 @@
+.content.step-4
+  h1 Step 4. Results
+
+  .container-result
+    - ['allowed', 'limitations', 'forbidden'].each do |restriction|
+      - if @grouped_rules[restriction]
+        section class="#{ restriction }"
+          .header = restriction.humanize
+          .list data-masonry='{ "itemSelector": ".block", "columnWidth": 218, "gutter": 20 }'
+            - @grouped_rules[restriction].each do |rule|
+              .block
+                .wrapper
+                  h3 #{ rule.use_item_name } #{ rule.personal_information_item_name }
+                  p = rule.category_name
+                  ul
+                    - [:limitation, :restriction].each do |category|
+                      - rule.context_items.public_send(category).each do |context_item|
+                        li class="#{ context_item.category }-item"  = context_item.description
+                  - if !rule.allowed? && rule.context_items.applicable_law.present?
+                    span.info onclick=("this.className === 'info' ? this.className='info active': this.className='info'")
+                      .tooltip
+                        h3 Applicable Laws
+                        - rule.context_items.applicable_law.each do |context_item|
+                          = link_to context_item.description, context_item.source, target: '_blank'
+    .actions
+      = link_to 'Start over', root_path, class: 'back-button'

@@ -11,6 +11,26 @@ class Admin::ContextItemsController < Admin::BaseController
     end
   end
 
+  def edit
+  end
+
+
+  def update
+    if @context_item.update(context_item_params)
+      flash.now[:success] = 'Context item succefully updated.'
+    else
+      flash.now[:error] = @context_item.errors.full_messages.join('. ')
+    end
+  end
+
+  def destroy
+    if @context_item.destroy
+      flash.now[:success] = 'Context item succefully deleted.'
+    else
+      flash.now[:error] = @context_item.errors.join('. ')
+    end
+  end
+
   private
 
   def context_item_params

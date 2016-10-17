@@ -69,4 +69,6 @@ gem 'figaro'
 gem 'devise'
 gem 'cancancan'
 
+gem 'wicked'
+
 ruby '2.3.1'

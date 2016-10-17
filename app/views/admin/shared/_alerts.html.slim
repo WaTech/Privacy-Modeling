@@ -9,9 +9,8 @@
       button.close aria-label='Close' data-dismiss='alert' type='button'
         span aria-hidden='true'  &times;
       = notice
-
-  - if alert
+  - if flash[:error]
     .alert.alert-info.alert-dismissible.fade.in role='alert'
       button.close aria-label='Close' data-dismiss='alert' type='button'
         span aria-hidden='true'  &times;
-      = alert
+      = flash[:error]
