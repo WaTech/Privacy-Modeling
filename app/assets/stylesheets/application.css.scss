@@ -290,6 +290,21 @@ body {
 
       }
       .actions {
+        @media only screen and (max-width: 600px) {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: reverse;
+          -ms-flex-direction: column-reverse;
+                  flex-direction: column-reverse;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+                  align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+                  justify-content: center;
+        }
 
         .submit-button {
           -webkit-appearance: none;
@@ -311,10 +326,16 @@ body {
           box-shadow: none;
           border: none;
           padding: 0;
+
           &:disabled {
             background-color: #5a5f69;
             cursor: initial;
           }
+
+          @media only screen and (max-width: 600px) {
+            margin: 20px 0 10px 0;
+          }
+
         }
 
         .back-button {
@@ -336,6 +357,10 @@ body {
           box-shadow: none;
           border: none;
           display: inline-block;
+
+          @media only screen and (max-width: 600px) {
+            margin: 20px 0 10px 0;
+          }
         }
       }
     }
