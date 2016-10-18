@@ -230,6 +230,12 @@ body {
           display: inline-block;
           margin: 10px;
           width: 218px;
+
+          @media only screen and (max-width: 600px) {
+            width: auto;
+            display: block;
+          }
+
           height: 116px;
           overflow: hidden;
           > input {
