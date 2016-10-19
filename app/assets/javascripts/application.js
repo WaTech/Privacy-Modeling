@@ -16,7 +16,6 @@
 //= require turbolinks
 //= require datatables
 //= require bootstrap
-//= require bootstrap-select.min
 //= require masonry.pkgd.min
 //= require generate_dashboard
 //= require dashboard
