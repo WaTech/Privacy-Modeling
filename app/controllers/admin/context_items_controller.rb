@@ -1,4 +1,5 @@
 class Admin::ContextItemsController < Admin::BaseController
+  load_and_authorize_resource :rule
   load_and_authorize_resource
 
   def create
@@ -14,6 +15,8 @@ class Admin::ContextItemsController < Admin::BaseController
   def edit
   end
 
+  def new
+  end
 
   def update
     if @context_item.update(context_item_params)
@@ -34,6 +37,6 @@ class Admin::ContextItemsController < Admin::BaseController
   private
 
   def context_item_params
-    params.require(:context_item).permit(:category, :description, :source)
+    params.require(:context_item).permit(:category, :description, :source, :applicable_law_kind)
   end
 end

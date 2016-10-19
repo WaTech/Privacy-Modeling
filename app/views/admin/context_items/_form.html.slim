@@ -1,12 +1,15 @@
-#edit_law_context.edit_law_context.modal.fade aria-hidden='true' aria-labelledby='addRegularContextModal' role='dialog' tabindex='-1' data-destroy_url="#{ admin_rule_context_item_url(@context_item.rule, @context_item) }"
+- destroy_url = admin_rule_context_item_url(@context_item.rule, @context_item) rescue nil
+
+#edit_law_context.edit_law_context.modal.fade aria-hidden='true' aria-labelledby='addRegularContextModal' role='dialog' tabindex='-1' data-destroy_url="#{ destroy_url }"
   .modal-dialog
     .modal-content
       .modal-header
         button.close aria-label='Close' data-dismiss='modal' type='button'
           = fa_icon 'times', class: 'close-modal'
-        h4.modal-title Edit #{ @context_item.category.humanize(capitalize: false) } context
-      = form_for ['admin', @context_item.rule, @context_item], remote: true, input_html: { class: "form-horizontal center" }  do |f|
+        h4.modal-title #{ @context_item.persisted? ? 'Edit' : 'New' } #{ @context_item.category.humanize(capitalize: false) } context
+      = form_for ['admin', @rule, @context_item], remote: true, input_html: { class: "form-horizontal center" }  do |f|
         .modal-body
+          = f.hidden_field :category
           .form-group
             = f.label :description, class: 'form-control-label'
             = f.text_field :description, class: 'form-control', required: true
@@ -14,9 +17,14 @@
             .form-group
               = f.label :source, class: 'form-control-label'
               = f.text_field :source, class: 'form-control', required: true
+            .form-group
+              = f.label :applicable_law_kind, class: 'form-control-label'
+
+              = f.select :applicable_law_kind, [['Federal', 'federal'], ['State', 'state'], ['Ordinance-only', 'ordinance']], include_blank: false, required: true,  input_html: { class: 'form-control selectpicker' }
         .modal-footer
           .actions
             button.btn.btn-secondary data-dismiss='modal' type='button' Close
-            button.destroy_context_item_button type='button' class='btn btn-danger' Delete
+            - if @context_item.persisted?
+              button.destroy_context_item_button type='button' class='btn btn-danger' Delete
             = f.submit 'Save', class: 'btn btn-primary'
 
