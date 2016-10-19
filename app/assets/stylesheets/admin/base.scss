@@ -5,8 +5,18 @@
 @import 'rules';
 
 .admin_content {
+  #rules {
+    tr td:nth-child(4) {
+      .form-control {
+        width: auto;
+      }
+    }
+  }
   .rules_context_item_description {
     cursor: pointer;
+    > i {
+      margin-top: 1px;
+    }
   }
 
   i {
@@ -61,9 +71,8 @@
   }
 
   .vertical-center {
-      display: inline-block;
-      vertical-align: middle;
-      float: none;
+    display: inline-block;
+    vertical-align: middle;
   }
 
   .modal-footer {

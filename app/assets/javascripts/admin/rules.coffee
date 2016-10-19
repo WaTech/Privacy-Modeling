@@ -3,10 +3,10 @@ $(document).on 'turbolinks:load', ->
   icon_restriction = '<i class="context-item-restriction-icon ca-2x pull-left" data-id=""  data-label="restriction" data-toggle="modal" data-target=".bd_law_context" data-category="restriction" ></i>'
   icon_forbidden = '<i class="context-item-applicable-law-icon ca-2x  pull-left" data-id=""  data-label="applicable law" data-toggle="modal" data-target=".bd_law_context" data-category="applicable_law"></i>'
 
-  context_item_icon_allow = '<i class="ca-x context-item-limitation-icon_x pull-left vertical-center"></i>'
-  context_item_icon_restriction = '<i class="ca-x context-item-restriction-icon_x pull-left vertical-center"></i>'
-  context_item_icon_forbidden = '<i class="ca-x context-item-applicable-law-icon_x pull-left vertical-center"></i>'
-  preview_context_item_icon_forbidden = '<i class="ca-x preview-context-item-applicable-law-icon pull-left vertical-center"></i>'
+  context_item_icon_allow = '<i class="ca-x context-item-limitation-icon_x pull-left "></i>'
+  context_item_icon_restriction = '<i class="ca-x context-item-restriction-icon_x pull-left "></i>'
+  context_item_icon_forbidden = '<i class="ca-x context-item-applicable-law-icon_x pull-left "></i>'
+  preview_context_item_icon_forbidden = '<i class="ca-x preview-context-item-applicable-law-icon pull-left "></i>'
 
   log = (value) ->
     console.log value
@@ -39,7 +39,7 @@ $(document).on 'turbolinks:load', ->
       {
         'render': (data, type, row) ->
           context_items = row.context_items.map (context_item) ->
-            description = ['<span class="vertical-center">', context_item.description, '</span>'].join('')
+            description = ['<span>', context_item.description, '</span>'].join('')
             if context_item.category == 'applicable_law'
               ['<p class="rules_context_item_description" data-id="' + context_item.id + '" data-destroy_url="' + context_item.destroy_url + '">', preview_context_item_icon_forbidden, '<a href="', context_item.source, '" target="_blank">', description, '</a></p>'].join('')
             else

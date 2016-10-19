@@ -165,6 +165,23 @@ body {
 
             }
           }
+
+          .list {
+            @media only screen and (max-width: 600px) {
+              text-align: center !important;
+            }
+
+            > .block {
+              @media only screen and (max-width: 600px) {
+                float: none !important;
+                display: inline-block !important;
+                position: inherit !important;
+                top: 0 !important;
+                left: 0 !important;
+              }
+            }
+          }
+
         }
         .allowed {
           background-color: #e7e8ee;
@@ -173,6 +190,7 @@ body {
           }
           .list {
             padding: 10px;
+            margin: 0 auto;
 
             &:after {
               display: block;
@@ -182,7 +200,6 @@ body {
 
             > .block {
               float: left;
-
               margin-bottom: 20px;
               width: 218px;
               padding: 27px 10px;
@@ -279,6 +296,9 @@ body {
       }
 
       .submit-button {
+        -webkit-appearance: none;
+        border-radius: 0px;
+
         margin: 20px 0 50px 0;
         width: 160px;
         height: 40px;
