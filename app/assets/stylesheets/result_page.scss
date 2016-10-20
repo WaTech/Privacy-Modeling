@@ -136,6 +136,20 @@ body {
                   padding: 0 0 5px 0;
                   white-space: nowrap;
                 }
+
+                > h4 {
+                  color: #333;
+                  font-family: "Source Sans Pro", sans-serif;
+                  font-size: 12px;
+                  font-weight: 600;
+                  letter-spacing: 0.38px;
+                  line-height: 15px;
+                  margin: 0;
+                  padding: 0;
+                  white-space: nowrap;
+                  text-align: left;
+                }
+
                 a {
                   text-align: left;
                   display: block;
