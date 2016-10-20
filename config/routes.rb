@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     sessions: 'sessions/sessions'
   }
 
-  root to: 'generate_dashboard#select_categories'
+  root to: 'homepage#show'
 
   resource :dashboard, only: :show
   resources :generate_dashboard
