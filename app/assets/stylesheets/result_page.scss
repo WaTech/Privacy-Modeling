@@ -102,6 +102,11 @@ body {
                 left: 0;
                 padding: 10px 10px 15px 20px;
                 box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+
+                @media only screen and (max-width: 600px) {
+                  left: -180px;
+                }
+
                 &:before {
                   display: block;
                   transform: rotate(45deg);
@@ -112,6 +117,12 @@ body {
                   width: 10px;
                   height: 10px;
                   background-color: white;
+
+                  @media only screen and (max-width: 600px) {
+                    right: 2.5px;
+                    left: auto;
+                  }
+
                 }
 
                 h3 {
