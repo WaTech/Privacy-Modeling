@@ -182,6 +182,19 @@ body {
 
 
                   > a {
+                    &:first-child {
+                      max-width: 100px;
+                      -ms-word-break: break-all;
+                           word-break: break-all;
+
+                           /* Non standard for webkit */
+                           word-break: break-word;
+
+                      -webkit-hyphens: auto;
+                         -moz-hyphens: auto;
+                              hyphens: auto;
+                      white-space: normal;
+                    }
                     &.google-it {
                       margin-left: 14px;
                     }
