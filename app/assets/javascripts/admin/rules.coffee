@@ -62,7 +62,7 @@ $(document).on 'turbolinks:load', ->
     ])
 
   # update rule restriction after changing it's value in select
-  $('body').on 'change', 'select', ->
+  $('body').on 'change', 'table select', ->
     row_id = table.row($(this).parents('tr')).index()
 
     log table.page.info().page
