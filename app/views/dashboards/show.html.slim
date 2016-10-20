@@ -22,6 +22,11 @@
                         h3 Applicable Laws
                         - rule.context_items.applicable_law.each do |context_item|
                           h4 = context_item.applicable_law_kind
-                          = link_to context_item.description, context_item.source, target: '_blank'
+
+                          .links
+                            = link_to context_item.description, context_item.source, target: :_blank
+                            = link_to(google_search_path(context_item.description), target: :_blank, class: 'google-it') do
+                              .search.icon
+                              span google
     .actions
       = link_to 'Start over', root_path, class: 'back-button'

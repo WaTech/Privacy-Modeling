@@ -39,6 +39,10 @@ module ApplicationHelper
     @generate_dashboard_params[step_params[@step]].present?
   end
 
+  def google_search_path(query_string = '')
+    "https://google.com/#q=#{ query_string.split(' ').join('+') }"
+  end
+
 end
 
 
