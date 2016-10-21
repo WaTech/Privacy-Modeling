@@ -21,7 +21,7 @@ html lang="en"
         p
          | The Washington State Privacy Modeling Tool offers general guidance, in accordance with state and federal privacy law, about the use of PIIs (Personal Information Items) that are collected, stored and distributed by the State of Washington. The tool is not comprehensive and is meant only as a guide. Please advise an attorney familiar with privacy law for further guidance.
     main
-      - unless devise_controller? || current_page?(root_path)
+      - unless devise_controller? || current_page?(root_path) || current_page?(user_guide_path)
         .nav-wrapper
           nav
             = section_nav_tag :select_categories

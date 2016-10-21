@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resource :user_guide, only: :show
+
   devise_for :users, controllers: {
     sessions: 'sessions/sessions'
   }

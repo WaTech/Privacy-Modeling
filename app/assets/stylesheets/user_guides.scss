@@ -1,0 +1,109 @@
+
+body {
+  > main {
+    > .user_guide {
+      background-color: white;
+      padding: 20px 27px 62px 27px;
+      margin: 30px auto 40px auto;
+
+      > img {
+        max-width: 100%;
+      }
+
+      > h1 {
+        margin: 30px 0 16px 0;
+        text-align: left;
+        color: #424141;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 0.88px;
+        line-height: 36px;
+
+        &:nth-child(1) {
+          margin: 0 0 16px 0;
+        }
+      }
+
+      > p {
+        margin: 16px 0 16px 0;
+
+        color: #424141;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: 0.63px;
+        line-height: 25px;
+        text-align: left;
+      }
+
+      > ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        padding-left: 16px;
+
+        > li {
+          text-align: left;
+          font-size: 17px;
+          letter-spacing: 0.53px;
+          line-height: 22px;
+
+          > h2 {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: 0.53px;
+            line-height: 22px;
+            margin: 32px 0 0 0;
+            display: inline-block;
+          }
+
+          > p {
+            padding-left: 22px;
+
+            color: #424141;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            letter-spacing: 0.53px;
+            line-height: 22px;
+            margin: 0 0 16px 0;
+          }
+        }
+
+        &.numbered {
+          list-style: decimal;
+          margin-left: 44px;
+
+          > li {
+            margin-bottom: 16px;
+          }
+        }
+
+        &.pointer {
+          > li {
+            margin-bottom: 16px;
+
+            &:before {
+              font-size: 17px;
+              padding-right: 22px;
+              content: '•';
+              color: #46b749;
+              display: inline-block;
+            }
+
+            > h2 {
+              padding-left: 22px;
+
+              &:nth-child(1) {
+                padding-left: 0;
+                margin-left: -6px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
