@@ -15,7 +15,7 @@ html lang="en"
         - category_params = step_params_for(:select_categories)
         - path = category_params.present? ? generate_dashboard_path(:select_categories, dashboard: category_params) : root_path
         = link_to path do
-          = image_tag 'logo.png', alt: 'logo'
+          = image_tag 'new_logo.png', alt: 'logo'
 
         h1 Privacy Modeling Tool
         = yield :header_text
