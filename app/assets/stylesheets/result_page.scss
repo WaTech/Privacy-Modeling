@@ -389,46 +389,45 @@ body {
           -webkit-box-pack: center;
           -ms-flex-pack: center;
                   justify-content: center;
+      }
+      .submit-button {
+        -webkit-appearance: none;
+        border-radius: 0px;
 
-        > .submit-button {
-          -webkit-appearance: none;
-          border-radius: 0px;
+        margin: 40px 0 39px 0;
+        width: 160px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background-color: #46B749;
+        color: white;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 17px;
+        font-weight: 500;
+        letter-spacing: 0.53px;
+        outline: none;
+        box-shadow: none;
+        border: none;
+        text-decoration: none;
 
-          margin: 40px 0 39px 0;
-          width: 160px;
-          height: 40px;
-          line-height: 40px;
-          text-align: center;
-          background-color: #46B749;
-          color: white;
-          font-family: 'Source Sans Pro', sans-serif;
-          font-size: 17px;
-          font-weight: 500;
-          letter-spacing: 0.53px;
-          outline: none;
-          box-shadow: none;
-          border: none;
-          text-decoration: none;
-
-          &:disabled {
-            background-color: #5a5f69;
-            cursor: initial;
-          }
+        &:disabled {
+          background-color: #5a5f69;
+          cursor: initial;
         }
+      }
 
-        > .user-guide-button {
-          -webkit-appearance: none;
-          border-radius: 0px;
-          margin: 0 0 57px 0;
+      .user-guide-button {
+        -webkit-appearance: none;
+        border-radius: 0px;
+        margin: 0 0 57px 0;
 
-          color: #46b749;
-          font-family: 'Source Sans Pro', sans-serif;
-          font-size: 20px;
-          font-weight: 600;
-          letter-spacing: 0.63px;
-          line-height: 25px;
-          text-decoration: underline;
-        }
+        color: #46b749;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 0.63px;
+        line-height: 25px;
+        text-decoration: underline;
       }
     }
 

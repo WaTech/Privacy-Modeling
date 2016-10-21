@@ -2,7 +2,7 @@
 body {
   > main {
     bottom: 50px;
-    > .user_guide {
+    .user_guide {
       background-color: white;
       padding: 20px 27px 62px 27px;
       margin: 30px auto 40px auto !important;
@@ -112,6 +112,12 @@ body {
             }
           }
         }
+      }
+    }
+    .user_guide_actions {
+      margin-bottom: 100px;
+      .submit-button {
+        padding: 9px 42.5px 9px 42.5px  !important;
       }
     }
   }
