@@ -125,6 +125,7 @@ body {
                 left: 0;
                 padding: 10px 10px 15px 20px;
                 box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+                width: 264px;
 
                 @media only screen and (max-width: 600px) {
                   width: 238px;
@@ -186,7 +187,7 @@ body {
 
                   > a {
                     &:first-child {
-                      max-width: 100px;
+                      max-width: 150px;
                       -ms-word-break: break-all;
                            word-break: break-all;
 
