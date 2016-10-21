@@ -77,10 +77,10 @@ body {
 
       .container-result {
         .allowed, .limitations, .forbidden {
-          background-color: #e7e8ee;
+          background-color: #c8cbd6;
           .header {
             height: 50px;
-            background-color: #094d7c;
+            background-color: #37475F;
             line-height: 50px;
             color: white;
             font-family: "Source Sans Pro", sans-serif;
@@ -117,7 +117,7 @@ body {
             &.active {
               background-image: url('/laws-icon-copy-4.svg');
               .tooltip {
-                background-color: #efefef;
+                background-color: #FFFFB5;
                 z-index: 100;
                 display: block;
                 position: absolute;
@@ -142,7 +142,7 @@ body {
                   left: 2.5px;
                   width: 10px;
                   height: 10px;
-                  background-color: #efefef;
+                  background-color: #FFFFB5;
 
                   @media only screen and (max-width: 600px) {
                     right: 24px;
@@ -265,7 +265,6 @@ body {
 
         }
         .allowed {
-          background-color: #e7e8ee;
           .header {
             background-image: url('/no-restriction-group-icon.svg');
           }
@@ -328,7 +327,6 @@ body {
         }
 
         .limitations, .forbidden {
-          background-color: #e7e8ee;
           .list {
             padding: 10px;
 
@@ -400,7 +398,7 @@ body {
           height: 40px;
           line-height: 40px;
           text-align: center;
-          background-color: #3e9cdd;
+          background-color: #46B749;
           color: white;
           font-family: 'Source Sans Pro', sans-serif;
           font-size: 17px;
@@ -409,6 +407,7 @@ body {
           outline: none;
           box-shadow: none;
           border: none;
+          text-decoration: none;
 
           &:disabled {
             background-color: #5a5f69;

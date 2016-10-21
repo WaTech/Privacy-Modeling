@@ -38,7 +38,7 @@ html, body {
   min-height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #f3f4f9;
+  background-color: #e1e4ea;
 }
 
 header, main {
@@ -59,7 +59,7 @@ main {
 
 body {
   > header {
-    background-color: #013152;
+    background-color: #FFFFFF;
     text-align: center;
     padding-bottom: 1px;
 
@@ -69,7 +69,7 @@ body {
     }
     > h1 {
       margin: 26px auto 0 auto;
-      color: white;
+      color: #46B749;
       font-family: 'Source Sans Pro', sans-serif;
       font-size: 50px;
       font-weight: 500;
@@ -80,7 +80,7 @@ body {
       margin: 15px auto 47px auto;
       padding: 0 10px;
       max-width: 950px;
-      color: white;
+      color: #424141;
       font-family: 'Source Sans Pro', sans-serif;
       font-size: 17px;
       font-weight: 300;
@@ -151,7 +151,7 @@ body {
 
 
           height: 40px;
-          color: #c6c8cf;
+          color: #9C9CA0;
           text-align: center;
           font-family: 'Source Sans Pro', sans-serif;
           font-size: 14px;
@@ -170,26 +170,26 @@ body {
             transform: translateX(-50%);
             width: 12px;
             height: 12px;
-            background-color: #d9dbe3;
+            background-color: #C8CBD6;
             border-radius: 12px;
           }
 
           &.active {
             font-weight: 700;
-            color: #3e9cdd;
+            color: #3E9CDD;
             &:nth-child(2){
               &:after {
-                background-color: #944487;
+                background-color: #AD6BAD;
               }
             }
             &:nth-child(3){
               &:after {
-                background-color: #636975;
+                background-color: #8F9093;
               }
             }
             &:nth-child(4){
               &:after {
-                background-color: #3b867b;
+                background-color: #4CB934;
               }
               &:before {
                 right: -200%;
@@ -198,7 +198,7 @@ body {
             }
 
             &:after {
-              background-color: #3b5ab0;
+              background-color: #526CB7;
               z-index: 2;
             }
             &:before {
@@ -336,7 +336,7 @@ body {
           height: 40px;
           line-height: 40px;
           text-align: center;
-          background-color: #3e9cdd;
+          background-color: #46B749;
           color: white;
           font-family: 'Source Sans Pro', sans-serif;
           font-size: 17px;
@@ -367,7 +367,7 @@ body {
           padding: auto;
           line-height: 40px;
           text-align: center;
-          background-color: #3e9cdd;
+          background-color: #6D727F;
           color: white;
           font-family: 'Source Sans Pro', sans-serif;
           font-size: 17px;
