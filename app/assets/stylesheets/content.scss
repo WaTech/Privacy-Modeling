@@ -30,7 +30,12 @@
   }
 }
 
+html {
+  height: 100%;
+}
 html, body {
+  position: relative;
+  min-height: 100%;
   margin: 0;
   padding: 0;
   background-color: #f3f4f9;
@@ -42,6 +47,10 @@ header, main {
   @media only screen and (max-width: 600px) {
     padding: 0 15px;
   }
+}
+
+main {
+  padding-bottom: 50px;
 }
 
 * {
@@ -77,6 +86,19 @@ body {
       font-weight: 300;
       letter-spacing: 0.53px;
       line-height: 22px;
+    }
+  }
+
+  > footer {
+    background-color: #FFFFFF;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+
+    > a > img {
+      width: 253px;
+      margin: 26px auto 0 auto;
     }
   }
 

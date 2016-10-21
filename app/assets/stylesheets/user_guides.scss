@@ -1,10 +1,12 @@
 
 body {
   > main {
+    bottom: 50px;
     > .user_guide {
       background-color: white;
       padding: 20px 27px 62px 27px;
-      margin: 30px auto 40px auto;
+      margin: 30px auto 40px auto !important;
+
 
       > img {
         max-width: 100%;

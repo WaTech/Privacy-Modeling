@@ -29,3 +29,6 @@ html lang="en"
             = section_nav_tag :select_use_items
             = section_nav_tag :results
       = yield
+    - unless devise_controller?
+      footer
+        = image_tag 'privacy_modeling_logo.png'
