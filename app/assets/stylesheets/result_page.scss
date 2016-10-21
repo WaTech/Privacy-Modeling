@@ -376,28 +376,58 @@ body {
 
       }
 
-      .submit-button {
-        -webkit-appearance: none;
-        border-radius: 0px;
+      .vertical-actions {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: column;
+          -ms-flex-direction: column;
+                  flex-direction: column;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+                  align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+                  justify-content: center;
 
-        margin: 20px 0 50px 0;
-        width: 160px;
-        height: 40px;
-        line-height: 40px;
-        text-align: center;
-        background-color: #3e9cdd;
-        color: white;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 17px;
-        font-weight: 500;
-        letter-spacing: 0.53px;
-        outline: none;
-        box-shadow: none;
-        border: none;
+        > .submit-button {
+          -webkit-appearance: none;
+          border-radius: 0px;
 
-        &:disabled {
-          background-color: #5a5f69;
-          cursor: initial;
+          margin: 40px 0 39px 0;
+          width: 160px;
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
+          background-color: #3e9cdd;
+          color: white;
+          font-family: 'Source Sans Pro', sans-serif;
+          font-size: 17px;
+          font-weight: 500;
+          letter-spacing: 0.53px;
+          outline: none;
+          box-shadow: none;
+          border: none;
+
+          &:disabled {
+            background-color: #5a5f69;
+            cursor: initial;
+          }
+        }
+
+        > .user-guide-button {
+          -webkit-appearance: none;
+          border-radius: 0px;
+          margin: 0 0 57px 0;
+
+          color: #46b749;
+          font-family: "Source  Sans  Pro";
+          font-size: 20px;
+          font-weight: 600;
+          letter-spacing: 0.63px;
+          line-height: 25px;
+          text-decoration: underline;
         }
       }
     }

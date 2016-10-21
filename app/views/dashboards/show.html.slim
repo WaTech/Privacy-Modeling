@@ -29,5 +29,6 @@
                             = link_to(google_search_path(context_item.description), target: :_blank, class: 'google-it') do
                               .search.icon
                               span search
-    .actions
+    .actions.vertical-actions
       = link_to 'Start over', root_path, class: 'back-button'
+      = link_to 'User Guide', user_guide_path, class: 'user-guide-button'
