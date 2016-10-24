@@ -1,3 +1,19 @@
+.modal.fade.choose-applicable-law-link-action-modal aria-hidden='true' aria-labelledby='mySmallModalLabel' role='dialog' tabindex='-1'
+  .modal-dialog.modal-sm
+    .modal-content
+      .modal-header
+        button.close aria-label='Close' data-dismiss='modal' type='button'
+          span aria-hidden='true'  &times;
+        h4.modal-title Choose action
+      .modal-body
+        .container-fluid
+          .row
+            .col-md-6.offset-md-3
+              .btn-group-vertical
+                a#applicable_law_url href='#' target='_blank' class='btn btn-secondary' data-dismiss="modal" Go to url
+                button#edit_applicable_law_context_item_button.btn.btn-secondary type="button" data-dismiss="modal" Edit
+                button.btn.btn-secondary data-dismiss="modal" type="button" Cancel
+
 .row
   .col-md-3.vertical-center
     h1 Dashboard
@@ -23,3 +39,4 @@
   = form_tag import_admin_rules_path, method: :post, multipart: true do
     = file_field_tag :file
     = submit_tag 'Import', id: 'submit_import_form'
+
