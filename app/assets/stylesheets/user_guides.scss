@@ -78,7 +78,15 @@ body {
           list-style: decimal;
           margin-left: 44px;
 
+
+
           > li {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 17px;
+            letter-spacing: 0.53px;
+            line-height: 22px;
+            font-weight: 400;
+            color: #424141;
             margin-bottom: 16px;
           }
         }
