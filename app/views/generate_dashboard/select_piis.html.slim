@@ -14,5 +14,6 @@
         div
           p = @piis[b.value - 1].name
     - @dashboard.category_ids.each do |category_id|
-      = hidden_field_tag 'dashboard[category_ids][]', category_id
-
+      = hidden_field_tag "dashboard[category_ids][]", category_id
+    - @dashboard.use_item_ids.each do |use_item_id|
+      = hidden_field_tag "dashboard[use_item_ids][]", use_item_id
