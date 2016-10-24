@@ -37,6 +37,6 @@ class Admin::ContextItemsController < Admin::BaseController
   private
 
   def context_item_params
-    params.require(:context_item).permit(:category, :description, :source, :applicable_law_kind)
+    params.require(:context_item).permit(:category, :description, :source, :applicable_law_kind, :applicable_law_description)
   end
 end

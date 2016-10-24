@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161019094850) do
+ActiveRecord::Schema.define(version: 20161024100351) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,10 +25,11 @@ ActiveRecord::Schema.define(version: 20161019094850) do
     t.integer  "rule_id"
     t.integer  "category"
     t.string   "description"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "source"
     t.integer  "applicable_law_kind"
+    t.string   "applicable_law_description"
     t.index ["rule_id"], name: "index_context_items_on_rule_id", using: :btree
   end
 
