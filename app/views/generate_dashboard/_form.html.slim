@@ -3,7 +3,7 @@
 = form_tag url, method: :get do |f|
   .container-categories
     = yield
-  .actions
+  .actions.margin-bottom-120
     - if previous_url && @step != :select_categories
       = link_to 'Back', previous_step_path, class: 'back-button'
 

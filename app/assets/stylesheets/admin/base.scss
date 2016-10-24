@@ -5,6 +5,12 @@
 @import 'rules';
 
 .admin_content {
+  @media only screen and (max-width: 600px) {
+    #user_remember_me {
+      width: auto !important;
+      display: inline-block;
+    }
+  }
   #rules {
     tr td:nth-child(4) {
       .form-control {

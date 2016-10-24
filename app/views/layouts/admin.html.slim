@@ -5,6 +5,7 @@ html
     = csrf_meta_tags
     = stylesheet_link_tag    'admin/base', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = favicon_link_tag 'new_favicon.png'
     - if devise_controller?
       meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"
 
