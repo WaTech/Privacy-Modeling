@@ -6,8 +6,9 @@
   = render layout: 'form' do |f|
     - @use_items = UseItem.all
     = collection_check_boxes(:dashboard, :use_item_ids, @use_items, :id, :name) do |b|
+      - is_checked = is_item_active :use_item_ids, b.object.id
       label
-        = b.check_box(class: 'use-item-checkbox')
+        = b.check_box(class: 'use-item-checkbox', checked: is_checked)
         div
           p = @use_items[b.value - 1].name
     - @dashboard.category_ids.each do |category_id|
