@@ -41,7 +41,7 @@ $(document).on 'turbolinks:load', ->
           context_items = row.context_items.map (context_item) ->
             description = ['<span>', context_item.description, '</span>'].join('')
             if context_item.category == 'applicable_law'
-              ['<p class="applicable_law_context_item rules_context_item_description" data-id="' + context_item.id + '" data-destroy_url="' + context_item.destroy_url + '" data-target=".choose-applicable-law-link-action-modal" data-toggle="modal" data-href="', context_item.source, '">', preview_context_item_icon_forbidden,  description, '</p>'].join('')
+              ['<p class="applicable_law_context_item rules_context_item_description" data-id="' + context_item.id + '" data-destroy_url="' + context_item.destroy_url + '" data-href="', context_item.source, '">', preview_context_item_icon_forbidden,  description, '</p>'].join('')
             else
               icon = if context_item.category == 'limitation' then context_item_icon_allow else context_item_icon_restriction
               ['<p class="', context_item.category, '_context_item rules_context_item_description" data-id="' + context_item.id + '" data-destroy_url="' + context_item.destroy_url + '">', icon,  description, '</p>'].join('')
@@ -88,14 +88,7 @@ $(document).on 'turbolinks:load', ->
   $('body').on 'change', '#file', ->
     $('#submit_import_form').click()
 
-
-  $('body').on 'click', '.applicable_law_context_item', (event) ->
-    href = $(event.target.parentElement).data('href')
-    edit_url = $(event.target.parentElement).data('destroy_url')
-    $('#applicable_law_url').attr('href', href)
-    $('#edit_applicable_law_context_item_button').data('destroy_url', edit_url)
-
-  $('body').on 'click', '.limitation_context_item, .restriction_context_item, #edit_applicable_law_context_item_button', ->
+  $('body').on 'click', '.limitation_context_item, .restriction_context_item, .applicable_law_context_item', ->
     $.get [$(this).data('destroy_url'), 'edit'].join('/')
 
   $('body').on 'click', '.destroy_context_item_button', (event) ->
