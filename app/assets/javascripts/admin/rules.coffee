@@ -1,7 +1,7 @@
 $(document).on 'turbolinks:load', ->
-  icon_allow = '<i class="context-item-limitation-icon ca-2x pull-left" data-id=""  data-label="limitation" data-toggle="modal" data-target=".bd_law_context" data-category="limitation" ></i>'
-  icon_restriction = '<i class="context-item-restriction-icon ca-2x pull-left" data-id=""  data-label="restriction" data-toggle="modal" data-target=".bd_law_context" data-category="restriction" ></i>'
-  icon_forbidden = '<i class="context-item-applicable-law-icon ca-2x  pull-left" data-id=""  data-label="applicable law" data-toggle="modal" data-target=".bd_law_context" data-category="applicable_law"></i>'
+  icon_allow = '<i class="context-item-limitation-icon ca-2x pull-left" data-id=""  data-label="limitation" data-category="limitation" ></i>'
+  icon_restriction = '<i class="context-item-restriction-icon ca-2x pull-left" data-id=""  data-label="restriction" data-category="restriction" ></i>'
+  icon_forbidden = '<i class="context-item-applicable-law-icon ca-2x  pull-left" data-id=""  data-label="applicable law" data-category="applicable_law"></i>'
 
   context_item_icon_allow = '<i class="ca-x context-item-limitation-icon_x pull-left "></i>'
   context_item_icon_restriction = '<i class="ca-x context-item-restriction-icon_x pull-left "></i>'
@@ -61,7 +61,6 @@ $(document).on 'turbolinks:load', ->
       }
     ])
 
-
   # update rule restriction after changing it's value in select
   $('body').on 'change', 'select', ->
     row_id = table.row($(this).parents('tr')).index()
@@ -74,40 +73,21 @@ $(document).on 'turbolinks:load', ->
     )
 
   # reload datatable after new context item added
-  $('body').on 'ajax:success', '#new_law_context_item', ->
-    $('#new_law_context').modal('toggle')
-    $('#context_item_category').val('')
-    $('#context_item_source').val('')
-    $('#context_item_description').val('')
+  $('body').on 'ajax:success', '#new_context_item', ->
+    $('.edit_law_context').modal('hide')
     table.draw('page')
 
-  # hide soure url for context item modals except with applicable_law category
-  # set real rule id for form's action
-  # set real context item categoru
-  $('#new_law_context').on 'show.bs.modal', (event) ->
-    modal = $(this)
-    form = modal.find('form')
-    relatedTarget = $(event.relatedTarget)
-    row_id = table.row(relatedTarget.parents('tr')).index()
-    data = table.row(row_id).data()
+  # remove new modal windows after it was hidden
+  $('body').on 'hidden.bs.modal', '.edit_law_context', ->
+    $('.edit_law_context').remove()
 
-    modal_title = ['New', relatedTarget.data('label'), 'context'].join(' ')
-    modal.find('.modal-title').text(modal_title)
-
-    form.attr('action', ['/admin/rules/', data.id, '/context_items'].join(''))
-    context_item_category_input = form.find('#context_item_category')
-    context_item_category_input.attr('value', relatedTarget.data('category'))
-    is_applicable_law_category = relatedTarget.data('category')
-    source = modal.find('#context_item_source_form_group')
-
-    if is_applicable_law_category == 'applicable_law'
-      source.show()
-    else
-      source.hide()
+  $('body').on 'click', '.context-item-limitation-icon, .context-item-restriction-icon, .context-item-applicable-law-icon', (event) ->
+    $.get ['/admin/rules/', $(this).data('id'), '/context_items/new', '?context_item%5Bcategory%5D=', $(this).data('category') ].join('')
 
   $('body').on 'click', '.import-csv-button', (event) ->
     $('#file').click()
     event.preventDefault()
+
   $('body').on 'change', '#file', ->
     $('#submit_import_form').click()
 

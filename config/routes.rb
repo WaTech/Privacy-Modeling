@@ -19,7 +19,7 @@ Rails.application.routes.draw do
         get :generate
         post :import
       end
-      resources :context_items, only: [:create, :destroy, :edit, :update]
+      resources :context_items, only: [:create, :destroy, :edit, :update, :new]
     end
   end
 
