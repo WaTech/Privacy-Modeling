@@ -41,14 +41,11 @@ $(document).on 'turbolinks:load', ->
           context_items = row.context_items.map (context_item) ->
             description = ['<span>', context_item.description, '</span>'].join('')
             if context_item.category == 'applicable_law'
-              ['<p class="rules_context_item_description" data-id="' + context_item.id + '" data-destroy_url="' + context_item.destroy_url + '">', preview_context_item_icon_forbidden, '<a href="', context_item.source, '" target="_blank">', description, '</a></p>'].join('')
+              ['<p class="applicable_law_context_item rules_context_item_description" data-id="' + context_item.id + '" data-destroy_url="' + context_item.destroy_url + '" data-href="', context_item.source, '">', preview_context_item_icon_forbidden,  description, '</p>'].join('')
             else
               icon = if context_item.category == 'limitation' then context_item_icon_allow else context_item_icon_restriction
-              ['<p class="rules_context_item_description" data-id="' + context_item.id + '" data-destroy_url="' + context_item.destroy_url + '">', icon,  description, '</p>'].join('')
+              ['<p class="', context_item.category, '_context_item rules_context_item_description" data-id="' + context_item.id + '" data-destroy_url="' + context_item.destroy_url + '">', icon,  description, '</p>'].join('')
           context_items.join('')
-          # context_items = (context_item.description for context_item in row.context_items)
-
-          # ('<p>' + conext_item + '</p>' for conext_item in context_items).join('')
         'targets': 0
       }
       {
@@ -91,7 +88,7 @@ $(document).on 'turbolinks:load', ->
   $('body').on 'change', '#file', ->
     $('#submit_import_form').click()
 
-  $('body').on 'click', '.rules_context_item_description', ->
+  $('body').on 'click', '.limitation_context_item, .restriction_context_item, .applicable_law_context_item', ->
     $.get [$(this).data('destroy_url'), 'edit'].join('/')
 
   $('body').on 'click', '.destroy_context_item_button', (event) ->
