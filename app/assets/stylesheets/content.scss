@@ -277,14 +277,17 @@ body {
 
           > input.category-checkbox[type=checkbox]:checked + div {
             background-color: #2f4993;
+            border: 4px solid #fff;
           }
 
           > input.pii-checkbox[type=checkbox]:checked + div {
             background-color: #823e77;
+            border: 4px solid #fff;
           }
 
           > input.use-item-checkbox[type=checkbox]:checked + div {
             background-color: #5a5f69;
+            border: 4px solid #fff;
           }
 
           > div {
@@ -292,6 +295,7 @@ body {
             cursor: pointer;
             background-color: white;
             box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+            border: 3px solid rgba(51, 51, 51, 0.85);
             width: 100%;
             height: 100%;
             display: -webkit-box;
