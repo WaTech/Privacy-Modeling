@@ -67,7 +67,6 @@ body {
 
       > p {
         margin: 16px 0 16px 0;
-
         color: #424141;
         font-family: 'Source Sans Pro', sans-serif;
         font-size: 20px;
@@ -81,7 +80,8 @@ body {
         list-style: none;
         padding: 0;
         margin: 0;
-        padding-left: 16px;
+        padding-left: 22px;
+        margin-left: 22px;
 
         > li {
           text-align: left;
@@ -100,8 +100,6 @@ body {
           }
 
           > p {
-            padding-left: 22px;
-
             color: #424141;
             font-family: 'Source Sans Pro', sans-serif;
             font-size: 17px;
@@ -132,7 +130,7 @@ body {
         &.pointer {
           > li {
             margin-bottom: 16px;
-
+            position: relative;
             font-family: 'Source Sans Pro', sans-serif;
             font-size: 17px;
             letter-spacing: 0.53px;
@@ -142,10 +140,11 @@ body {
 
             &:before {
               font-size: 17px;
-              padding-right: 22px;
+              left: -22px;
               content: '•';
               color: #46b749;
               display: inline-block;
+              position: absolute;
             }
 
             > h2 {
@@ -154,7 +153,6 @@ body {
 
               &:nth-child(1) {
                 padding-left: 0;
-                margin-left: -6px;
               }
             }
           }
