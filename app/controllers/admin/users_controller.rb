@@ -19,6 +19,8 @@ class Admin::UsersController < Admin::BaseController
     @user = User.new(user_params)
 
     if @user.save
+      Users::RegistrationMailer.send_credentials(@user).deliver_now
+
       flash.now[:success] = 'User succefully created.'
     else
       flash.now[:error] = @user.errors.full_messages.join('. ')
