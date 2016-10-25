@@ -26,7 +26,7 @@ class Rule < ApplicationRecord
   end
 
   def self.to_csv
-    headers = [:category_name, :personal_information_item_name, :uses_name, :restriction, :context_item_category, :context_item_description, :context_item_source]
+    headers = [:category_name, :personal_information_item_name, :uses_name, :restriction, :context_item_category, :context_item_description, :context_item_source, :applicable_law_flag, :applicable_law_description]
     attribute_names = [:category_name, :personal_information_item_name, :use_item_name, :restriction]
 
     CSV.generate(headers: true) do |csv|
@@ -67,7 +67,7 @@ class Rule < ApplicationRecord
           category: row['context_item_category'],
           description: row['context_item_description'],
           source: row['context_item_source'],
-          applicable_law_kind: row['applicable_law_kind'],
+          applicable_law_kind: row['applicable_law_flag'],
           applicable_law_description: row['applicable_law_description'] })
       end
     end
