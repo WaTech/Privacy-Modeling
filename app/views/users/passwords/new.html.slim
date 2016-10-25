@@ -1,17 +1,13 @@
-.main.admin_content
-  .row
-    .col-sm-4.offset-sm-4.col-xs-12.text-center
-      = image_tag 'new_logo.png', alt: 'logo', class: 'login-logo'
-  .row
-    .col-sm-4.offset-sm-4.col-xs-12
-      h2.text-center Forgot your password?
+.row
+  .col-sm-4.offset-sm-4.col-xs-12
+    h1.text-center Forgot your password?
 
-      = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-        = devise_error_messages!
+    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+      = devise_error_messages!
 
-        .form-group
-          = f.label :email
-          = f.email_field :email, autofocus: true, class: 'form-control'
+      .form-group
+        = f.label :email
+        = f.email_field :email, autofocus: true, class: 'form-control'
 
-        .actions.text-center
-          = f.submit 'Send me reset password instructions', class: 'btn btn-primary'
+      .actions.text-center
+        = f.submit 'Send me reset password instructions', class: 'btn btn-primary'
