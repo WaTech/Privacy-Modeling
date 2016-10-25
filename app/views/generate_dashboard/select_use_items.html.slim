@@ -10,7 +10,7 @@
       label
         = b.check_box(class: 'use-item-checkbox', checked: is_checked)
         div
-          p = @use_items[b.value - 1].name
+          p = @use_items.find(b.value).name
     - @dashboard.category_ids.each do |category_id|
       = hidden_field_tag "dashboard[category_ids][]", category_id
     - @dashboard.pii_ids.each do |pii_id|

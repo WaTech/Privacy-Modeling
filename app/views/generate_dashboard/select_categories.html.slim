@@ -6,12 +6,13 @@
   p Please input or select the type of personal information your agency is working with
   = render layout: 'form' do |f|
     - @categories = Category.all
+
     = collection_check_boxes(:dashboard, :category_ids, @categories, :id, :name) do |b|
       - is_checked = is_item_active :category_ids, b.object.id
       label
         = b.check_box(class: 'category-checkbox', checked: is_checked)
         div
-          p = @categories[b.value - 1].name
+          p = @categories.find(b.value).name
     - @dashboard.pii_ids.each do |pii_id|
       = hidden_field_tag "dashboard[pii_ids][]", pii_id
     - @dashboard.use_item_ids.each do |use_item_id|
