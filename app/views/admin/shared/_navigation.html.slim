@@ -3,8 +3,8 @@ nav.navbar.navbar-light.bg-faded
     button.navbar-toggler.hidden-sm-up aria-controls='exCollapsingNavbar2' aria-expanded='false' aria-label=('Toggle navigation') data-target='#exCollapsingNavbar2' data-toggle='collapse' type='button'
       | ☰
   #exCollapsingNavbar2.collapse.navbar-toggleable-xs
-    = link_to root_path, class: 'navbar-brand' do
-      = image_tag 'https://uc.uxpin.com/files/552025/549473/logoFlyIn_0.png', class: 'logo'
+    = link_to admin_path, class: 'navbar-brand' do
+        = image_tag 'new_logo.png', alt: 'logo', class: 'logo'
     - if current_user
       ul.nav.navbar-nav.pull-xs-right
         li.nav-item
