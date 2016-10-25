@@ -15,3 +15,6 @@
       | To get started, please go to the
       = link_to 'Next Page', generate_dashboard_path(:select_categories), class: 'next-page'
 
+    .actions
+      = link_to 'User Guide', user_guide_path, class: 'action-button user-guide-button'
+      = link_to 'Continue', generate_dashboard_path(:select_categories), class: 'action-button start-over-button'
