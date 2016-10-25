@@ -116,6 +116,7 @@ body {
             }
             &.active {
               background-image: url('/laws-icon-copy-4.svg');
+
               .tooltip {
                 background-color: #FFFFB5;
                 z-index: 100;
@@ -220,6 +221,20 @@ body {
                   }
                 }
               }
+
+              &.mirror {
+                .tooltip {
+                  width: 238px;
+                  left: -203px;
+                  padding: 10px 10px 15px 10px;
+
+                  &:before {
+                    right: 24px;
+                    left: auto;
+                  }
+                }
+              }
+
             }
           }
 
