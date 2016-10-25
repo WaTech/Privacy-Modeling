@@ -34,3 +34,7 @@ en:
         federal: federal
         state: state
         ordinance: ordinance-only
+  users:
+    registration_mailer:
+      send_credentials:
+        subject: Welcome
