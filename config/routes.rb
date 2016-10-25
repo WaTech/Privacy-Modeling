@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   resource :user_guide, only: :show
 
   devise_for :users, controllers: {
-    sessions: 'sessions/sessions'
+    sessions: 'users/sessions',
+    passwords: 'users/passwords'
   }
 
   root to: 'homepage#show'
