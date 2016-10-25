@@ -12,12 +12,8 @@ module ApplicationHelper
   end
 
   def step_params_for step
-    params_keys = {
-      select_categories: [category_ids: []],
-      select_piis: [category_ids: [], pii_ids: []],
-      select_use_items: [category_ids: [], pii_ids: [], use_item_ids: []]
-    }
-    params.require(:dashboard).permit(params_keys[step]).to_h rescue {}
+    params_keys = [category_ids: [], pii_ids: [], use_item_ids: []]
+    params.require(:dashboard).permit(params_keys).to_h rescue {}
   end
 
   def previous_step_path
@@ -37,6 +33,10 @@ module ApplicationHelper
   def step_parameter
     step_params = { select_piis: :pii_ids, select_use_items: :use_item_ids }
     @generate_dashboard_params[step_params[@step]].present?
+  end
+
+  def google_search_path(query_string = '')
+    "https://google.com/#q=#{ query_string.split(' ').join('+') }"
   end
 
 end

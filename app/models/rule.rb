@@ -37,7 +37,7 @@ class Rule < ApplicationRecord
 
         if rule.context_items.count > 0
           rule.context_items.each do |context_item|
-            csv << rule_attributes + [:category, :description, :source].map { |attr| context_item.public_send attr }
+            csv << rule_attributes + [:category, :description, :source, :applicable_law_kind, :applicable_law_description].map { |attr| context_item.public_send attr }
           end
         else
            csv << rule_attributes
@@ -62,7 +62,13 @@ class Rule < ApplicationRecord
       rule.update restriction: restriction
 
       if row['context_item_description'].present?
-        context_item = ContextItem.find_or_create_by rule: rule, category: row['context_item_category'], description: row['context_item_description'], source: row['context_item_source']
+        context_item = ContextItem.find_or_create_by({
+          rule: rule,
+          category: row['context_item_category'],
+          description: row['context_item_description'],
+          source: row['context_item_source'],
+          applicable_law_kind: row['applicable_law_kind'],
+          applicable_law_description: row['applicable_law_description'] })
       end
     end
   end

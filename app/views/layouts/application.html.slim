@@ -6,7 +6,7 @@ html lang="en"
     title Watech
     link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet"
     = csrf_meta_tags
-    = favicon_link_tag 'favicon.png'
+    = favicon_link_tag 'new_favicon.png'
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
@@ -14,14 +14,13 @@ html lang="en"
       header
         - category_params = step_params_for(:select_categories)
         - path = category_params.present? ? generate_dashboard_path(:select_categories, dashboard: category_params) : root_path
-        = link_to path do
-          = image_tag 'https://uc.uxpin.com/files/552025/549473/logoFlyIn_0.png', alt: 'logo'
+        = link_to root_path do
+          = image_tag 'new_logo.png', alt: 'logo'
 
         h1 Privacy Modeling Tool
-        p
-         | The Washington State Privacy Modeling Tool offers general guidance, in accordance with state and federal privacy law, about the use of PIIs (Personal Information Items) that are collected, stored and distributed by the State of Washington. The tool is not comprehensive and is meant only as a guide. Please advise an attorney familiar with privacy law for further guidance.
+        = yield :header_text
     main
-      - unless devise_controller?
+      - unless devise_controller? || current_page?(root_path) || current_page?(user_guide_path)
         .nav-wrapper
           nav
             = section_nav_tag :select_categories
@@ -29,3 +28,6 @@ html lang="en"
             = section_nav_tag :select_use_items
             = section_nav_tag :results
       = yield
+    - unless devise_controller?
+      footer
+        = image_tag 'privacy_modeling_logo.png'
