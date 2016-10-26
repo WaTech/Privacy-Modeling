@@ -20,3 +20,9 @@ $(document).on 'turbolinks:load', ->
     path = [action, $('form').serialize()].join('?')
     $(this).attr('href', path)
 
+  $('body').on 'click', '#select_categories_nav_step.active, #select_piis_nav_step.active', (event) ->
+    action = ['/generate_dashboard', $('form').attr('data-previous-step')].join('/')
+    console.log $('form')
+    if !!$('form').length
+      path = [action, $('form').serialize()].join('?')
+      $(this).attr('href', path)
