@@ -4,7 +4,7 @@ class Admin::UsersController < Admin::BaseController
   def index
     @records_total = User.count
     @draw = params[:draw].to_i
-    @users = User.all.order(:id).page(page_number)
+    @users = @users.order(:id).page(page_number)
 
     respond_to do |format|
       format.html
