@@ -23,6 +23,6 @@
           .form-group
             = f.label :role, class: 'form-control-label'
             br
-            = f.select :role, [['Admin', 'admin'], ['Creator', 'super_admin']], include_blank: false, required: true,  class: 'form-control'
+            = f.select :role, available_user_roles, include_blank: false, required: true,  class: 'form-control'
         .modal-footer
           .actions = f.submit
