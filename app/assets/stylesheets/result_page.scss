@@ -296,9 +296,25 @@ body {
 
             > .block {
               float: left;
-              margin-bottom: 20px;
               width: 218px;
-              padding: 27px 10px;
+              min-height: 115px;
+
+              margin-bottom: 20px;
+              padding: 30px 10px 10px;
+
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+
+              -webkit-flex-direction: column;
+              -moz-flex-direction: column;
+              -ms-flex-direction: column;
+              flex-direction: column;
+
+              -moz-box-pack: center;
+              -webkit-justify-content: center;
+              -ms-flex-pack: center;
+              justify-content: center;
 
               background-color: white;
               box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
@@ -353,13 +369,31 @@ body {
             }
 
             > .block {
+              position: relative;
+
               float: left;
-              margin-bottom: 20px;
               width: 218px;
+              min-height: 115px;
+
+              margin-bottom: 20px;
+              padding: 30px 10px 10px;
+
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+
+              -webkit-flex-direction: column;
+              -moz-flex-direction: column;
+              -ms-flex-direction: column;
+              flex-direction: column;
+
+              -moz-box-pack: center;
+              -webkit-justify-content: center;
+              -ms-flex-pack: center;
+              justify-content: center;
+
               background-color: white;
               box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
-              padding: 20px 10px;
-              position: relative;
 
               > .wrapper {
                 > h3 {
