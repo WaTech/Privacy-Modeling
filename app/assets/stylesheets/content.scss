@@ -197,10 +197,6 @@ body {
             color: #3E9CDD;
 
             &:nth-child(2){
-              @media only screen and (min-device-width : 1024px) {
-                min-width: 200px;
-              }
-
               &:after {
                 background-color: #AD6BAD;
               }
@@ -235,6 +231,16 @@ body {
               height: 3px;
               background-color: #25A6F7;
             }
+          }
+        }
+      }
+    }
+
+    .main-nav {
+      .active {
+        &:nth-child(2) {
+          @media only screen and (min-device-width : 1024px) {
+            min-width: 200px;
           }
         }
       }
