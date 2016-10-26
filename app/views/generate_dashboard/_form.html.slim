@@ -1,6 +1,6 @@
 - url = next_wizard_path rescue wizard_path(:select_piis)
 - previous_url = previous_wizard_path rescue nil
-= form_tag url, method: :get do |f|
+= form_tag url, method: :get, id: @step, data: { previous_step: @previous_step } do |f|
   .container-categories
     = yield
   .actions.margin-bottom-120
