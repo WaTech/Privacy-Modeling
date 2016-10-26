@@ -16,8 +16,6 @@ class Admin::UsersController < Admin::BaseController
   end
 
   def create
-    @user = User.new(user_params)
-
     if @user.save
       Users::RegistrationMailer.send_credentials(@user).deliver_now
 

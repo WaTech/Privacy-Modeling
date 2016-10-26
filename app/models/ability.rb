@@ -15,6 +15,7 @@ class Ability
 
         can :manage, User, id: user.id
         can :read, User
+        cannot [:new, :create], User
       end
   end
 end

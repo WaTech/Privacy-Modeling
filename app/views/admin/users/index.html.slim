@@ -1,8 +1,9 @@
 .row
   .col-sm-3.vertical-center
     h1 Categories
-  .offset-sm-6.col-sm-3.vertical-center.skip-padding-right
-    = link_to 'Add new user', new_admin_user_path, remote: true, class: 'btn btn-primary pull-right'
+  - if can? :new, User
+    .offset-sm-6.col-sm-3.vertical-center.skip-padding-right
+      = link_to 'Add new user', new_admin_user_path, remote: true, class: 'btn btn-primary pull-right'
 .row
   .col-sm-12
     table#users.table.table-striped
