@@ -1,41 +1,11 @@
 .row
-  .col-sm-12
-    #new_law_context.modal.fade.bd_law_context aria-hidden='true' aria-labelledby='addRegularContextModal' role='dialog' tabindex='-1'
-      .modal-dialog
-        .modal-content
-          .modal-header
-            button.close aria-label='Close' data-dismiss='modal' type='button'
-              = fa_icon 'times', class: 'close-modal'
-            h4.modal-title New context
-          form#new_law_context_item.form-horizontal accept-charset="UTF-8" data-action="" data-remote="true" method="post"
-            .modal-body
-              input name="utf8" type="hidden" value="✓"
-
-              .form-group
-                input#context_item_category.form-control name="context_item[category]" type="hidden" value=''
-              .form-group
-                label.form-control-label.string.optional for="context_item_description"  Description:
-                input#context_item_description.form-control.string.optional name="context_item[description]" type="text"
-              .form-group#context_item_source_form_group
-                label.form-control-label for='recipient-name' Source:
-                input#context_item_source.form-control.string.optional name="context_item[source]" type="url"
-            .modal-footer
-              button.btn.btn-secondary data-dismiss='modal' type='button' Close
-              input.btn.btn-primary data-disable-with="Save" name="commit" type="submit" value="Save"
-
-.row
   .col-md-3.vertical-center
     h1 Dashboard
   .col-md-6.offset-md-3.vertical-center.skip-padding-right
     .btn-toolbar
-      / .vertical-center
       = link_to 'Generate scenarios', generate_admin_rules_url, class: 'btn btn-primary pull-right'
-      = link_to 'Improt CSV', '#', class: 'btn import-csv-button pull-right'
+      = link_to 'Import CSV', '#', class: 'btn import-csv-button pull-right'
       = link_to 'Export CSV', admin_rules_url(format: :csv), class: 'btn pull-right'
-      / .row
-        .col-md-3
-        .col-md-3
-        .col-md-3
 
 .row
   .col-sm-12
@@ -48,7 +18,9 @@
           th width='12%' Restriction
           th width='23%' Context
           th Add context
+
 #import_form
   = form_tag import_admin_rules_path, method: :post, multipart: true do
     = file_field_tag :file
     = submit_tag 'Import', id: 'submit_import_form'
+

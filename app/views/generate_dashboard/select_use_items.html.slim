@@ -1,13 +1,16 @@
+- content_for :header_text
+  p How do you intend to use the Personally Identifiable Information?
 .content.step-1
   h1 Step 3: Uses
-  p Please select how your agency will use the information
+  p Click on one or more ways that your agency intends to use the PII.
   = render layout: 'form' do |f|
     - @use_items = UseItem.all
     = collection_check_boxes(:dashboard, :use_item_ids, @use_items, :id, :name) do |b|
+      - is_checked = is_item_active :use_item_ids, b.object.id
       label
-        = b.check_box(class: 'use-item-checkbox')
+        = b.check_box(class: 'use-item-checkbox', checked: is_checked)
         div
-          p = @use_items[b.value - 1].name
+          p = @use_items.find(b.value).name
     - @dashboard.category_ids.each do |category_id|
       = hidden_field_tag "dashboard[category_ids][]", category_id
     - @dashboard.pii_ids.each do |pii_id|

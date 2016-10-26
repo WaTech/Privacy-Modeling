@@ -1,0 +1,210 @@
+
+body {
+  > main {
+    .nav-wrapper.user-guide-nav {
+      max-width: 748px;
+
+
+      > nav {
+        .section {
+          &.active {
+            &:nth-child(1){
+              &:after {
+                background-color: #B75533;
+              }
+            }
+
+            &:nth-child(2){
+              &:after {
+                background-color: #DA9711;
+              }
+            }
+
+            &:nth-child(3){
+              &:after {
+                background-color: #1D8A85;
+              }
+            }
+
+            &:nth-child(4){
+              &:after {
+                background-color: #8C54D8;
+              }
+            }
+
+            &:nth-child(5){
+              &:after {
+                background-color: #1A65AB;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    bottom: 50px;
+    .user_guide {
+      background-color: white;
+      padding: 20px 27px 62px 27px;
+      margin: 30px auto 40px auto !important;
+      max-width: 748px;
+
+
+      > img {
+        max-width: 100%;
+      }
+
+      > h1 {
+        margin: 30px 0 16px 0;
+        text-align: left;
+        color: #424141 !important;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 0.88px;
+        line-height: 36px;
+
+        &:nth-child(1) {
+          margin: 0 0 16px 0;
+        }
+      }
+
+      sup {
+        font-size: 12px;
+      }
+
+      > p {
+        margin: 16px 0 16px 0;
+        color: #424141;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: 0.63px;
+        line-height: 25px;
+        text-align: left;
+      }
+
+      > ul {
+        list-style: none;
+        padding: 0 0 0 22px;
+        margin: 0 0 0 18px;
+
+        > li {
+          text-align: left;
+          font-size: 17px;
+          letter-spacing: 0.53px;
+          line-height: 22px;
+
+          > h2 {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: 0.53px;
+            line-height: 22px;
+            margin: 32px 0 0 0;
+            display: inline-block;
+          }
+
+          > p {
+            color: #424141;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            letter-spacing: 0.53px;
+            line-height: 22px;
+            margin: 0 0 16px 0;
+          }
+        }
+
+        &.numbered {
+          list-style: decimal;
+          margin-left: 44px;
+
+
+
+          > li {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 17px;
+            letter-spacing: 0.53px;
+            line-height: 22px;
+            font-weight: 400;
+            color: #424141;
+            margin-bottom: 16px;
+          }
+        }
+
+        &.pointer {
+          > li {
+            margin-bottom: 16px;
+            position: relative;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 17px;
+            letter-spacing: 0.53px;
+            line-height: 22px;
+            font-weight: 400;
+            color: #424141;
+
+            &:before {
+              font-size: 25px;
+              left: -22px;
+              top: -1px;
+              content: '•';
+              color: #46b749;
+              display: inline-block;
+              position: absolute;
+            }
+
+            > h2 {
+              padding-left: 22px;
+              margin-top: 0;
+
+              &:nth-child(1) {
+                padding-left: 0;
+              }
+            }
+          }
+        }
+      }
+
+      .all-footnote {
+        position: relative;
+        padding-top: 20px;
+        margin-top: 30px;
+
+        text-align: left;
+        font:400 17px/22px  'Source Sans Pro', sans-serif;
+        letter-spacing: 0.53px;
+        color: #424141;
+        list-style: none;
+
+        sup {
+          font-size: 8px;
+        }
+
+        &:before {
+          position: absolute;
+          display: block;
+
+          content: '';
+          width: 40%;
+          height: 1px;
+
+          background: #424141;
+          left: 0;
+          top: 0;
+        }
+
+        .list-footnote {
+          list-style: decimal;
+        }
+      }
+    }
+    .user_guide_actions {
+      margin-bottom: 100px;
+      .submit-button {
+        text-decoration: none;
+        padding: 9px 42.5px 9px 42.5px  !important;
+      }
+    }
+  }
+}

@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  resource :user_guide, only: :show
+
   devise_for :users, controllers: {
-    sessions: 'sessions/sessions'
+    sessions: 'users/sessions',
+    passwords: 'users/passwords'
   }
 
-  root to: 'generate_dashboard#select_categories'
+  root to: 'homepage#show'
 
   resource :dashboard, only: :show
   resources :generate_dashboard
@@ -19,7 +22,7 @@ Rails.application.routes.draw do
         get :generate
         post :import
       end
-      resources :context_items, only: [:create, :destroy, :edit, :update]
+      resources :context_items, only: [:create, :destroy, :edit, :update, :new]
     end
   end
 

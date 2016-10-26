@@ -1,0 +1,17 @@
+.content.margin-bottom-140
+  .container-description
+    p
+      | This <bold>Privacy Modeling Tool</bold> offers general guidance, in accordance with state and federal privacy laws, regarding use of “PII” (Personally Identifiable Information) that government agencies may wish to use. The tool searches through a database of national and Washington State laws to identify which laws might apply to your situation and the way you seek to use PII to deliver a product or service. (It also features a “federal law only” mode.)
+    p
+      | This first-of-a-kind tool is not comprehensive and is meant only for general research. This web application also offers a
+      = link_to '“User Guide to Privacy”', 'user_guide'
+      | for those wishing to design a product or service. For specific legal questions, please consult with an expert familiar with privacy law.
+    p
+      | We welcome feedback about this project. Please visit
+      = link_to 'privacy.wa.gov', 'https://privacy.wa.gov', target: '_blank'
+      | to contact us!
+
+
+    .actions
+      = link_to 'User Guide', user_guide_path, class: 'action-button user-guide-button'
+      = link_to 'Continue', generate_dashboard_path(:select_categories), class: 'action-button start-over-button'

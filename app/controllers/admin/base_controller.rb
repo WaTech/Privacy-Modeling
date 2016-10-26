@@ -3,5 +3,11 @@ class Admin::BaseController < ApplicationController
 
   before_action :authenticate_user!
 
+  rescue_from CanCan::AccessDenied do |exception|
+    flash.now[:error] = exception.message
+
+    render 'admin/shared/alerts'
+  end
+
   layout 'admin'
 end
