@@ -12,9 +12,9 @@ class Ability
         can :manage, PersonalInformationItem
         can :manage, Rule
         can :manage, UseItem
-        can :manage, User do |user_item|
-          user_item == user
-        end
+
+        can :manage, User, id: user.id
+        can :read, User
       end
   end
 end
