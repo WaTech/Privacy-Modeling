@@ -21,10 +21,13 @@ $(document).on 'turbolinks:load', ->
       { 'data': 'email' },
       {
         'render': (data, type, row) ->
-          dataId = ['data-id="', row.id, '"'].join('')
-          editIcon = ['<i class="edit-user fa fa-pencil fa-1x pull-left"', dataId, '></i>'].join(' ')
-          destroyIcon = ['<i class="remove-user fa fa-remove fa-1x pull-left"', dataId, '></i>'].join(' ')
-          [editIcon, destroyIcon].join('')
+          if row.is_editable
+            dataId = ['data-id="', row.id, '"'].join('')
+            editIcon = ['<i class="edit-user fa fa-pencil fa-1x pull-left"', dataId, '></i>'].join(' ')
+            destroyIcon = ['<i class="remove-user fa fa-remove fa-1x pull-left"', dataId, '></i>'].join(' ')
+            [editIcon, destroyIcon].join('')
+          else
+            ''
         'targets': 0
       }
     ])
