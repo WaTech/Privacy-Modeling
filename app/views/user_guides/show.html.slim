@@ -67,6 +67,6 @@
       li You must not rely on the information you obtain through your interaction with the OCIO, this Guide or the PM App as an alternative to legal advice from your attorney or other professional legal services provider. If you have any specific questions about any legal matter you should consult your attorney or other professional legal services provider.
 
   .actions.user_guide_actions
-    = link_to 'Back', :back, class: 'back-button'
+    = link_to 'Back', dashboard_path(dashboard: @dashboard_params.to_h), class: 'back-button'
     = link_to 'Start over', generate_dashboard_path(:select_categories), class: 'submit-button'
 
