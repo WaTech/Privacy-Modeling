@@ -2,6 +2,9 @@
 body {
   > main {
     .nav-wrapper.user-guide-nav {
+      max-width: 748px;
+
+
       > nav {
         .section {
           &.active {
@@ -44,6 +47,7 @@ body {
       background-color: white;
       padding: 20px 27px 62px 27px;
       margin: 30px auto 40px auto !important;
+      max-width: 748px;
 
 
       > img {
@@ -198,6 +202,7 @@ body {
     .user_guide_actions {
       margin-bottom: 100px;
       .submit-button {
+        text-decoration: none;
         padding: 9px 42.5px 9px 42.5px  !important;
       }
     }
