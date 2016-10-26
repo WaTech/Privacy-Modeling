@@ -14,3 +14,9 @@ $(document).on 'turbolinks:load', ->
       $('.submit-button').attr('disabled', false)
     else
       $('.submit-button').attr('disabled', 'disabled')
+
+  $('body').on 'click', '#select_piis .back-button, #select_use_items .back-button', (event) ->
+    action = ['/generate_dashboard', $('form').attr('data-previous-step')].join('/')
+    path = [action, $('form').serialize()].join('?')
+    $(this).attr('href', path)
+
