@@ -51,7 +51,15 @@ class Admin::UsersController < Admin::BaseController
   end
 
   def user_params
-    params.require(:user).permit(:email, :role, :password)
+    unless @user_params
+      @user_params = params.require(:user).permit(:email, :role, :password)
+      @user_params[:role] = @user_params[:role].presence_in(available_user_roles)
+    end
+    @user_params
+  end
+
+  def available_user_roles
+    { admin: %w(admin), super_admin: %w(admin super_admin) }[current_user.role.to_sym]
   end
 
 end
