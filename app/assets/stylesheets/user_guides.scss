@@ -78,10 +78,8 @@ body {
 
       > ul {
         list-style: none;
-        padding: 0;
-        margin: 0;
-        padding-left: 22px;
-        margin-left: 22px;
+        padding: 0 0 0 22px;
+        margin: 0 0 0 18px;
 
         > li {
           text-align: left;
@@ -139,8 +137,9 @@ body {
             color: #424141;
 
             &:before {
-              font-size: 17px;
+              font-size: 25px;
               left: -22px;
+              top: -1px;
               content: '•';
               color: #46b749;
               display: inline-block;
