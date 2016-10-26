@@ -27,7 +27,6 @@ html lang="en"
             = section_nav_tag :select_piis
             = section_nav_tag :select_use_items
             = section_nav_tag :results
-          a.pseudo-nav-item class="#{ if @step then '' else 'pseudo-active' end }" href='#' User guide
       = yield
     - unless devise_controller?
       footer
