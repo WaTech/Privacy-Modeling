@@ -180,6 +180,10 @@ body {
             border-radius: 12px;
           }
 
+          &.pseudo-nav-item:after {
+              display: none;
+          }
+
           &.active {
             font-weight: 700;
             color: #3E9CDD;
