@@ -106,16 +106,16 @@ body {
             background-position: center;
             background-repeat: no-repeat;
             background-size: 15px 15px;
-            background-image: url('/laws-icon-copy-3.svg');
+            background-image: url('/icon_i.svg');
 
             .tooltip {
               display: none;
             }
             &:hover {
-              background-image: url('/laws-icon-copy-4.svg');
+              background-image: url('/icon_i_hover.svg');
             }
             &.active {
-              background-image: url('/laws-icon-copy-4.svg');
+              background-image: url('/icon_i_hover.svg');
 
               .tooltip {
                 background-color: #FFFFB5;
