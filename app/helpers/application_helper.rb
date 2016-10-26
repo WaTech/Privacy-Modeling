@@ -2,10 +2,12 @@ module ApplicationHelper
   def section_nav_tag nav_step
     content_tag_class = nav_step == @step || past_step?(nav_step) || nav_step == :select_categories ? 'active' : nil rescue 'active'
     condition = past_step?(nav_step) rescue false
+    link_id = "#{ nav_step.to_s }_nav_step"
+
     if condition
-      link_to I18n.t(nav_step), wizard_path(nav_step, dashboard: step_params_for(nav_step)), class: [content_tag_class, :section].join(' ')
+      link_to I18n.t(nav_step), wizard_path(nav_step, dashboard: step_params_for(nav_step)), class: [content_tag_class, :section].join(' '), id: link_id
     elsif current_page?(dashboard_path) && nav_step != :results
-      link_to I18n.t(nav_step), generate_dashboard_path(nav_step, dashboard: step_params_for(nav_step)), class: [content_tag_class, :section].join(' ')
+      link_to I18n.t(nav_step), generate_dashboard_path(nav_step, dashboard: step_params_for(nav_step)), class: [content_tag_class, :section].join(' '), id: link_id
     else
       content_tag :section, I18n.t(nav_step), class: content_tag_class
     end

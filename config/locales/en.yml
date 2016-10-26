@@ -35,6 +35,9 @@ en:
         state: state
         ordinance: ordinance-only
   users:
+    roles:
+      admin: Admin
+      super_admin: Creator
     registration_mailer:
       send_credentials:
         subject: Welcome

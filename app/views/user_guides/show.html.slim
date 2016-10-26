@@ -95,6 +95,6 @@
       li <sup>6</sup>  There are also 8 exemptions to the Act: RCW 42.56.230-.480.
 
   .actions.user_guide_actions
-    = link_to 'Back', :back, class: 'back-button'
+    = link_to 'Back', dashboard_path(dashboard: @dashboard_params.to_h), class: 'back-button'
     = link_to 'Start over', generate_dashboard_path(:select_categories), class: 'submit-button'
 
