@@ -3,13 +3,6 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on 'turbolinks:load', ->
-  setTimeout (->
-    $('.list').masonry
-      'itemSelector': '.block'
-      'columnWidth': 218
-      'gutter': 20
-  ), 100
-
   # Check if block is last in column. If it's last then add mirror class
   $('body').on 'mouseover', '.block', ->
     containerWidth = $('.allowed, .limitations, .forbidden').first().width()
