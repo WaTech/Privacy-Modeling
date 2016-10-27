@@ -291,6 +291,7 @@ body {
         }
 
         > label {
+          vertical-align: top;
           display: inline-block;
           margin: 10px;
           width: 218px;
@@ -298,6 +299,7 @@ body {
           @media only screen and (max-width: 600px) {
             width: auto;
             display: block;
+            height: 140px;
           }
 
           height: 130px;
