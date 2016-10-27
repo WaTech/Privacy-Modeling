@@ -17,7 +17,7 @@ html lang="en"
         = link_to root_path do
           = image_tag 'new_logo.png', alt: 'logo'
 
-        h1 Privacy Modeling Tool
+        h1.main-title Privacy Modeling Tool
         = yield :header_text
     main
       - unless devise_controller? || current_page?(root_path) || current_page?(user_guide_path)
