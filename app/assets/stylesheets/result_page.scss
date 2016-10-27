@@ -83,7 +83,7 @@ body {
             background-color: #37475F;
             line-height: 50px;
             color: white;
-            font-family: "Source Sans Pro", sans-serif;
+            font-family: 'Source Sans Pro', sans-serif;
             font-size: 21px;
             font-weight: 600;
             letter-spacing: 0.66px;
@@ -155,7 +155,7 @@ body {
 
                 h3 {
                   color: #333;
-                  font-family: "Source Sans Pro", sans-serif;
+                  font-family: 'Source Sans Pro', sans-serif;
                   font-size: 17px;
                   font-weight: 600;
                   letter-spacing: 0.53px;
@@ -167,7 +167,7 @@ body {
 
                 > h4 {
                   color: #333;
-                  font-family: "Source Sans Pro", sans-serif;
+                  font-family: 'Source Sans Pro', sans-serif;
                   font-size: 12px;
                   font-weight: 600;
                   letter-spacing: 0.38px;
@@ -178,40 +178,64 @@ body {
                   text-align: left;
                 }
                 > .links {
+                  display: -webkit-box;
+                  display: -ms-flexbox;
                   display: flex;
-                  justify-content: space-between;
+                  -webkit-box-pack: justify;
+                  -ms-flex-pack: justify;
+                          justify-content: space-between;
+                  -webkit-box-align: center;
+                  -ms-flex-align: center;
+                          align-items: center;
 
-                  span {
+                  a > span {
                     margin-left: 20px;
                   }
 
 
-                  > a {
-                    &:first-child {
+                  a.google-it {
+                    margin-left: 14px;
+                  }
+
+                  .search.icon {
+                    margin-top: 4px;
+                    border-color: #3e9cdd;
+                    color: #3e9cdd
+                  }
+
+                  .applicable-law-info {
+                    padding: auto;
+                    > a {
                       max-width: 150px;
                       -ms-word-break: break-all;
-                           word-break: break-all;
-
-                           /* Non standard for webkit */
-                           word-break: break-word;
+                        word-break: break-all;
+                        word-break: break-word;
 
                       -webkit-hyphens: auto;
-                         -moz-hyphens: auto;
-                              hyphens: auto;
+                        -moz-hyphens: auto;
+                          hyphens: auto;
                       white-space: normal;
                     }
-                    &.google-it {
-                      margin-left: 14px;
+
+                    > .description {
+                      color: #333;
+                      font-family: 'Source Sans Pro', sans-serif;
+                      font-size: 12px;
+                      font-weight: 400;
+                      letter-spacing: 0.53px;
+                      line-height: 18px;
+
+                      text-align: left;
+                      padding-bottom: 5px;
                     }
-                    .search.icon {
-                      margin-top: 4px;
-                      border-color: #3e9cdd;
-                      color: #3e9cdd
-                    }
+
+                  }
+
+                  > a, .applicable-law-info > a {
                     text-align: left;
                     display: block;
                     color: #3e9cdd;
-                    font-family: "Source Sans Pro", sans-serif;
+                    font-family: 'Source Sans Pro', sans-serif;
                     font-size: 14px;
                     font-weight: 400;
                     letter-spacing: 0.01px;
@@ -248,7 +272,7 @@ body {
                 background-image: url('/restriction-iocn-copy.svg');
               }
 
-              font-family: "Source Sans Pro", sans-serif;
+              font-family: 'Source Sans Pro', sans-serif;
               font-size: 14px;
               font-weight: 400;
               letter-spacing: 0.01px;
@@ -325,7 +349,7 @@ body {
                   margin: 0;
                   padding: 0;
                   color: #333;
-                  font-family: "Source Sans Pro", sans-serif;
+                  font-family: 'Source Sans Pro', sans-serif;
                   font-size: 17px;
                   font-weight: 600;
                   letter-spacing: 0.53px;
@@ -335,7 +359,7 @@ body {
                   margin: 4px 0 0 0;
                   padding: 0;
                   color: #333;
-                  font-family: "Source Sans Pro", sans-serif;
+                  font-family: 'Source Sans Pro', sans-serif;
                   font-size: 12px;
                   font-weight: 400;
                   letter-spacing: 0.38px;
@@ -400,7 +424,7 @@ body {
                   margin: 0;
                   padding: 0;
                   color: #333;
-                  font-family: "Source Sans Pro", sans-serif;
+                  font-family: 'Source Sans Pro', sans-serif;
                   font-size: 17px;
                   font-weight: 600;
                   letter-spacing: 0.53px;
@@ -410,7 +434,7 @@ body {
                   margin: 4px 0 0 0;
                   padding: 0;
                   color: #333;
-                  font-family: "Source Sans Pro", sans-serif;
+                  font-family: 'Source Sans Pro', sans-serif;
                   font-size: 12px;
                   font-weight: 400;
                   letter-spacing: 0.38px;
