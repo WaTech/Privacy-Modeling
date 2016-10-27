@@ -21,16 +21,17 @@ html lang="en"
         = yield :header_text
     main
       - unless devise_controller? || current_page?(root_path) || current_page?(user_guide_path)
-        .nav-wrapper.main-nav
-          nav
-            = section_nav_tag :select_categories
-            = section_nav_tag :select_piis
-            = section_nav_tag :select_use_items
-            = section_nav_tag :results
-            - if @step
-              section class='user-guide-link pseudo-nav-item section' User guide
-            - else
-              = link_to 'User guide', user_guide_path(dashboard: @dashboard_params.to_h), class: [:active, :'user-guide-link', :'pseudo-nav-item', :section]
+        .nav-container
+          .nav-wrapper.main-nav
+            nav
+              = section_nav_tag :select_categories
+              = section_nav_tag :select_piis
+              = section_nav_tag :select_use_items
+              = section_nav_tag :results
+              - if @step
+                section class='user-guide-link pseudo-nav-item section' User guide
+              - else
+                = link_to 'User guide', user_guide_path(dashboard: @dashboard_params.to_h), class: [:active, :'user-guide-link', :'pseudo-nav-item', :section]
       = yield
     - unless devise_controller?
       footer

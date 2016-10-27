@@ -109,6 +109,11 @@ body {
   }
 
   > main {
+    .nav-container {
+      @media screen and (min-width: 601px){
+        margin: 0 15px;
+      }
+    }
     .nav-wrapper {
       max-width: 934px;
       margin: 1px auto;
@@ -295,7 +300,7 @@ body {
             display: block;
           }
 
-          height: 116px;
+          height: 130px;
           overflow: hidden;
           > input {
             display: none;
