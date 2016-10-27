@@ -43,7 +43,7 @@
   }
 
   tr td:last-child {
-    vertical-align:middle;
+    vertical-align: middle;
   }
 
   thead {
@@ -103,7 +103,6 @@
     margin-top: 32px;
   }
 
-
   .rule {
     border: 1px black solid;
     margin: 5px;
@@ -128,7 +127,6 @@
     background-size: 32.5px 32.5px;
   }
 
-
   .context-item-limitation-icon_x {
     background: url('/limitation_context_icon.svg');
     background-size: 20px 22.38px;
@@ -146,8 +144,6 @@
     background-size: 20px 22.38px;
   }
 
-
-
   .ca-2x {
     width: 32.5px;
     height: 32.5px;
@@ -160,5 +156,15 @@
 
   .skip-padding-right {
     padding-right: 0;
+  }
+
+  @media screen and (min-width: 1170px) {
+    .pull-xs-right {
+      padding-right: 10px;
+    }
+    .skip-padding-right {
+      margin-top: 6px;
+      padding-right: 15px;
+    }
   }
 }

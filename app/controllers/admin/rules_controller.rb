@@ -27,7 +27,7 @@ class Admin::RulesController < Admin::BaseController
   def import
     file = import_params[:file]
     Rule.import file
-    redirect_to root_path
+    redirect_to admin_path
   end
 
   def update

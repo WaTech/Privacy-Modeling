@@ -31,10 +31,13 @@
 
                           - context_items.each do |context_item|
                             .links
-                              = link_to context_item.description, context_item.source, target: :_blank
+                              .applicable-law-info
+                                = link_to context_item.description, context_item.source, target: :_blank
+                                - if context_item.applicable_law_description.present?
+                                  .description = context_item.applicable_law_description
                               = link_to(google_search_path(context_item.description), target: :_blank, class: 'google-it') do
                                 .search.icon
                                 span search
     .actions.margin-bottom-120
-      = link_to 'Start over',  generate_dashboard_path(:select_categories), class: 'action-button start-over-button'
       = link_to 'User Guide', user_guide_path(dashboard: @dashboard_params.to_h), class: 'action-button user-guide-button'
+      = link_to 'Start over',  generate_dashboard_path(:select_categories), class: 'action-button start-over-button'

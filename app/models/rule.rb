@@ -48,9 +48,9 @@ class Rule < ApplicationRecord
 
   def self.import(file)
     csv_text = File.read(file.path)
-    csv = CSV.parse(csv_text.encode("UTF-8", "Windows-1252"), headers: true)
+    csv = CSV.parse(csv_text.encode('UTF-8', 'Windows-1252'), headers: true)
 
-    csv.each do |row|
+    csv.each_with_index do |row, index|
       category = Category.find_or_create_by! name: row['category_name']
       personal_information_item = PersonalInformationItem.find_or_create_by! name: row['personal_information_item_name']
       use_item = UseItem.find_or_create_by! name: row['uses_name']
@@ -62,13 +62,20 @@ class Rule < ApplicationRecord
       rule.update restriction: restriction
 
       if row['context_item_description'].present?
-        context_item = ContextItem.find_or_create_by({
+        description = row['context_item_description'].strip.to_s.gsub('Â', '')
+        context_item = ContextItem.find_or_initialize_by({
           rule: rule,
           category: row['context_item_category'],
-          description: row['context_item_description'],
+          description: description })
+
+        applicable_law_kind = row['applicable_law_flag'].to_s.downcase.presence_in ContextItem.applicable_law_kinds.keys
+
+        context_item.assign_attributes({
           source: row['context_item_source'],
-          applicable_law_kind: row['applicable_law_flag'],
+          applicable_law_kind: applicable_law_kind,
           applicable_law_description: row['applicable_law_description'] })
+
+        context_item.save!
       end
     end
   end

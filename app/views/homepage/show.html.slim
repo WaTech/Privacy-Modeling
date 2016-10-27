@@ -13,5 +13,6 @@
 
 
     .actions
+      = link_to 'Legal Disclaimer', 'user_guide#legal_disclaimer', class: 'action-button legal-disclaimer'
       = link_to 'User Guide', user_guide_path, class: 'action-button user-guide-button'
       = link_to 'Continue', generate_dashboard_path(:select_categories), class: 'action-button start-over-button'
