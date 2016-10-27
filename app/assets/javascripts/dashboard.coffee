@@ -27,5 +27,5 @@ $(document).on 'turbolinks:load', ->
     if $(this).attr('class').indexOf('active') > -1
       $(this).removeClass('active')
     else
-      $('.active').removeClass('active')
+      $('.info.active').removeClass('active')
       $(this).addClass('active')
