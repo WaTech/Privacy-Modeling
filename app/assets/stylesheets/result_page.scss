@@ -217,6 +217,7 @@ body {
 
                   .applicable-law-info {
                     padding: auto;
+                    max-width: 170px;
                     > a {
                       max-width: 150px;
                       -ms-word-break: break-all;
@@ -333,7 +334,7 @@ body {
             > .block {
               float: left;
               width: 218px;
-              min-height: 115px;
+              min-height: 105px;
 
               margin-bottom: 20px;
               padding: 30px 10px 10px;
