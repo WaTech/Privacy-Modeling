@@ -21,7 +21,7 @@ html lang="en"
         = yield :header_text
     main
       - unless devise_controller? || current_page?(root_path) || current_page?(user_guide_path)
-        .nav-wrapper
+        .nav-wrapper.main-nav
           nav
             = section_nav_tag :select_categories
             = section_nav_tag :select_piis
