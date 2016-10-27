@@ -76,6 +76,17 @@ body {
       }
 
       .container-result {
+
+        @media screen and (min-width: 715px) and (max-width: 951px){
+          max-width: 715px;
+          margin: 0 auto;
+        }
+
+        @media screen and (min-width: 601px) and (max-width: 714px){
+          max-width: 476px;
+          margin: 0 auto;
+        }
+
         .allowed, .limitations, .forbidden {
           background-color: #c8cbd6;
           .header {
@@ -184,9 +195,10 @@ body {
                   -webkit-box-pack: justify;
                   -ms-flex-pack: justify;
                           justify-content: space-between;
-                  -webkit-box-align: center;
-                  -ms-flex-align: center;
-                          align-items: center;
+                  -webkit-box-align: start;
+                  -ms-flex-align: start;
+                  align-items: flex-start;
+
 
                   a > span {
                     margin-left: 20px;
@@ -281,8 +293,8 @@ body {
 
               background-position: left center;
               background-repeat: no-repeat;
-              background-size: 11px 11px;
-              background-image: url('/info-icon.svg');
+              background-size: 13px 13px;
+              background-image: url('/limitation-icon-copy.svg');
 
             }
           }

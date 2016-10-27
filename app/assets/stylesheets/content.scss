@@ -271,6 +271,16 @@ body {
       .container-categories {
         text-align: left;
 
+        @media screen and (min-width: 715px) and (max-width: 951px){
+          max-width: 715px;
+          margin: 0 auto;
+        }
+
+        @media screen and (min-width: 601px) and (max-width: 714px){
+          max-width: 476px;
+          margin: 0 auto;
+        }
+
         @media only screen and (max-width: 600px) {
           text-align: center !important;
         }
@@ -381,7 +391,7 @@ body {
           padding: 0;
 
           &:disabled {
-            background-color: #5a5f69;
+            background-color: #ABAFB7;;
             cursor: initial;
           }
 
