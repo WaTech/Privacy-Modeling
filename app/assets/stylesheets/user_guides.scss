@@ -203,7 +203,10 @@ body {
       margin-bottom: 100px;
       .submit-button {
         text-decoration: none;
-        padding: 9px 42.5px 9px 42.5px  !important;
+
+        @media screen and (min-width: 601px){
+          padding: 9px 42.5px 9px 42.5px  !important;
+        }
       }
     }
   }
