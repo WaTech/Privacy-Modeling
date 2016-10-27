@@ -109,6 +109,11 @@ body {
   }
 
   > main {
+    .nav-container {
+      @media screen and (min-width: 601px){
+        margin: 0 15px;
+      }
+    }
     .nav-wrapper {
       max-width: 934px;
       margin: 1px auto;
@@ -286,6 +291,7 @@ body {
         }
 
         > label {
+          vertical-align: top;
           display: inline-block;
           margin: 10px;
           width: 218px;
@@ -293,9 +299,10 @@ body {
           @media only screen and (max-width: 600px) {
             width: auto;
             display: block;
+            height: 140px;
           }
 
-          height: 116px;
+          height: 130px;
           overflow: hidden;
           > input {
             display: none;
