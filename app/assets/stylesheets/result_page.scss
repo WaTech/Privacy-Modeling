@@ -106,16 +106,16 @@ body {
             background-position: center;
             background-repeat: no-repeat;
             background-size: 15px 15px;
-            background-image: url('/icon_i.svg');
+            background-image: url('/info-icon.svg');
 
             .tooltip {
               display: none;
             }
             &:hover {
-              background-image: url('/icon_i_hover.svg');
+              background-image: url('/info-icon.svg');
             }
             &.active {
-              background-image: url('/icon_i_hover.svg');
+              background-image: url('/info-icon.svg');
 
               .tooltip {
                 background-color: #FFFFB5;
