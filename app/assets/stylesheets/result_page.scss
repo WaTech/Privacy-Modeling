@@ -416,7 +416,7 @@ body {
 
               float: left;
               width: 218px;
-              min-height: 115px;
+              min-height: 116px;
 
               margin-bottom: 20px;
               padding: 30px 10px 10px;
@@ -437,6 +437,12 @@ body {
 
               background-color: white;
               box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+
+              @media screen and (max-width: 600px){
+                padding: 35px 10px 10px;
+                width: 100%;
+                max-width: 476px;
+              }
 
               > .wrapper {
                 > h3 {
