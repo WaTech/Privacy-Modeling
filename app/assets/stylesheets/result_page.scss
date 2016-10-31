@@ -317,7 +317,7 @@ body {
                 top: 0 !important;
                 left: 0 !important;
 
-                height: 140px;
+                min-height: 140px !important;
               }
             }
           }
@@ -366,6 +366,8 @@ body {
                 padding: 35px 10px 10px;
                 width: 100%;
                 max-width: 476px;
+                margin: 10px auto 10px;
+
               }
 
               > .wrapper {
@@ -448,6 +450,8 @@ body {
                 padding: 35px 10px 10px;
                 width: 100%;
                 max-width: 476px;
+                margin: 10px auto 10px;
+
               }
 
               > .wrapper {
