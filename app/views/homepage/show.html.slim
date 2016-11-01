@@ -1,17 +1,20 @@
 .content.margin-bottom-140
   .container-description
     p
-      | This <bold>Privacy Modeling Tool</bold> offers general guidance, in accordance with state and federal privacy laws, regarding use of “PII” (Personally Identifiable Information) that is collected, stored and processed by the State of Washington or a city or county government. The tool searches through a database of national and Washington State laws to identify which laws might apply to your situation and the way you seek to use PII to deliver a product or service. (It also features a “federal law only” mode.)
-    p This first-of-a-kind tool is not comprehensive and is meant only for general research. For specific legal questions, please consult with an expert familiar with privacy law.
-    p This web application also offers a “User Guide to Privacy” for those wishing to design a product or service. After you use the PM Tool, please consult the Guide!
+      | This <bold>Privacy Modeling Tool</bold> is designed to help you identify privacy laws based on personal information you wish to use. It offers general guidance on Washington State and Federal law. The tool searches through a database to find the laws which apply to your situation.
+
+    p
+      | The tool includes a
+      = link_to '“User Guide to Privacy”', 'user_guide'
+      | with recommendations on how to create a product or service that uses personally identifiable information. For specific legal questions, please consult an expert familiar with privacy law.
+
     p
       | We welcome feedback about this project. Please visit
       = link_to 'privacy.wa.gov', 'https://privacy.wa.gov', target: '_blank'
       | to contact us!
-    p Sincerely,
-    p Alex Alben, Chief Privacy Officer
-    p Washington State
-    p
-      | To get started, please go to the
-      = link_to 'Next Page', generate_dashboard_path(:select_categories), class: 'next-page'
 
+
+    .actions
+      = link_to 'Legal Disclaimer', 'user_guide#legal_disclaimer', class: 'action-button legal-disclaimer'
+      = link_to 'User Guide', user_guide_path, class: 'action-button user-guide-button'
+      = link_to 'Continue', generate_dashboard_path(:select_categories), class: 'action-button start-over-button'

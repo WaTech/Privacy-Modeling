@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title Watech
+    = csrf_meta_tags
+    = stylesheet_link_tag 'admin/base', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = favicon_link_tag 'new_favicon.png'
+    meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"
+
+  body
+    .container-fluid.admin_content
+      .row#alerts
+        = render 'admin/shared/alerts'
+      .row#content
+        .col-sm-12
+          .main.admin_content
+            .row
+              .col-sm-4.offset-sm-4.col-xs-12.text-center
+                = image_tag 'new_logo.png', alt: 'logo', class: 'login-logo'
+            = yield
