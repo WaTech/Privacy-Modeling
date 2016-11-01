@@ -178,6 +178,10 @@ body {
         color: #424141;
         list-style: none;
 
+        & > li {
+          margin-bottom: 20px;
+        }
+
 
         .list-footnote {
           list-style: decimal;
