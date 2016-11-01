@@ -169,6 +169,7 @@ body {
       .all-footnote {
         position: relative;
         padding-top: 20px;
+        padding-left: 30px;
         margin-top: 30px;
 
         text-align: left;
@@ -177,22 +178,6 @@ body {
         color: #424141;
         list-style: none;
 
-        sup {
-          font-size: 8px;
-        }
-
-        &:before {
-          position: absolute;
-          display: block;
-
-          content: '';
-          width: 40%;
-          height: 1px;
-
-          background: #424141;
-          left: 0;
-          top: 0;
-        }
 
         .list-footnote {
           list-style: decimal;
