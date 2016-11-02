@@ -35,7 +35,7 @@ html lang="en"
       = yield
     - unless devise_controller?
       footer
-        = link_to 'http://privacy.wa.gov/'
+        = link_to 'http://privacy.wa.gov/', target: "_blank"
           = image_tag 'privacy_modeling_logo.png'
         .powered
           | Powered by:
