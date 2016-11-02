@@ -1,5 +1,5 @@
 .home-content {
-  padding: 35px 15px 140px;
+  padding: 35px 15px 80px;
   background: #fff;
 
   @media screen and (max-width: 600px) {
@@ -8,7 +8,7 @@
 
   .home-container {
     max-width: 1170px;
-    margin: 0 auto 60px;
+    margin: 0 auto 35px;
     padding: 0;
     list-style: none;
 
@@ -43,14 +43,14 @@
           display: inline-block;
           width: 200px;
           height: 50px;
-          border: 3px solid #6d7280;
+          border: 2px solid #6d7280;
           text-align: center;
 
           color: #6d7280;
           text-decoration: none;
           font-size: 20px;
-          font-weight: 700;
-          line-height: 2.2;
+          font-weight: 600;
+          line-height: 2.3;
           letter-spacing: 0.63px;
           text-transform: uppercase;
         }
@@ -63,7 +63,14 @@
 
       &:first-child {
         .actions a {
+          border: 2px solid #989CA5;
+          color: #8F939B;
           width: 230px;
+
+          &:hover {
+            background: #989CA5;
+            color: #fff;
+          }
         }
       }
 
@@ -76,7 +83,7 @@
         }
 
         .actions a {
-          border: 3px solid #fff;
+          border: 2px solid #fff;
           color: white;
 
           &:hover {
