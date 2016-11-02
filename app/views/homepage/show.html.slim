@@ -1,20 +1,33 @@
-.content.margin-bottom-140
-  .container-description
-    p
-      | This <bold>Privacy Modeling Tool</bold> is designed to help you identify privacy laws based on personal information you wish to use. It offers general guidance on Washington State and Federal law. The tool searches through a database to find the laws which apply to your situation.
+.home-content
+  ul.home-container
+    li
+      p
+        | This <bold>Privacy Modeling Tool</bold> is designed to help you identify privacy laws based on personal information you wish to use. It offers general guidance on Washington State and Federal law. The tool searches through a database to find the laws which apply to your situation.
+      .actions
+        = link_to 'Legal Disclaimer', 'user_guide#legal_disclaimer', class: 'action-button legal-disclaimer'
 
-    p
-      | The tool includes a
-      = link_to '“User Guide to Privacy”', 'user_guide'
-      | with recommendations on how to create a product or service that uses personally identifiable information. For specific legal questions, please consult an expert familiar with privacy law.
+    li
+      p
+        | The tool includes a
+        = link_to '“User Guide to Privacy”', 'user_guide'
+        |  with recommendations on how to create a product or service that uses personally identifiable information. For specific legal questions, please consult an expert familiar with privacy law.
 
-    p
-      | We welcome feedback about this project. Please visit
-      = link_to 'privacy.wa.gov', 'https://privacy.wa.gov', target: '_blank'
-      | to contact us!
+      .actions
+        = link_to 'User Guide', user_guide_path, class: 'action-button user-guide-button'
+
+    li
+      p
+        | We welcome feedback about this project.
+
+      p
+        |Please visit
+        = link_to ' privacy.wa.gov', 'https://privacy.wa.gov', target: '_blank'
+        |  to contact us!
+
+      .actions
+        = link_to 'Get Started!', generate_dashboard_path(:select_categories), class: 'action-button start-over-button'
 
 
-    .actions
-      = link_to 'Legal Disclaimer', 'user_guide#legal_disclaimer', class: 'action-button legal-disclaimer'
-      = link_to 'User Guide', user_guide_path, class: 'action-button user-guide-button'
-      = link_to 'Continue', generate_dashboard_path(:select_categories), class: 'action-button start-over-button'
+
+
+
