@@ -4,7 +4,7 @@
       p
         | This <bold>Privacy Modeling Tool</bold> is designed to help you identify privacy laws based on personal information you wish to use. It offers general guidance on Washington State and Federal law. The tool searches through a database to find the laws which apply to your situation.
       .actions
-        = link_to 'Legal Disclaimer', 'user_guide#legal_disclaimer', class: 'action-button legal-disclaimer'
+        = link_to 'Legal Disclaimer', 'user_guide#legal_disclaimer', class: 'action-button legal-disclaimer', onclick: "setTimeout('location=\"'+href+'\"',300);return false;"
 
     li
       p
