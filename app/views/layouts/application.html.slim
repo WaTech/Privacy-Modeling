@@ -35,7 +35,8 @@ html lang="en"
       = yield
     - unless devise_controller?
       footer
-        = image_tag 'privacy_modeling_logo.png'
+        = link_to 'http://privacy.wa.gov/'
+          = image_tag 'privacy_modeling_logo.png'
         .powered
           | Powered by:
           = link_to 'http://n3wnormal.com/'
