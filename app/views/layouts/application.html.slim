@@ -35,9 +35,9 @@ html lang="en"
       = yield
     - unless devise_controller?
       footer
-        = link_to 'http://privacy.wa.gov/', target: "_blank"
+        = link_to 'http://privacy.wa.gov/', target: '_blank'
           = image_tag 'privacy_modeling_logo.png'
         .powered
           | Powered by:
-          = link_to 'http://n3wnormal.com/'
+          = link_to 'http://n3wnormal.com/', target: '_blank'
             = image_tag 'logo-n3wnormal.png'
