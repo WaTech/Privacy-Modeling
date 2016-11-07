@@ -15,7 +15,7 @@ html lang="en"
         - category_params = step_params_for(:select_categories)
         - path = category_params.present? ? generate_dashboard_path(:select_categories, dashboard: category_params) : root_path
         = link_to root_path do
-          = image_tag 'new_logo.png', alt: 'logo'
+          = image_tag 'privacy_modeling_logo.png', alt: 'logo'
 
 
         h1.main-title Privacy Modeling Tool
@@ -37,7 +37,7 @@ html lang="en"
     - unless devise_controller?
       footer
         = link_to 'http://privacy.wa.gov/', target: '_blank'
-          = image_tag 'privacy_modeling_logo.png'
+          = image_tag 'new_logo.png'
         .powered
           | Powered by:
           = link_to  'http://n3wnormal.com/', target: '_blank'
