@@ -14,11 +14,11 @@ html lang="en"
       header
         - category_params = step_params_for(:select_categories)
         - path = category_params.present? ? generate_dashboard_path(:select_categories, dashboard: category_params) : root_path
-        = link_to 'http://privacy.wa.gov/', target: '_blank'
+        = link_to root_path do
           = image_tag 'new_logo.png', alt: 'logo'
 
-        =link_to root_path do
-          h1.main-title Privacy Modeling Tool
+
+        h1.main-title Privacy Modeling Tool
         = yield :header_text
     main
       - unless devise_controller? || current_page?(root_path) || current_page?(user_guide_path)
@@ -36,7 +36,7 @@ html lang="en"
       = yield
     - unless devise_controller?
       footer
-        = link_to root_path do
+        = link_to 'http://privacy.wa.gov/', target: '_blank'
           = image_tag 'privacy_modeling_logo.png'
         .powered
           | Powered by:
