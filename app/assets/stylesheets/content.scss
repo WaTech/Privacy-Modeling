@@ -192,8 +192,8 @@ body {
 
           letter-spacing: 0.44px;
           line-height: 18px;
-          //margin-top: 20px;
           position: relative;
+
           &:after {
             content: '';
             display: block;
@@ -433,7 +433,7 @@ body {
         .back-button {
           text-decoration: none;
           cursor: pointer;
-          margin: 20px 16px 50px 0;
+          margin: 20px 15px 50px 0;
           width: 160px;
           height: 40px;
           line-height: 40px;
@@ -481,6 +481,12 @@ body {
           margin-left: 0;
         }
       }
+
+      .result-button {
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+      }
     }
 
   }
@@ -492,4 +498,8 @@ body {
 
 .margin-bottom-140 {
   margin-bottom: 140px !important;
+}
+
+#select_categories .submit-button {
+  margin-left: 0;
 }
