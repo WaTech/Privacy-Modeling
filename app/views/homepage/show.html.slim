@@ -16,16 +16,8 @@
         = link_to 'User Guide', user_guide_path, class: 'action-button user-guide-button'
 
     li
-      p
-        | We welcome feedback about this project.
 
-      p
-        |Please visit
-        = link_to 'privacy.wa.gov', 'https://privacy.wa.gov', target: '_blank'
-        |  to contact us!
-
-      .actions
-        = link_to 'Get Started!', generate_dashboard_path(:select_categories), class: 'action-button start-over-button'
+      = link_to 'Get Started!', generate_dashboard_path(:select_categories), class: 'action-button start-over-button'
 
 
 
