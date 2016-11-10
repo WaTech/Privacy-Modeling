@@ -525,10 +525,14 @@ body {
 
           &.user-guide-button {
             background-color: #6D727F;
+           @media screen and (min-width: 601px){
+             margin-right: 25px;
+           }
           }
 
           &.start-over-button {
             background-color: #46B749;
+            margin-right: 0;
           }
         }
 
