@@ -42,3 +42,5 @@
       = link_to 'User Guide', user_guide_path(dashboard: @dashboard_params.to_h), class: 'action-button user-guide-button'
       = link_to 'Start over',  generate_dashboard_path(:select_categories), class: 'action-button start-over-button'
       = link_to 'Contact Us', 'http://privacy.wa.gov/contact-us', class: 'contact-us', target: '_blank'
+      .feedback-block
+        = link_to 'Leave Feedback', 'https://privacy.wa.gov/privacy-modeling-feedback-0', class: 'feedback-button', target: '_blank'
