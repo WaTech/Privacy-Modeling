@@ -93,6 +93,12 @@ body {
 
         .allowed, .limitations, .forbidden {
           background-color: #c8cbd6;
+
+          @media screen and (max-width: 600px){
+            .list {
+              height: auto !important;
+            }
+          }
           .header {
             height: 50px;
             background-color: #37475F;
