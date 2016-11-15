@@ -422,7 +422,7 @@ body {
             }
 
             > .block {
-              position: relative;
+              position: relative !important;
 
               float: left;
               width: 218px;
