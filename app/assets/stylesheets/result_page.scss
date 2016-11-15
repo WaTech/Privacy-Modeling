@@ -9,7 +9,7 @@ body {
     border: solid 1px currentColor;
     border-radius: 100%;
     -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
+    transform: rotate(-45deg);
   }
 
   .search.icon:before {
@@ -77,14 +77,18 @@ body {
 
       .container-result {
 
-        @media screen and (min-width: 715px) and (max-width: 951px){
-          max-width: 715px;
-          margin: 0 auto;
+        @media screen and (min-width: 715px) and (max-width: 951px) {
+          .allowed, .limitations, .forbidden {
+            max-width: 715px;
+            margin: 0 auto;
+          }
         }
 
-        @media screen and (min-width: 601px) and (max-width: 714px){
-          max-width: 476px;
-          margin: 0 auto;
+        @media screen and (min-width: 601px) and (max-width: 714px) {
+          .allowed, .limitations, .forbidden {
+            max-width: 476px;
+            margin: 0 auto;
+          }
         }
 
         .allowed, .limitations, .forbidden {
@@ -194,16 +198,14 @@ body {
                   display: flex;
                   -webkit-box-pack: justify;
                   -ms-flex-pack: justify;
-                          justify-content: space-between;
+                  justify-content: space-between;
                   -webkit-box-align: start;
                   -ms-flex-align: start;
                   align-items: flex-start;
 
-
                   a > span {
                     margin-left: 20px;
                   }
-
 
                   a.google-it {
                     margin-left: 14px;
@@ -221,12 +223,12 @@ body {
                     > a {
                       max-width: 150px;
                       -ms-word-break: break-all;
-                        word-break: break-all;
-                        word-break: break-word;
+                      word-break: break-all;
+                      word-break: break-word;
 
                       -webkit-hyphens: auto;
-                        -moz-hyphens: auto;
-                          hyphens: auto;
+                      -moz-hyphens: auto;
+                      hyphens: auto;
                       white-space: normal;
                     }
 
@@ -362,7 +364,7 @@ body {
               background-color: white;
               box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
 
-              @media screen and (max-width: 600px){
+              @media screen and (max-width: 600px) {
                 padding: 35px 10px 10px;
                 width: 100%;
                 max-width: 476px;
@@ -446,7 +448,7 @@ body {
               background-color: white;
               box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
 
-              @media screen and (max-width: 600px){
+              @media screen and (max-width: 600px) {
                 padding: 35px 10px 10px;
                 width: 100%;
                 max-width: 476px;
@@ -491,13 +493,13 @@ body {
           -webkit-box-orient: vertical;
           -webkit-box-direction: reverse;
           -ms-flex-direction: column-reverse;
-                  flex-direction: column-reverse;
+          flex-direction: column-reverse;
           -webkit-box-align: center;
           -ms-flex-align: center;
-                  align-items: center;
+          align-items: center;
           -webkit-box-pack: center;
           -ms-flex-pack: center;
-                  justify-content: center;
+          justify-content: center;
         }
 
         .action-button {
@@ -525,17 +527,48 @@ body {
 
           &.user-guide-button {
             background-color: #6D727F;
-           @media screen and (min-width: 601px){
-             margin-right: 25px;
-           }
+            @media screen and (min-width: 601px) {
+              margin-right: 25px;
+              margin-bottom: 10px;
+            }
           }
 
           &.start-over-button {
             background-color: #46B749;
             margin-right: 0;
+
+            @media screen and (min-width: 601px) {
+              margin-bottom: 10px;
+            }
           }
         }
 
+        .feedback-block {
+          margin-top: 15px;
+
+          @media screen and (max-width: 600px){
+            margin-top: 20px;
+          }
+
+          .feedback-button {
+            display: inline-block;
+            width: 160px;
+            height: 40px;
+
+            text-align: center;
+            background-color: #6D727F;
+            color: white;
+            font: 500 17px/40px 'Source Sans Pro', sans-serif;
+
+            letter-spacing: 0.53px;
+            outline: none;
+            box-shadow: none;
+            border: none;
+
+            text-decoration: none;
+            cursor: pointer;
+          }
+        }
 
       }
     }
