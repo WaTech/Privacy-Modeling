@@ -3,10 +3,21 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on 'turbolinks:load', ->
-  $('.list').masonry
-    'itemSelector': '.block'
-    'columnWidth': 218
-    'gutter': 20
+
+  if window.innerWidth > '600'
+    $('.list').masonry
+      'itemSelector': '.block'
+      'columnWidth': 218
+      'gutter': 20
+
+  else if window.innerWidth <= '600'
+    $('.list').masonry
+      'itemSelector': '.block'
+      'columnWidth': 218
+      'gutter': 20
+      .masonry 'reload'
+
+
 
   # Check if block is last in column. If it's last then add mirror class
   $('body').on 'mouseover', '.block', ->
