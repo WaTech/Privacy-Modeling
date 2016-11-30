@@ -13,18 +13,19 @@
 
     = image_tag 'user_guide_diagram.png'
 
-    p The PM App identifies uses of PII that are “Allowed,” have “Limitations” or are “Forbidden.”  These results should be applied across the entire data life cycle by assessing how your organization collects, stores, maintains, and shares or otherwise uses PII when fulfilling its goals.
+    p The PM App produces a “Results Matrix” to indicate:  (i) “No specific privacy law found,” (ii) the intended use has “Limitations” or (iii) the intended use is “Forbidden.”  Please keep in mind that Privacy Modeling’s database only covers privacy laws, not other laws that might apply to a specific scenario.
 
-    p We understand that the “Limitations” flag may be difficult to interpret and you might   need to consult an attorney or privacy expert to comply with applicable law.  Further, just because the PM App has identified a desired use as “Allowed,” does not mean that your organization obtained permission or consent to use an individual’s data in a specific way.  “Allowed” means that our database has not found a law that governs the query you made.  Further, the PM App applies to American citizens and is focused on the State of Washington.  It doesn’t apply to rights European citizens or citizens of other nations might retain.
+    p We understand that the “Limitations” flag may be difficult to interpret and you might   need to consult an attorney or privacy expert to comply with applicable law.  Further, just because the PM App has identified a desired use as “No specific privacy law found” does not mean that your organization obtained permission or consent to use an individual’s data in a specific way.  “No specific privacy law found” means that our database has not found a privacy statute that in its plain language governs the query you made.  Further, the PM App applies to American citizens and is focused on the State of Washington.  It doesn’t apply to rights which European citizens or citizens of other nations might retain.
 
-    p You may also want to review your organization’s privacy policy and ask how it is administered.  Your organization may have rules regarding the security level it applies to PII, how it assesses the sensitivity of PII, to which third parties (internally or externally) it distributes the PII, and how it secures PII while it is used, stored and eventually destroyed or archived.  Privacy experts refer to seven principles of Privacy By Design (“PbD”).<sup>i</sup>
+    p Privacy experts refer to seven principles of Privacy By Design (“PbD”), which you might wish to consult in building your product.<sup>i</sup>   You should consider applying the results across the entire data life cycle by assessing how your organization collects, stores, maintains, and shares or otherwise uses PII when fulfilling its objectives.
+
+    p It’s a good practice to review your organization’s privacy policy and ask how it is administered.  Your organization may have rules regarding the security level it applies to different types of citizen data and you may need to incorporate these rules into your product design.
 
     p Finally, think about implementing a “Data Minimization” approach to your product or service.  Is it really essential to collect each item of personal information to accomplish your goal?  Try to pare down the data collected and used to minimize the risk that any data is misused or accessed in an unauthorized manner.
 
-
     h1#data_collection II. Permission and Method of Data Collection:
 
-    p The PM App assumes that you collected your data in a legal manner.  Also, your group may have collected data for a specific purpose and is not authorized to use that data for another purpose.  If you don’t know, please ask how your organization obtained the data it plans to utilize in your  product or service.  Be wary of data supplied by third parties or contractors.  Specific laws govern data collection processes in order to protect privacy rights.<sup>ii</sup>
+    p The PM App assumes that you collected your data in a legal manner.  Also, your group may have collected data for a specific purpose and is not authorized to use that data for another purpose.  If you don’t know, please ask how your organization obtained the data it plans to utilize in your product or service.  Be wary of data supplied by third parties or contractors.  Specific laws govern data collection processes in order to protect privacy rights.<sup>ii</sup>
 
     h1#public_records III. The Public Records Act
 
@@ -41,21 +42,22 @@
 
     p A “Forbidden” or “Restricted” result indicates that your agency should conduct more review or consult an attorney to verify compliance with the applicable state or federal law.
 
-    p <em>Federal Mode:</em> The PM App displays both Federal and State of Washington results. If you are only concerned about Federal law, ignore the “RCW” links in the yellow pop- up boxes in the Results Matrix.
+    p <em>Federal Mode:</em> The PM App displays both Federal and State of Washington results. If you are only concerned about Federal law, ignore the “RCW” links in the yellow pop-up boxes in the Results Matrix.
 
     p.red <em>The Database was last updated on November 1, 2016.  It does not cover laws after this date!</em>
 
     h1#legal_disclaimer V. Legal Disclaimer
 
-    p Here’s the legal stuff: The Washington State Office of the Chief Information Officer, Consolidated Technology Services, Washington Technology Solutions and Office of Privacy and Data Protection (collectively, the “State of Washington”) have provided free access to the PM App.  Use of the PM App is not a substitute for legal advice, especially with respect  to complex privacy laws.
+    p Here’s the legal stuff: The Washington State Office of the Chief Information Officer, Consolidated Technology Services, Washington Technology Solutions and Office of Privacy and Data Protection and the State of Washington (collectively, “State of Washington”) have provided free access to the PM App.  Use of the PM App is not a substitute for legal advice, especially with respect  to complex privacy laws.
 
-    p The PM App contains only general information about legal matters and recommendations about statutory interpretation based on the scenarios selected by the user.  As laws change, the PM database may not be up to date.  None of the information provided in the Results Matrix, this Guide or elsewhere by the State of Washington constitutes legal advice.  You ultimately are responsible for the content of the products or services that you develop based on your use of the PM App.
+    p The PM App contains only general information about existing laws based on the scenarios selected by the user.  As laws change or are interpreted by courts, the PM database may not be up to date.  None of the information provided in the Results Matrix, this Guide or elsewhere by the State of Washington constitutes legal advice.  You ultimately are responsible for the content and consequences of the products or services that you develop based on your use of the PM App.
 
-    p We extend the PM App to you with the following limitations:
+    p The State of Washington extends the PM App to you with the following limitations:
     ul.pointer
-      li The legal information on this website is provided “as is” without any representations or warranties, express or implied. The State of Washington makes no representations or warranties in relation to references to legal information on its website, this Guide or in the PM App or its results.
+      li The legal information on this website is provided “as is” without any representations or warranties, express or implied. The State of Washington makes no representations or warranties of any kind in relation to references to information on this website, this User Guide or in the PM App or its results.
 
-      li You must not rely on the information you obtain through your use of the PM App   and User Guide as an alternative to legal advice from your attorney or other professional legal services provider. If you have any specific questions about any legal matter, you should consult your attorney or other professional legal services provider.
+      li This application may not apply to your particular facts or circumstances.  Further, Privacy Modeling may not reflect the most recent developments in privacy and related law and may not be applicable to your particular jurisdiction.  You must not rely on the information you obtain through your use of the PM App   and User Guide as an alternative to legal advice from your attorney or other professional legal services provider. Before taking any action based on use of this site, the Result Matrix or any other product of Privacy Modeling you should consult an attorney or other professional legal services provider.
+
     p
       i This Privacy Modeling tool was funded, in part, with a grant from the William and Flora Hewlett Foundation as part of their Cyber Initiative.
 
@@ -82,8 +84,7 @@
       li
         | <sup>ii</sup> Laws Restricting Data Collection:
         ol.list-footnote
-          li Washington State’s Constitutional Right to Privacy (WASH. CONST. art. I, § 7.): <br>
-             “No person shall be disturbed in his private affairs, or his home invaded, without authority of law.” Generally, if an individual has a reasonable expectation that its PII is private, it should remain private unless you obtain consent to collect it. Did your organization or a group collecting data on your behalf obtain proper consent from individuals to use their data in the manner you intend?
+          li Washington State’s Constitutional Right to Privacy (WASH. CONST. art. I, § 7.): “No person shall be disturbed in his private affairs, or his home invaded, without authority of law.” Generally, if an individual has a reasonable expectation that its PII is private, it should remain private unless you obtain consent to collect it. Did your organization or a group collecting data on your behalf obtain proper consent from individuals to use their data in the manner you intend?
 
           li Electronic Communications Privacy Act of 1986 (ECPA): This federal law restricts government agencies from accessing private communications transmitted electronically absent a compelling government interest approved by a court or tribunal.
 
