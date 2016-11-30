@@ -334,6 +334,15 @@ body {
         .allowed {
           .header {
             background-image: url('/no-restriction-group-icon.svg');
+            @media screen and (max-width: 500px){
+              font-size: 13px;
+              line-height: 1.5;
+              padding-top: 5px
+            }
+
+            @media screen and (max-width: 714px) {
+              font-size: 13px;
+            }
           }
           .list {
             padding: 10px;
