@@ -10,7 +10,10 @@
     - ['allowed', 'limitations', 'forbidden'].each do |restriction|
       - if @grouped_rules[restriction]
         section class="#{ restriction }"
-          .header = restriction.humanize
+          - if restriction == 'allowed'
+            .header = 'No specific privacy law found—consult User Guide for privacy design'
+          - else
+            .header = restriction.humanize
           .list
             - @grouped_rules[restriction].each do |rule|
               .block
