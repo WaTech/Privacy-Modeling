@@ -6,16 +6,7 @@ class DashboardsController < ApplicationController
       use_item_id: dashboard_params[:use_item_ids]
     }
 
-    @grouped_rules = if params[:law_type].present?
-                  Rule.where(condition).group_by(&:restriction)
-                else
-                  Rule.where(condition).group_by(&:restriction).filter_of_law(dashboard_params[:law_type])
-                end
-
-    respond_to do |format|
-      format.html  # show.html.slim
-      format.json  { render :json => @grouped_rules }
-    end
+    @grouped_rules = Rule.where(condition).group_by(&:restriction)
   end
 
   def dashboard_params
