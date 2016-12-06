@@ -11,13 +11,13 @@ class Rule < ApplicationRecord
   delegate :name, to: :personal_information_item, prefix: true
   delegate :name, to: :use_item, prefix: true
 
+  attr_reader :law_kind
+
   accepts_nested_attributes_for :context_items
 
-  scope :filter_of_law, ->(type = nil) {
-    if type.present?
-      includes(:context_items).where(context_items: {applicable_law_kind: type} )
-    end
-  }
+  def law_kind
+    self.context_items.pluck(:applicable_law_kind)
+  end
 
   def self.generate!
     rules_size_was = Rule.count

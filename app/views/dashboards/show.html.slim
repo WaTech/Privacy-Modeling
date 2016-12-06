@@ -26,6 +26,7 @@
             .header = restriction.humanize
           .list
             - @grouped_rules[restriction].each do |rule|
+              // Use "law_kind" parameter to get all rule's law types ("rule.law_kind")
               .block
                 .wrapper
                   h3 #{ rule.use_item_name } #{ rule.personal_information_item_name }
