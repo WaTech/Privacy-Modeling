@@ -24,3 +24,12 @@ $(document).on 'turbolinks:load', ->
     else
       $('.info.active').removeClass('active')
       $(this).addClass('active')
+
+  $('#federal').click ->
+    $.ajax document.URL + "&law_type=federal",
+      type: 'GET'
+      dataType: 'json'
+      error: (jqXHR, textStatus, errorThrown) ->
+        $('body').append "AJAX Error: #{textStatus}"
+      success: (data, textStatus, jqXHR) ->
+        console.log data
