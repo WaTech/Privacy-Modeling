@@ -63,6 +63,11 @@ main {
 }
 
 body {
+  a img, img {
+    border: none;
+    outline: none;
+  }
+
   > header {
     background-color: #FFFFFF;
     text-align: center;
