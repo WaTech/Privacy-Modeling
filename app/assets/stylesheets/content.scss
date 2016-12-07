@@ -269,7 +269,8 @@ body {
       .active {
         &:nth-child(2) {
           @media only screen and (min-device-width: 1024px) {
-            min-width: 200px;
+            min-width: 198px;
+            max-width: 200px;
           }
         }
       }
