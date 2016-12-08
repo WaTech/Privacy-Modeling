@@ -6,3 +6,4 @@
 #= require dashboard
 #= require intro
 #= require angular-intro.min
+#= require tutorial
