@@ -10,12 +10,14 @@
     .filter-result
       form#filter
         p
-          = check_box_tag 'federal'
-          = label_tag 'federal', 'Federal'
+          input#federal[type="checkbox" name="federal" value=".federal" checked]
+          label[for="federal"]
+            | Federal
 
         p
-          = check_box_tag 'washington'
-          = label_tag 'washington', 'Washington'
+          input#washington[type="checkbox" name="washington" value=".state" checked]
+          label[for="washington"]
+            | Washington
 
     - ['allowed', 'limitations', 'forbidden'].each do |restriction|
       - if @grouped_rules[restriction]
