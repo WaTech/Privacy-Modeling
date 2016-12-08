@@ -1,4 +1,4 @@
-.container-categories p {
+body > main .content .container-categories > label > div > p {
   display: table-cell;
   vertical-align: middle;
 }
@@ -9,4 +9,13 @@ body > main .content .container-result .forbidden .active.info .tooltip > .links
 
   min-width: 145px;
   max-width: 160px;
+}
+
+body > main .nav-wrapper > nav {
+  display: block;
+
+  section, .section {
+    float: left;
+    width: 19%;
+  }
 }
