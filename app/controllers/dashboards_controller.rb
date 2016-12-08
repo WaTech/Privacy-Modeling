@@ -10,6 +10,6 @@ class DashboardsController < ApplicationController
   end
 
   def dashboard_params
-    @dashboard_params ||= params.require(:dashboard).permit(category_ids: [], pii_ids: [], use_item_ids: [])
+    @dashboard_params ||= params.require(:dashboard).permit(:law_type, category_ids: [], pii_ids: [], use_item_ids: [])
   end
 end
