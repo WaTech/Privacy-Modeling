@@ -8,9 +8,9 @@ html lang="en"
     = csrf_meta_tags
     = favicon_link_tag 'new_favicon.png'
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    /![if lt IE 9]>
+    /![if IE]
       = stylesheet_link_tag 'ie', media: 'all', 'data-turbolinks-track' => true
-    /<![endif]
+
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     - unless devise_controller?
