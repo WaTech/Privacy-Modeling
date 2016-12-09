@@ -73,7 +73,7 @@ $(function () {
                 $limit.hide();
             }
         });
-        $container.masonry({filters: filters});
+        $container.masonry();
 
 
     });
