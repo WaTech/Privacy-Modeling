@@ -51,7 +51,8 @@ $(function () {
 
             if ($limit.children(':hidden')) {
                 $limit.show();
-            } else if ($forbidden.children(':hidden')) {
+            }
+            if ($forbidden.children(':hidden')) {
                 $forbidden.show();
             }
         }
