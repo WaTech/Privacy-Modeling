@@ -16,7 +16,7 @@ class Rule < ApplicationRecord
   accepts_nested_attributes_for :context_items
 
   def law_kind
-    self.context_items.pluck(:applicable_law_kind)
+    self.context_items.pluck(:applicable_law_kind).uniq
   end
 
   def self.generate!
