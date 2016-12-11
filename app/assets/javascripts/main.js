@@ -40,7 +40,7 @@ $(function () {
                 });
 
 
-            } else if (value == '.state') {
+            }  if (value == '.state') {
 
                 $('.state', $container).each(function () {
                     if (!$(this).hasClass('federal')) {
@@ -58,9 +58,21 @@ $(function () {
             if ($forbidden.find('.list').children('.state:visible').length === 0 && $forbidden.find('.list').children('.federal:visible').length === 0) {
                 $forbidden.hide();
             }
-
-
         }
+
+        $container.isotope({
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            },
+
+            masonry: {
+                gutter: 20,
+                columnWidth: 218
+            },
+            itemSelector: '.block'
+        });
 
 
         $checkboxes.change(function () {
@@ -80,29 +92,12 @@ $(function () {
             }
         });
 
-        $container.isotope({
-            animationOptions: {
-                duration: 750,
-                easing: 'linear',
-                queue: false
-            },
-
-            masonry: {
-                gutter: 20,
-                columnWidth: 218
-            },
-            itemSelector: '.block'
-        });
-
-
         if ($(this).is(":checked")) {
-
-            if (value == '.federal') {
-                $container.find('.federal').css('transform', 'none');
-            }
-            if (value == '.state') {
-                $container.find('.state').css('transform', 'none');
-            }
+            setTimeout(function () {
+                $.each( block, function( i, block ) {
+                    block.find('.block').css('transform', 'none');
+                });
+            }, 300)
         }
     });
 
