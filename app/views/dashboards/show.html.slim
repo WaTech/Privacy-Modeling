@@ -7,17 +7,17 @@
   h1 Step 4. Results
 
   .container-result
-    .filter-result
-      form#filter
-        p
-          input#federal[type="checkbox" name="federal" value=".federal" checked]
-          label[for="federal"]
-            | Federal
-
-        p
-          input#washington[type="checkbox" name="washington" value=".state" checked]
-          label[for="washington"]
-            | Washington
+    /.filter-result
+    /  form#filter
+    /    p
+    /      input#federal[type="checkbox" name="federal" value=".federal" checked]
+    /      label[for="federal"]
+    /        | Federal
+    /
+    /    p
+    /      input#washington[type="checkbox" name="washington" value=".state" checked]
+    /      label[for="washington"]
+    /        | Washington
 
     - ['allowed', 'limitations', 'forbidden'].each do |restriction|
       - if @grouped_rules[restriction]
