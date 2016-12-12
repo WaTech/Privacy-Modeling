@@ -6,3 +6,4 @@
 #= require dashboard
 #= require main
 #= require isotope.pkgd
+#= require analytics_events
