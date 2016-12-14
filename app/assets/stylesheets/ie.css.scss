@@ -1,0 +1,21 @@
+body > main .content .container-categories > label > div > p {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+body > main .content .container-result .allowed .active.info .tooltip > .links .applicable-law-info,
+body > main .content .container-result .limitations .active.info .tooltip > .links .applicable-law-info,
+body > main .content .container-result .forbidden .active.info .tooltip > .links .applicable-law-info {
+
+  min-width: 145px;
+  max-width: 160px;
+}
+
+body > main .nav-wrapper > nav {
+  display: block;
+
+  section, .section {
+    float: left;
+    width: 19%;
+  }
+}

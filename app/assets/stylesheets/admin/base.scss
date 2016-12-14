@@ -38,6 +38,25 @@
     max-width: 100px;
   }
 
+  @media screen and (max-width: 634px){
+    .navbar-brand {
+      padding-top: 10px;
+    }
+  }
+
+  @media screen and (min-width: 635px){
+   .logo {
+     min-width: 100px;
+     height: 40px;
+     max-width: 100%;
+   }
+
+    .navbar-light {
+      line-height: 2;
+    }
+  }
+
+
   .login-logo {
     max-width: 250px;
   }
@@ -101,6 +120,10 @@
 
   .login-title {
     margin-top: 32px;
+  }
+
+  .new_user {
+    margin-bottom: 20px;
   }
 
   .rule {

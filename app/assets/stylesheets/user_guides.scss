@@ -49,7 +49,9 @@ body {
       margin: 30px auto 40px auto !important;
       max-width: 748px;
 
-
+      .red {
+        color: #ff3d33;
+      }
       > img {
         max-width: 100%;
       }
@@ -71,6 +73,7 @@ body {
 
       sup {
         font-size: 12px;
+        font-style: italic;
       }
 
       > p {
@@ -91,7 +94,7 @@ body {
 
         > li {
           text-align: left;
-          font-size: 17px;
+          font-size: 20px;
           letter-spacing: 0.53px;
           line-height: 22px;
 
@@ -124,7 +127,7 @@ body {
 
           > li {
             font-family: 'Source Sans Pro', sans-serif;
-            font-size: 17px;
+            font-size: 20px;
             letter-spacing: 0.53px;
             line-height: 22px;
             font-weight: 400;
@@ -166,10 +169,22 @@ body {
         }
       }
 
+      .end-notes {
+        border-top: 1px solid #424141;
+        margin-top: 30px;
+        padding-top: 20px;
+        padding-left: 30px;
+
+        color: #424141;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 20px;
+        letter-spacing: 0.63px;
+        font-style: italic;
+      }
+
       .all-footnote {
         position: relative;
-        padding-top: 20px;
-        margin-top: 30px;
+        padding-left: 30px;
 
         text-align: left;
         font:400 17px/22px  'Source Sans Pro', sans-serif;
@@ -177,22 +192,10 @@ body {
         color: #424141;
         list-style: none;
 
-        sup {
-          font-size: 8px;
+        & > li {
+          margin-bottom: 20px;
         }
 
-        &:before {
-          position: absolute;
-          display: block;
-
-          content: '';
-          width: 40%;
-          height: 1px;
-
-          background: #424141;
-          left: 0;
-          top: 0;
-        }
 
         .list-footnote {
           list-style: decimal;
@@ -207,6 +210,14 @@ body {
         @media screen and (min-width: 601px){
           padding: 9px 42.5px 9px 42.5px  !important;
         }
+
+        @media screen and (max-width: 600px){
+          margin: 0 0 25px 0;
+        }
+      }
+
+      .contact-us {
+        margin-top: 0;
       }
     }
   }
