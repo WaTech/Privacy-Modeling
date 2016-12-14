@@ -37,7 +37,7 @@
                     - [:limitation, :restriction].each do |category|
                       - rule.context_items.public_send(category).each do |context_item|
                         li class="#{ context_item.category }-item"  = context_item.description
-                  - if !rule.allowed? && rule.context_items.applicable_law.present?
+                  - if rule.context_items.applicable_law.present?
                     span.info
                       .tooltip
                         h3 Applicable Laws
