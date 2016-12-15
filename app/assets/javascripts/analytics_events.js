@@ -53,9 +53,9 @@ $( document ).on('turbolinks:load', function() {
         /**
          * Track clicks on Step 1 Tiles
          */
-        $('form#select_categories').on('submit', function () {
+        $('#select_categories .submit-button').on('click', function () {
 
-            $(this).find('.category-checkbox:checked').each(function(){
+            $(this).closest('form').find('.category-checkbox:checked').each(function(){
                 var $this = $(this);
                 var tile_title = $this.parent().find('div > p').text();
 
@@ -73,9 +73,9 @@ $( document ).on('turbolinks:load', function() {
         /**
          * Track clicks on Step 2 tiles
          */
-        $('form#select_piis').on('submit', function () {
+        $('#select_piis .submit-button').on('click', function () {
 
-            $(this).find('.pii-checkbox:checked').each(function(){
+            $(this).closest('form').find('.pii-checkbox:checked').each(function(){
                 var $this = $(this);
                 var tile_title = $this.parent().find('div > p').text();
 
@@ -92,9 +92,9 @@ $( document ).on('turbolinks:load', function() {
         /**
          * Track clicks on Step 3 tiles
          */
-        $('form#select_use_items').on('submit', function () {
+        $('#select_use_items .submit-button').on('click', function () {
 
-            $(this).find('.use-item-checkbox:checked').each(function(){
+            $(this).closest('form').find('.use-item-checkbox:checked').each(function(){
                 var $this = $(this);
                 var tile_title = $this.parent().find('div > p').text();
 
