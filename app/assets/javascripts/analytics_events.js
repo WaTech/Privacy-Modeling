@@ -1,4 +1,4 @@
-$(function () {
+$( document ).on('turbolinks:load', function() {
     // if google analytics enabled
     if (typeof ga == 'function') {
 
@@ -27,14 +27,14 @@ $(function () {
         });
 
         /**
-         * Track user goes to User Guide from home page
+         * Track user goes to User Guide from Legal disclaimer button
          */
         $('.home-content .legal-disclaimer').on('touchstart click', function () {
             ga('send', {
                 hitType: 'event',
-                eventCategory: 'LegalDisclaimer',
-                eventAction: 'open_legal_disclaimer_from_home',
-                eventLabel: 'Open Legal Disclaimer from home page'
+                eventCategory: 'UserGuide',
+                eventAction: 'open_user_guide_from_legal_disclaimer_home',
+                eventLabel: 'Open User Guide from Legal Disclaimer (home page)'
             });
         });
 
