@@ -53,9 +53,8 @@ $( document ).on('turbolinks:load', function() {
         /**
          * Track clicks on Step 1 Tiles
          */
-        $('#select_categories .submit-button').on('click', function () {
-
-            $(this).closest('form').find('.category-checkbox:checked').each(function(){
+        $('#select_categories .category-checkbox').on('change', function () {
+            if(this.checked) {
                 var $this = $(this);
                 var tile_title = $this.parent().find('div > p').text();
 
@@ -65,17 +64,15 @@ $( document ).on('turbolinks:load', function() {
                     eventAction: 'click_' + $.parameterize_string(tile_title) + '_on_select_category',
                     eventLabel: 'Clicked on ' + tile_title + ' tile on Select Category step'
                 });
-            });
-
+            }
         });
 
 
         /**
          * Track clicks on Step 2 tiles
          */
-        $('#select_piis .submit-button').on('click', function () {
-
-            $(this).closest('form').find('.pii-checkbox:checked').each(function(){
+        $('#select_piis .pii-checkbox').on('change', function () {
+            if(this.checked) {
                 var $this = $(this);
                 var tile_title = $this.parent().find('div > p').text();
 
@@ -85,16 +82,14 @@ $( document ).on('turbolinks:load', function() {
                     eventAction: 'click_' + $.parameterize_string(tile_title) + '_on_piis',
                     eventLabel: 'Clicked on ' + tile_title + ' tile on PI Items step'
                 });
-            });
-
+            }
         });
 
         /**
          * Track clicks on Step 3 tiles
          */
-        $('#select_use_items .submit-button').on('click', function () {
-
-            $(this).closest('form').find('.use-item-checkbox:checked').each(function(){
+        $('#select_use_items .use-item-checkbox').on('change', function () {
+            if(this.checked) {
                 var $this = $(this);
                 var tile_title = $this.parent().find('div > p').text();
 
@@ -104,8 +99,7 @@ $( document ).on('turbolinks:load', function() {
                     eventAction: 'click_' + $.parameterize_string(tile_title) + '_on_piis',
                     eventLabel: 'Clicked on ' + tile_title + ' tile on PI Items step'
                 });
-            });
-
+            }
         });
 
     }
