@@ -1,21 +1,22 @@
-.home-content ng-app="myApp"
-  ul.home-container ng-controller="MyController" ng-intro-options="IntroOptions" ng-intro-method="CallMe"
-    li
+script type="text/javascript" homePage()
+.home-content
+  ul.home-container
+    li id='step3'
       p
         | This <bold>Privacy Modeling Tool</bold> is designed to help you identify privacy laws based on personal information you wish to use. It offers general guidance on Washington State and Federal law. The tool searches through a database to find the laws which apply to your situation.
       .actions
-        = link_to 'Legal Disclaimer', 'user_guide#legal_disclaimer', class: 'action-button legal-disclaimer', onclick: "setTimeout('location=\"'+href+'\"',300);return false;", id: 'step1'
+        = link_to 'Legal Disclaimer', 'user_guide#legal_disclaimer', class: 'action-button legal-disclaimer', onclick: "setTimeout('location=\"'+href+'\"',300);return false;"
 
-    li
+    li id='step4'
       p
         | The tool includes a
-        = link_to 'User Guide to Privacy', user_guide_path, id: 'step2'
+        = link_to 'User Guide to Privacy', user_guide_path
         |  with recommendations on how to create a product or service that uses personally identifiable information. For specific legal questions, please consult an expert familiar with privacy law.
 
       .actions
         = link_to 'User Guide', user_guide_path, class: 'action-button user-guide-button'
 
-    li
+    li id='step5'
 
       = link_to 'Get Started!', generate_dashboard_path(:select_categories), class: 'action-button start-over-button'
 
