@@ -169,29 +169,33 @@ body {
         }
       }
 
-      .title, .subtitle, .database-priv-law {
+      .subtitle, .database-priv-law {
         text-align: left;
       }
 
       .title {
         color: #424141 !important;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 28px;
+        font-family: 'Arial', sans-serif;
+        font-size: 17px;
         font-weight: 700;
-        letter-spacing: 0.88px;
+        letter-spacing: 0.44px;
         line-height: 36px;
       }
 
       .subtitle {
         color: #424141 !important;
-        font-family: 'Source Sans Pro', sans-serif;
-        letter-spacing: 0.88px;
+        font-family: 'Arial', sans-serif;
+        letter-spacing: 0.44px;
+        font-size: 14px;
+        line-height: 14px;
       }
 
       .database-priv-law {
         p {
           margin-bottom: 0;
-          font-family: 'Source Sans Pro', sans-serif;
+          font-size: 14px;
+          line-height: 14px;
+          font-family: 'Arial', sans-serif;
           color: #424141;
 
           a {
