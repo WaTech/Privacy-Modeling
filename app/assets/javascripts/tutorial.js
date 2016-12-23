@@ -314,30 +314,34 @@ function userGuide() {
 
         steps: [
             {
-                intro: 'Hover over each title to display a longer description.',
+                intro: '<p>We want to help you get started designing your product or service by flagging a few common issues.</p>',
                 position: 'top'
             },
             {
                 element: document.querySelector('.container-categories'),
-                intro: 'Click this main logo to view a list of all Hongkiat demos.',
+                intro: '<div class="bg-icon bg-icon-top"></div>' +
+                '<p>How did you collect your information? This may determine whether it can be used at all.</p>',
                 position: 'top'
             },
 
             {
                 element: '.submit-button',
-                intro: 'Click this orange button to view the tutorial article in a new tab.',
+                intro: '<div class="bg-icon bg-icon-top"></div>' +
+                '<p>Washington State has a strong Public Records Act. So do other states. Make sure you design your product or service with public disclosure requirement in mind.</p>',
                 position: 'top'
             },
 
             {
                 element: '.submit-button',
-                intro: 'Click this orange button to view the tutorial article in a new tab.',
+                intro: '<div class="bg-icon bg-icon-top"></div>' +
+                '<p>Privacy modeling looks up specific privacy laws in our database. Your organization may have an internal policy or another law that may prevent the possible uses indicated by this tool.</p>',
                 position: 'top'
             },
 
             {
                 element: '.submit-button',
-                intro: 'Click this orange button to view the tutorial article in a new tab.',
+                intro: '<div class="bg-icon bg-icon-check"></div>' +
+                '<h1>Your tutorial is complete!</h1>',
                 position: 'top'
             }
         ]
