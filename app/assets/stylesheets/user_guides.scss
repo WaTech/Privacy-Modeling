@@ -169,6 +169,42 @@ body {
         }
       }
 
+      .title, .subtitle, .database-priv-law {
+        text-align: left;
+      }
+
+      .title {
+        color: #424141 !important;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 0.88px;
+        line-height: 36px;
+      }
+
+      .subtitle {
+        color: #424141 !important;
+        font-family: 'Source Sans Pro', sans-serif;
+        letter-spacing: 0.88px;
+      }
+
+      .database-priv-law {
+        p {
+          margin-bottom: 0;
+          font-family: 'Source Sans Pro', sans-serif;
+          color: #424141;
+
+          a {
+            color: #424141;
+            font-weight: 600;
+
+            &:hover {
+              opacity: 0.9;
+            }
+          }
+        }
+      }
+
       .end-notes {
         border-top: 1px solid #424141;
         margin-top: 30px;
