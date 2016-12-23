@@ -61,11 +61,6 @@ $(function () {
         }
 
         $container.isotope({
-            animationOptions: {
-                duration: 750,
-                easing: 'linear',
-                queue: false
-            },
 
             masonry: {
                 gutter: 20,
@@ -97,7 +92,7 @@ $(function () {
                 $.each( block, function( i, block ) {
                     block.find('.block').css('transform', 'none');
                 });
-            }, 300)
+            }, 10)
         }
     });
 

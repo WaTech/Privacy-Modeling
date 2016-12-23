@@ -20,12 +20,14 @@
             label[for="washington"]
               | Washington
 
-    - ['allowed', 'limitations', 'forbidden'].each do |restriction|
+    - ['forbidden', 'limitations', 'allowed'].each do |restriction|
       - if @grouped_rules[:rules][restriction]
         section class="#{ restriction }"
           - if restriction == 'allowed'
             .header = 'No specific privacy law found—consult User Guide for privacy design'
-          - else
+          - if restriction == 'forbidden'
+            .header = 'Prohibited'
+          - if restriction == 'limitations'
             .header = restriction.humanize
           .list
             - @grouped_rules[:rules][restriction].each do |rule|
