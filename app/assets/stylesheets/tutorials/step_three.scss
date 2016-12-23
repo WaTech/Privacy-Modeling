@@ -1,0 +1,21 @@
+.step-three {
+  width: 361px;
+  max-width: 460px;
+  height: 300px;
+  padding: 28px 47px 0;
+
+  .introjs-bullets ul {
+    margin-top: 5px;
+  }
+
+}
+
+.step-three-hint1,
+.step-three-hintlast {
+  left: 50% !important;
+  transform: translateX(-50%);
+}
+
+.step-three-hintlast {
+  height: 230px;
+}

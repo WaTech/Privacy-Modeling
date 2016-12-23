@@ -1,0 +1,150 @@
+.introjs-tooltip {
+  border-radius: 0;
+}
+
+h1 {
+  color: #2c3e50;
+  font: 700 30px/36px 'Rambla', sans-serif;
+  text-align: center;
+}
+
+p {
+  color: #2c3e50;
+  font: 400 20px 'Rambla', sans-serif;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+
+.introjs-prevbutton {
+  display: none;
+}
+
+.introjs-bullets ul {
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  li {
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      width: 12px;
+      height: 12px;
+      background-color: #d4d5d8;
+
+      &.active {
+        background-color: #00a7cd;
+      }
+    }
+  }
+}
+
+.introjs-tooltipbuttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+
+  .introjs-nextbutton {
+    border: none;
+    background-image: none;
+    text-shadow: none;
+
+    width: 160px;
+    height: 40px;
+
+    border-radius: 100px;
+    background-color: #ff9311;
+
+    padding: 0;
+    margin-top: 0;
+    text-align: center;
+
+    color: #fff;
+    font: 700 18px/2.3 'Rambla', sans-serif;
+    letter-spacing: 1px;
+
+    &:hover {
+      box-shadow: none;
+      background: darken(#ff9311, 5%);
+    }
+  }
+
+  .introjs-skipbutton {
+    margin-top: 22px;
+    padding: 0;
+    margin-right: 0;
+    color: #77838e;
+
+    font: 700 18px 'Rambla', sans-serif;
+    letter-spacing: 1px;
+
+    text-decoration: underline;
+    background: none;
+    border: none;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+
+.introjs-helperLayer {
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+}
+
+.introjs-arrow {
+  display: none !important;
+}
+
+.step-tooltip {
+  h1 {
+    margin-top: 0;
+  }
+  .introjs-skipbutton {
+    display: none;
+  }
+}
+
+.bg-icon {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+}
+
+.bg-icon-left {
+  background: url("../images/icon-arrow.png");
+}
+
+.bg-icon-right {
+  background: url("../images/icon-arrow-right.png");
+}
+
+.bg-icon-down {
+  background: url("../images/icon-arrow-down.png");
+}
+
+.last-step {
+  .introjs-nextbutton {
+    display: none;
+  }
+}
+
+//.introjs-tooltipReferenceLayer {
+//  top: 385px !important;
+//}

@@ -1,0 +1,103 @@
+.result-step {
+  width: 1140px;
+  min-width: 1080px;
+
+  height: 640px;
+
+  left: 50% !important;
+  transform: translateX(-50%);
+  margin-left: 0 !important;
+
+  padding: 28px 30px 0;
+
+  .hint-result {
+    margin: 0 0 35px;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+
+    li {
+      width: 340px;
+      min-height: 312px;
+
+      float: left;
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      h2 {
+        font: 700 20px 'Rambla', sans-serif;
+        letter-spacing: 1px;
+        text-align: center;
+
+        &.green {
+          color: #84b818;
+        }
+
+        &.yellow {
+          color: #f2c84b;
+        }
+
+        &.red {
+          color: #d84b39;
+        }
+      }
+
+      .bg-img {
+        width: 258px;
+        height: 201px;
+        margin: 0 auto;
+      }
+
+      .bg-img-allowed {
+        background: url("../images/allow.png");
+      }
+
+      .bg-img-limit {
+        background: url("../images/limitation.png");
+      }
+
+      .bg-img-forbid {
+        background: url("../images/forbidden.png");
+      }
+
+      .bg-tooltip {
+        width: 215px;
+        height: 120px;
+        background: url('../images/tooltip.png');
+
+        position: absolute;
+        top: 363px;
+        right: -74px;
+      }
+    }
+  }
+
+  .introjs-skipbutton {
+    border: none;
+    background-image: none;
+    text-shadow: none;
+    text-decoration: none;
+
+    width: 160px;
+    height: 40px;
+
+    border-radius: 100px;
+    background-color: #ff9311;
+
+    padding: 0;
+    margin-top: 18px;
+    text-align: center;
+
+    color: #fff;
+    font: 700 18px/2.3 'Rambla', sans-serif;
+    letter-spacing: 1px;
+
+    &:hover {
+      box-shadow: none;
+      background: darken(#ff9311, 5%);
+    }
+  }
+}
