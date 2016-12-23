@@ -174,6 +174,7 @@ body {
       }
 
       .title {
+        margin-top: 30px;
         color: #424141 !important;
         font-family: 'Arial', sans-serif;
         font-size: 17px;
@@ -190,6 +191,10 @@ body {
         line-height: 14px;
       }
 
+      .subtitle-wash {
+        margin-top: 20px;
+      }
+
       .database-priv-law {
         p {
           margin-bottom: 0;
@@ -197,6 +202,11 @@ body {
           line-height: 14px;
           font-family: 'Arial', sans-serif;
           color: #424141;
+
+          strong {
+            display: inline-block;
+            margin-top: 6px;
+          }
 
           a {
             color: #424141;
