@@ -4,35 +4,34 @@ body {
     .nav-wrapper.user-guide-nav {
       max-width: 748px;
 
-
       > nav {
         .section {
           &.active {
-            &:nth-child(1){
+            &:nth-child(1) {
               &:after {
                 background-color: #B75533;
               }
             }
 
-            &:nth-child(2){
+            &:nth-child(2) {
               &:after {
                 background-color: #DA9711;
               }
             }
 
-            &:nth-child(3){
+            &:nth-child(3) {
               &:after {
                 background-color: #1D8A85;
               }
             }
 
-            &:nth-child(4){
+            &:nth-child(4) {
               &:after {
                 background-color: #8C54D8;
               }
             }
 
-            &:nth-child(5){
+            &:nth-child(5) {
               &:after {
                 background-color: #1A65AB;
               }
@@ -123,8 +122,6 @@ body {
           list-style: decimal;
           margin-left: 44px;
 
-
-
           > li {
             font-family: 'Source Sans Pro', sans-serif;
             font-size: 20px;
@@ -169,6 +166,51 @@ body {
         }
       }
 
+      #section-two,
+      #section-three,
+      #section-four {
+        margin-left: -25px;
+        margin-right: -25px;
+        padding-left: 25px;
+        padding-right: 25px;
+        h1, p {
+          text-align: left;
+        }
+
+        > p {
+          margin: 16px 0 16px 0;
+          color: #424141;
+          font-family: 'Source Sans Pro', sans-serif;
+          font-size: 20px;
+          font-weight: 400;
+          letter-spacing: 0.63px;
+          line-height: 25px;
+          text-align: left;
+        }
+
+        > ul {
+          list-style: none;
+          padding: 0 0 0 22px;
+          margin: 0 0 0 18px;
+
+          &.numbered {
+            list-style: decimal;
+            margin-left: 44px;
+
+            > li {
+              font-family: 'Source Sans Pro', sans-serif;
+              font-size: 20px;
+              letter-spacing: 0.53px;
+              line-height: 22px;
+              font-weight: 400;
+              color: #424141;
+              margin-bottom: 16px;
+              text-align: left;
+            }
+          }
+        }
+      }
+
       .subtitle, .database-priv-law {
         text-align: left;
       }
@@ -202,6 +244,7 @@ body {
           line-height: 14px;
           font-family: 'Arial', sans-serif;
           color: #424141;
+          text-align: left;
 
           strong {
             display: inline-block;
@@ -214,6 +257,7 @@ body {
 
             &:hover {
               opacity: 0.9;
+
             }
           }
         }
@@ -237,7 +281,7 @@ body {
         padding-left: 30px;
 
         text-align: left;
-        font:400 17px/22px  'Source Sans Pro', sans-serif;
+        font: 400 17px/22px 'Source Sans Pro', sans-serif;
         letter-spacing: 0.53px;
         color: #424141;
         list-style: none;
@@ -245,7 +289,6 @@ body {
         & > li {
           margin-bottom: 20px;
         }
-
 
         .list-footnote {
           list-style: decimal;
@@ -257,11 +300,11 @@ body {
       .submit-button {
         text-decoration: none;
 
-        @media screen and (min-width: 601px){
-          padding: 9px 42.5px 9px 42.5px  !important;
+        @media screen and (min-width: 601px) {
+          padding: 9px 42.5px 9px 42.5px !important;
         }
 
-        @media screen and (max-width: 600px){
+        @media screen and (max-width: 600px) {
           margin: 0 0 25px 0;
         }
       }

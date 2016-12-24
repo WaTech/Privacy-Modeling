@@ -1,0 +1,127 @@
+.first-home-tooltip {
+  min-width: 358px;
+  max-width: 460px;
+  min-height: 480px;
+  padding: 5px 50px 20px;
+
+  @media screen and (max-width: 557px){
+    min-width: 280px;
+    margin-left: 5px !important;
+    transform: translate(-50%);
+    padding: 5px 15px 20px;
+  }
+}
+
+@media screen and (max-width: 557px) {
+#home {
+  .introjs-helperLayer,
+  .introjs-tooltipReferenceLayer{
+    top: 390px !important;
+  }
+}
+}
+
+
+.home-tooltips {
+  width: 358px;
+  max-width: 460px;
+  height: 314px;
+
+  padding: 42px 50px 0;
+
+  h1 {
+    margin: 0 0 42px;
+  }
+
+  .introjs-bullets ul {
+    margin-top: 20px;
+  }
+
+  @media screen and (max-width: 557px){
+    width: 258px;
+    max-width: 460px;
+    min-height: 270px;
+    padding: 42px 20px;
+
+    margin-left: -144px !important;
+    margin-top: -262px !important;
+  }
+}
+
+.step-legal {
+  height: 300px;
+  padding-top: 32px;
+  top: 85px !important;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 557px){
+    left: 145px !important;
+    //top: 200px !important;
+  }
+
+  @media screen and (min-width: 558px) and (max-width: 949px) {
+    top: 490px !important;
+    transform: translateX(-50%);
+    left: 50% !important;
+
+  }
+}
+
+.step-guide {
+  min-width: 325px;
+  width: 360px;
+  height: 300px;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  padding: 31px 30px 0;
+  top: 75px !important;
+
+  @media screen and (max-width: 557px){
+    width: 258px;
+    min-width: 258px;
+    padding: 31px 20px 0;
+
+    left: 145px !important;
+    top: -350px !important;
+    margin-top: auto !important;
+  }
+
+  @media screen and (min-width: 558px) and (max-width: 949px) {
+    top: 490px !important;
+    transform: translateX(-50%);
+    left: 50% !important;
+
+  }
+}
+
+
+.step-get-started {
+  height: 220px;
+  padding: 31px 30px 0;
+  top: 105px !important;
+
+  p {
+    margin: 30px 0 0;
+  }
+
+  @media screen and (max-width: 557px){
+    padding: 31px 20px 0;
+    top: -100px !important;
+    right: 1px !important;
+    min-height: 215px;
+    margin: 0 !important;
+  }
+
+  @media screen and (min-width: 558px) and (max-width: 949px) {
+    top: -260px !important;
+    transform: translateX(-50%);
+    left: 50% !important;
+
+  }
+}

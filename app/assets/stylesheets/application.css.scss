@@ -3,3 +3,14 @@
 @import 'homepage';
 @import 'content';
 @import 'user_guides';
+
+@import "introjs";
+
+// tutorials
+@import "tutorials/all",
+        "tutorials/homepage",
+        "tutorials/result_page",
+        "tutorials/step_one",
+        "tutorials/step_two",
+        "tutorials/step_three",
+        "tutorials/user_guide";
