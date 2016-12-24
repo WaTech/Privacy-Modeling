@@ -1,0 +1,81 @@
+#user-guide {
+  .introjs-tooltipReferenceLayer {
+    top: 355px !important;
+  }
+}
+
+.guide-step-one {
+  min-width: 358px;
+  max-width: 460px;
+
+  padding: 5px 50px 0;
+  height: 240px;
+
+  @media screen and (max-width: 557px){
+    min-width: 250px;
+    padding: 5px 20px 30px;
+    min-height: 240px;
+    margin-left: -140px;
+  }
+}
+
+.guide-step {
+  min-width: 358px;
+  max-width: 460px;
+  min-height: 286px;
+
+  padding: 30px 50px 40px;
+  left: 50% !important;
+  transform: translateX(-50%);
+
+  @media screen and (max-width: 557px){
+    min-width: 270px;
+    padding: 30px 15px 40px;
+  }
+}
+
+.guide-last-step {
+  min-width: 358px;
+  max-width: 460px;
+  height: 252px;
+
+  padding: 30px 50px 40px;
+
+  .introjs-skipbutton {
+    border: none;
+    background-image: none;
+    text-shadow: none;
+    text-decoration: none;
+
+    width: 160px;
+    height: 40px;
+
+    border-radius: 100px;
+    background-color: #ff9311;
+
+    padding: 0;
+    margin-top: 0;
+    text-align: center;
+
+    color: #fff;
+    font: 700 18px/2.3 'Rambla', sans-serif;
+    letter-spacing: 1px;
+
+    &:hover {
+      box-shadow: none;
+      background: darken(#ff9311, 5%);
+    }
+  }
+
+  .introjs-nextbutton {
+    display: none;
+  }
+
+
+  @media screen and (max-width: 557px){
+    min-width: 270px;
+    min-height: 285px;
+    padding: 30px 15px 40px;
+    margin-left: -145px !important;
+  }
+}

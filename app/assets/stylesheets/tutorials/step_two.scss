@@ -1,3 +1,7 @@
 .step-two-tooltip1 {
   height: 355px;
+
+  @media screen and (max-width: 557px) {
+    min-height: 380px;
+  }
 }

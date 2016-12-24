@@ -153,6 +153,8 @@ p {
   }
 }
 
-//.introjs-tooltipReferenceLayer {
-//  top: 385px !important;
-//}
+#remove-bg-tooltipsLayer {
+  .introjs-helperLayer {
+    background: none;
+  }
+}

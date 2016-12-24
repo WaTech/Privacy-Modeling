@@ -8,6 +8,11 @@
     margin-top: 5px;
   }
 
+  @media screen and (max-width: 557px){
+    width: 260px;
+    min-height: 300px;
+    padding: 28px 20px 35px;
+  }
 }
 
 .step-three-hint1,
@@ -18,4 +23,7 @@
 
 .step-three-hintlast {
   height: 230px;
+  @media screen and (max-width: 557px) {
+    min-height: 230px;
+  }
 }

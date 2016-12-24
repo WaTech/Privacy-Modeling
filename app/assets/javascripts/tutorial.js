@@ -1,6 +1,7 @@
 function homePage() {
-    var cookies = document.cookie;
-    console.log(cookies); //TODO delete this code
+    $('body').attr('id', 'home');
+    // var cookies = document.cookie;
+    // console.log(cookies); //TODO delete this code
 
     // if (cookies.indexOf("name=homepage") + 1) {
     //     console.log('cookie-home'); //TODO delete this code
@@ -51,15 +52,15 @@ function homePage() {
     setTimeout(function () {
         introguide.start().onchange(function () {
             if (introguide._currentStep == "3") {
-                $('body').attr('id', 'home-page');
+                $('body').attr('id', 'remove-bg-tooltipsLayer');
                 $('.introjs-nextbutton').text('Got it!');
             }
         });
 
 
-        document.cookie = " name=homepage;";
-        cookies = document.cookie;
-        console.log(cookies); // TODO delete this code
+        // document.cookie = " name=homepage;";
+        // cookies = document.cookie;
+        // console.log(cookies); // TODO delete this code
     }, 0);
 
 
@@ -69,7 +70,7 @@ function homePage() {
 
 /** Step One  */
 function stepOne() {
-    var cookies = document.cookie;
+    // var cookies = document.cookie;
 
     // if (cookies.indexOf("stepname=first_step") + 1) {
     //     console.log('cookie-first');  // TODO delete this code
@@ -105,11 +106,11 @@ function stepOne() {
     });
     setTimeout(function () {
         introguide.start();
-
-        document.cookie = " stepname=first_step;";
-        cookies = document.cookie;
-
-        console.log(cookies); // TODO delete this code
+        //
+        // document.cookie = " stepname=first_step;";
+        // cookies = document.cookie;
+        //
+        // console.log(cookies); // TODO delete this code
 
     }, 100);
 
@@ -119,8 +120,8 @@ function stepOne() {
 
 /** Step Two*/
 function stepTwo() {
-    var cookies = document.cookie;
-    console.log(cookies); //TODO delete this code
+    // var cookies = document.cookie;
+    // console.log(cookies); //TODO delete this code
 
     // if (cookies.indexOf("steptwo=two_step;") + 1) {
     //     console.log('cookie-two'); // TODO delete this code
@@ -156,10 +157,10 @@ function stepTwo() {
     setTimeout(function () {
         introguide.start();
 
-        document.cookie = " steptwo=two_step;";
-        cookies = document.cookie;
-
-        console.log(cookies); // TODO delete this code
+        // document.cookie = " steptwo=two_step;";
+        // cookies = document.cookie;
+        //
+        // console.log(cookies); // TODO delete this code
     }, 100);
 
 
@@ -167,11 +168,18 @@ function stepTwo() {
 
 }
 
+$(document).ready(function () {
+    $('#select_use_items').each(function () {
+        $(this).find('label:nth-of-type(2)').attr('id','protect-information');
+        $(this).find('label:nth-of-type(6)').attr('id','share');
+    });
+});
 
 /** Step Three*/
 function stepThree() {
-    var cookies = document.cookie;
-    console.log(cookies); //TODO delete this code
+
+    // var cookies = document.cookie;
+    // console.log(cookies); //TODO delete this code
     //
     // if (cookies.indexOf("stepthree=three_step;") + 1) {
     //     console.log('cookie-three'); //TODO delete this code
@@ -193,14 +201,14 @@ function stepThree() {
                 tooltipClass: 'step-tooltip step-three step-three-hint1'
             },
             {
-                element: '.protect-information',
+                element: '#protect-information',
                 intro: '<div class="bg-icon bg-icon-left"></div>' +
                 '<p>This use means your goal is to shield information from disclosure.</p>',
                 position: 'top',
                 tooltipClass: 'step-tooltip step-three'
             },
             {
-                element: '.share',
+                element: '#share',
                 intro: '<div class="bg-icon bg-icon-left"></div>' +
                 '<p>Do you intend to share the data with a third party?</p>',
                 position: 'top',
@@ -215,9 +223,12 @@ function stepThree() {
             }
         ]
     });
+
     setTimeout(function () {
         introguide.start().onchange(function () {
+
             if (introguide._currentStep == "1") {
+                $('body').attr('id', 'remove-bg-tooltipsLayer');
                 $('.introjs-nextbutton').text('Okay');
             }
 
@@ -225,14 +236,18 @@ function stepThree() {
                 $('.introjs-nextbutton').text('Got it!');
             }
 
+            if (introguide._currentStep == "3") {
+                $('body').removeAttr('id');
+            }
+
         });
     }, 100);
 
-
-    document.cookie = " stepthree=three_step;";
-    cookies = document.cookie;
-
-    console.log(cookies);  // TODO delete this code
+    //
+    // document.cookie = " stepthree=three_step;";
+    // cookies = document.cookie;
+    //
+    // console.log(cookies);  // TODO delete this code
 
     // }
 
@@ -240,8 +255,8 @@ function stepThree() {
 
 /** Result Page*/
 function resultPage() {
-    var cookies = document.cookie;
-    console.log(cookies); //TODO delete this code
+    // var cookies = document.cookie;
+    // console.log(cookies); //TODO delete this code
     //
     // if (cookies.indexOf("resultpage=result_page;") + 1) {
     //     console.log('cookie-result-page');  //TODO delete this code
@@ -286,20 +301,28 @@ function resultPage() {
     setTimeout(function () {
         introguide.start();
 
-        document.cookie = " resultpage=result_page;";
-        cookies = document.cookie;
-
-        console.log(cookies);  // TODO delete this code
+        // document.cookie = " resultpage=result_page;";
+        // cookies = document.cookie;
+        //
+        // console.log(cookies);  // TODO delete this code
     }, 100);
 
     // }
 
 }
 
+
 /** User Guide */
 function userGuide() {
+    $('body').attr('id', 'user-guide');
 
-    var cookies = document.cookie;
+    var body = $("html, body");
+    body.stop().animate({scrollTop:0}, '300', 'swing', function() {
+
+    });
+
+
+    // var cookies = document.cookie;
 
     // if (cookies.indexOf("userguide=user_guide") + 1) {
     //     console.log('user-guide'); // TODO delete this code
@@ -311,58 +334,64 @@ function userGuide() {
         skipLabel: 'Skip this tutorial',
         nextLabel: 'Next',
         showStepNumbers: false,
+        doneLabel: 'Woohoo!',
 
         steps: [
             {
                 intro: '<p>We want to help you get started designing your product or service by flagging a few common issues.</p>',
-                position: 'top'
+                position: 'top',
+                tooltipClass: 'step-tooltip guide-step-one'
             },
             {
-                element: document.querySelector('.container-categories'),
+                element: '#section-two',
                 intro: '<div class="bg-icon bg-icon-top"></div>' +
                 '<p>How did you collect your information? This may determine whether it can be used at all.</p>',
-                position: 'top'
+                position: 'bottom',
+                tooltipClass: 'step-tooltip guide-step'
             },
 
             {
-                element: '.submit-button',
+                element: '#section-three',
                 intro: '<div class="bg-icon bg-icon-top"></div>' +
                 '<p>Washington State has a strong Public Records Act. So do other states. Make sure you design your product or service with public disclosure requirement in mind.</p>',
-                position: 'top'
+                position: 'bottom',
+                tooltipClass: 'step-tooltip guide-step'
             },
 
             {
-                element: '.submit-button',
+                element: '#section-four',
                 intro: '<div class="bg-icon bg-icon-top"></div>' +
                 '<p>Privacy modeling looks up specific privacy laws in our database. Your organization may have an internal policy or another law that may prevent the possible uses indicated by this tool.</p>',
-                position: 'top'
+                position: 'bottom',
+                tooltipClass: 'step-tooltip guide-step'
             },
 
             {
-                element: '.submit-button',
                 intro: '<div class="bg-icon bg-icon-check"></div>' +
                 '<h1>Your tutorial is complete!</h1>',
-                position: 'top'
+                position: 'bottom',
+                tooltipClass: 'guide-last-step'
             }
         ]
     });
     setTimeout(function () {
         introguide.start().onchange(function () {
-            if (introguide._currentStep == "1") {
-                $('.introjs-nextbutton').text('Okay');
+            if ((introguide._currentStep == "1") || (introguide._currentStep == "3")) {
+                $('.introjs-nextbutton').text('Got it!');
+                $('body').removeAttr('id');
             }
 
             if (introguide._currentStep == "2") {
-                $('.introjs-nextbutton').text('Got it!');
+                $('.introjs-nextbutton').text('Okay');
             }
 
         });
 
 
-        document.cookie = " userguide=user_guide";
-        cookies = document.cookie;
-
-        console.log(cookies);  // TODO delete this code
+        // document.cookie = " userguide=user_guide";
+        // cookies = document.cookie;
+        //
+        // console.log(cookies);  // TODO delete this code
     }, 100);
 
     // }
