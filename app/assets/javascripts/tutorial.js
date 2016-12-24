@@ -78,6 +78,11 @@ function stepOne() {
     //
     // } else {
 
+    var body = $("html, body");
+    body.stop().animate({scrollTop:0}, '300', 'swing', function() {
+
+    });
+
     var introguide = introJs();
     introguide.setOptions({
         skipLabel: 'Skip this tutorial',
@@ -128,6 +133,11 @@ function stepTwo() {
     //     console.log(cookies);      // TODO delete this code
     //
     // } else {
+
+    var body = $("html, body");
+    body.stop().animate({scrollTop:0}, '300', 'swing', function() {
+
+    });
 
     var introguide = introJs();
     introguide.setOptions({
@@ -185,6 +195,10 @@ function stepThree() {
     //     console.log('cookie-three'); //TODO delete this code
     //
     // } else {
+    var body = $("html, body");
+    body.stop().animate({scrollTop:0}, '300', 'swing', function() {
+
+    });
 
     var introguide = introJs();
     introguide.setOptions({
@@ -381,7 +395,44 @@ function userGuide() {
                 $('body').removeAttr('id');
             }
 
+            if($(window).width() >= 768){
+                if (introguide._currentStep == "2") {
+                    $('.introjs-nextbutton').text('Okay');
+
+                    var body = $("html, body");
+                    body.stop().animate({scrollTop: 2000}, '300', 'swing', function () {
+
+                    });
+                }
+
+                if (introguide._currentStep == "1") {
+                    var body = $("html, body");
+                    body.stop().animate({scrollTop: 1700}, '300', 'swing', function () {
+
+                    });
+                }
+
+                if (introguide._currentStep == "3") {
+                    $('.introjs-nextbutton').text('Okay');
+
+                    var body = $("html, body");
+                    body.stop().animate({scrollTop: 2300}, '300', 'swing', function () {
+
+                    });
+                }
+
+                if (introguide._currentStep == "4") {
+                    var body = $("html, body");
+                    body.stop().animate({scrollTop: 2750}, '300', 'swing', function () {
+
+                    });
+                }
+            }
             if (introguide._currentStep == "2") {
+                $('.introjs-nextbutton').text('Okay');
+            }
+
+            if (introguide._currentStep == "3") {
                 $('.introjs-nextbutton').text('Okay');
             }
 
