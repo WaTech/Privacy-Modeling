@@ -41,6 +41,10 @@ module ApplicationHelper
     "https://google.com/#q=#{ query_string.split(' ').join('+') }"
   end
 
+  # Is application run in production environment
+  def production?
+    Rails.env.production?
+  end
 end
 
 

@@ -63,6 +63,11 @@ main {
 }
 
 body {
+  a img, img {
+    border: none;
+    outline: none;
+  }
+
   > header {
     background-color: #FFFFFF;
     text-align: center;
@@ -185,7 +190,7 @@ body {
 
           padding-bottom: 8px;
 
-          height: 40px;
+          height: 45px;
           color: #9C9CA0;
           text-align: center;
           font-family: 'Source Sans Pro', sans-serif;
@@ -196,11 +201,15 @@ body {
           line-height: 18px;
           position: relative;
 
+          display: block;
+          width: 19%;
+          float: left;
+
           &:after {
             content: '';
             display: block;
             position: absolute;
-            top: 33px;
+            top: 35px;
             left: 50%;
             transform: translateX(-50%);
             width: 14px;
@@ -254,7 +263,7 @@ body {
               content: '';
               display: block;
               position: absolute;
-              top: 38px;
+              top: 40px;
               right: 50%;
               width: 1000px;
               height: 3px;
@@ -379,6 +388,9 @@ body {
               font-weight: 400;
               letter-spacing: 0.53px;
               line-height: 22px;
+
+              display: table-cell;
+              vertical-align: middle;
             }
           }
         }

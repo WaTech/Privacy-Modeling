@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   root to: 'homepage#show'
 
-  resource :dashboard, only: :show
+  resource :dashboard, only: [:show, :filter_of_law]
   resources :generate_dashboard
 
   namespace :admin do
