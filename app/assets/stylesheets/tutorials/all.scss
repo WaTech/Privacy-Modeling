@@ -144,7 +144,11 @@ p {
 }
 
 .bg-icon-check {
-  background: url("../images/icon-check.png");
+  background: url("../images/well_done_icon.svg");
+}
+
+.arrow_down_icon {
+  background: url('../images/arrow_down_icon.svg');
 }
 
 .last-step {
@@ -156,5 +160,18 @@ p {
 #remove-bg-tooltipsLayer {
   .introjs-helperLayer {
     background: none;
+  }
+}
+
+
+@media only screen and (max-device-width : 1024px) {
+  .introjs-overlay {
+    position: absolute !important;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100% !important;
+    height: 100% !important;
   }
 }
