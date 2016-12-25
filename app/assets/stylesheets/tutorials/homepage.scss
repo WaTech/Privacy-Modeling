@@ -4,7 +4,7 @@
   min-height: 480px;
   padding: 5px 50px 20px;
 
-  @media screen and (max-width: 557px){
+  @media screen and (max-width: 557px) {
     min-width: 280px;
     margin-left: 5px !important;
     transform: translate(-50%);
@@ -12,15 +12,21 @@
   }
 }
 
-@media screen and (max-width: 557px) {
-#home {
-  .introjs-helperLayer,
-  .introjs-tooltipReferenceLayer{
-    top: 390px !important;
+.home {
+  .introjs-tooltipReferenceLayer {
+    @media screen and (max-width: 768px) {
+      top: 300px !important;
+    }
   }
 }
-}
 
+.step-two-mob {
+  .introjs-tooltipReferenceLayer {
+    @media screen and (max-width: 768px) {
+      top: 115px !important;
+    }
+}
+}
 
 .home-tooltips {
   width: 358px;
@@ -37,14 +43,15 @@
     margin-top: 20px;
   }
 
-  @media screen and (max-width: 557px){
+  @media screen and (max-width: 769px) {
     width: 258px;
     max-width: 460px;
     min-height: 270px;
     padding: 42px 20px;
 
-    margin-left: -144px !important;
-    margin-top: -262px !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+    margin: 0 !important;
   }
 }
 
@@ -57,17 +64,18 @@
     margin-bottom: 0;
   }
 
-  @media screen and (max-width: 557px){
-    left: 145px !important;
-    //top: 200px !important;
+  @media screen and (max-width: 769px) {
+    //left: 50% !important;
+    //transform: translateX(-50%);
+    top: -385px !important;
   }
-
-  @media screen and (min-width: 558px) and (max-width: 949px) {
-    top: 490px !important;
-    transform: translateX(-50%);
-    left: 50% !important;
-
-  }
+  //
+  //@media screen and (min-width: 558px) and (max-width: 949px) {
+  //  top: 490px !important;
+  //  transform: translateX(-50%);
+  //  left: 50% !important;
+  //
+  //}
 }
 
 .step-guide {
@@ -82,24 +90,23 @@
   padding: 31px 30px 0;
   top: 75px !important;
 
-  @media screen and (max-width: 557px){
+  @media screen and (max-width: 769px) {
     width: 258px;
     min-width: 258px;
     padding: 31px 20px 0;
 
-    left: 145px !important;
-    top: -350px !important;
-    margin-top: auto !important;
+    //left: 50% !important;
+    //transform: translateX(-50%);
+    top: -345px !important;
   }
 
-  @media screen and (min-width: 558px) and (max-width: 949px) {
-    top: 490px !important;
-    transform: translateX(-50%);
-    left: 50% !important;
-
-  }
+  //@media screen and (min-width: 558px) and (max-width: 949px) {
+  //  top: 490px !important;
+  //  transform: translateX(-50%);
+  //  left: 50% !important;
+  //
+  //}
 }
-
 
 .step-get-started {
   height: 220px;
@@ -110,18 +117,25 @@
     margin: 30px 0 0;
   }
 
-  @media screen and (max-width: 557px){
+  @media screen and (max-width: 769px) {
     padding: 31px 20px 0;
-    top: -100px !important;
-    right: 1px !important;
     min-height: 215px;
-    margin: 0 !important;
+
+    top: -265px !important;
+    //left: 50% !important;
+    //transform: translateX(-50%);
   }
 
-  @media screen and (min-width: 558px) and (max-width: 949px) {
-    top: -260px !important;
-    transform: translateX(-50%);
-    left: 50% !important;
+  //@media screen and (min-width: 558px) and (max-width: 949px) {
+  //  top: -260px !important;
+  //  transform: translateX(-50%);
+  //  left: 50% !important;
+  //
+  //}
+}
 
+#step5 {
+  .introjs-showElement {
+    background: #46b749;
   }
 }
