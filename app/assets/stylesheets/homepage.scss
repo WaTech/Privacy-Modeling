@@ -13,14 +13,34 @@
     list-style: none;
 
     li {
-      position: relative;
-      vertical-align: top;
       background-color: #f5f4f4;
       color: #424141;
 
       letter-spacing: 0.66px;
       font-family: 'Source Sans Pro', sans-serif;
       font-size: 21px;
+
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+
+      -webkit-flex-wrap: wrap;
+      -moz-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+
+      -webkit-align-content: space-between;
+      -moz-align-content: space-between;
+      -ms-flex-line-pack: space-between;
+      align-content: space-between;
+
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+
+      padding-bottom: 75px;
+      height: 550px;
+
 
       a {
         font-weight: 400;
@@ -34,10 +54,6 @@
       }
 
       .actions {
-        position: absolute;
-        bottom: 75px;
-        transform: translateX(50%);
-        right: 50%;
 
         a {
           display: inline-block;
@@ -78,6 +94,19 @@
         background-color: #46b749;
         color: white;
 
+        display: flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+
+
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+
         a {
           color: #fff;
         }
@@ -99,11 +128,6 @@
           letter-spacing: 0.63px;
           text-transform: uppercase;
 
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-
           &:hover {
             background: #fff;
             color: #46b749;
@@ -114,18 +138,17 @@
       @media screen and (max-width: 439px) {
         height: 540px;
         margin-bottom: 20px;
-        padding: 15px 20px 0;
+        padding: 15px 20px 75px;
       }
 
       @media screen and (min-width: 440px) {
         width: 384px;
         height: 467px;
         margin: 0 auto 20px;
-        padding: 30px 32px 0;
+        padding: 30px 32px 75px;
       }
 
       @media screen and (min-width: 950px) {
-        display: inline-block;
         width: 32.68%;
         height: 550px;
         margin-right: 9px;
@@ -139,6 +162,12 @@
         width: 384px;
         height: 467px;
       }
+    }
+
+    @media screen and (min-width: 950px) {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
     }
   }
 }

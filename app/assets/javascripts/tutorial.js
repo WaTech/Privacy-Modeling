@@ -1,14 +1,31 @@
+$(document).ready(function () {
+    var cookies = document.cookie;
+
+    $('.introjs-skipbutton').on('click', function () {
+        document.cookie = " skipbutton=skipbutton";
+        cookies = document.cookie;
+        console.log(cookies); // TODO delete this code
+    });
+
+    $('#select_use_items').each(function () {
+        $(this).find('label:nth-of-type(2)').attr('id','protect-information');
+        $(this).find('label:nth-of-type(6)').attr('id','share');
+    });
+});
+
+
 function homePage() {
-    $('body').attr('id', 'home');
+    $('body').attr('class', 'home');
     // var cookies = document.cookie;
     // console.log(cookies); //TODO delete this code
-
-    // if (cookies.indexOf("name=homepage") + 1) {
+    //
+    // if ((cookies.indexOf("name=homepage") + 1) || (cookies.indexOf("skipbutton=skipbutton") + 1)) {
     //     console.log('cookie-home'); //TODO delete this code
     //     console.log(cookies);       //TODO delete this code
     //
     // } else {
     var introguide = introJs();
+    var introguidemob = introJs();
     introguide.setOptions({
         skipLabel: 'Skip this tutorial',
         nextLabel: 'Next',
@@ -49,19 +66,91 @@ function homePage() {
             }
         ]
     });
-    setTimeout(function () {
-        introguide.start().onchange(function () {
-            if (introguide._currentStep == "3") {
-                $('body').attr('id', 'remove-bg-tooltipsLayer');
-                $('.introjs-nextbutton').text('Got it!');
+
+    introguidemob.setOptions({
+        skipLabel: 'Skip this tutorial',
+        nextLabel: 'Next',
+        showStepNumbers: false,
+        exitOnOverlayClick: false, // not allow skip tooltip when overlay click
+
+        steps: [
+            {
+                intro: '<h1>Welcome To The Privacy Modeling Tutorial</h1>' +
+                '<p>We intend Privacy Modeling as your starting point for research. This app draws on a limited database of laws. Results refer only to privacy law, not other possible laws, regulations or policy. Please consult the User Guide as a critical step in your design process.</p>',
+                tooltipClass: 'first-home-tooltip'
+            },
+            {
+                intro: '<h1>Privacy Modeling Tutorial</h1>' +
+                '<p>We want to make sure you know the capabilities and limits of this tool, so let’s get started …</p>',
+                tooltipClass: 'home-tooltips step-tooltip'
+            },
+            {
+                element: '.legal-disclaimer',
+                intro: '<div class="bg-icon bg-icon-left"></div>' +
+                '<p>Here’s the legal stuff (our lawyer says this is important)</p>',
+                position: 'right',
+                tooltipClass: 'home-tooltips step-legal step-tooltip'
+            },
+            {
+                element: '.user-guide-button',
+                intro: '<div class="bg-icon bg-icon-left"></div>' +
+                '<p>Consult the user guide at any time for tips on privacy design.</p>',
+                position: 'right',
+                tooltipClass: 'home-tooltips step-guide step-tooltip'
+            },
+            {
+                element: '.start-over-button',
+                intro: '<div class="bg-icon bg-icon-right"></div>' +
+                '<p>Click to launch the app</p>',
+                position: 'left',
+                tooltipClass: 'home-tooltips step-get-started step-tooltip last-step'
             }
+        ]
+    });
+
+    if($(window).width() <= 768) {
+        var body = $("html, body");
+        body.stop().animate({scrollTop:0}, '300', 'swing', function() {
+
         });
+        setTimeout(function () {
+            introguidemob.start().onchange(function () {
+                if (introguidemob._currentStep == "1") {
+                    var body = $("html, body");
+                    body.stop().animate({scrollTop:0}, '300', 'swing', function() {
+                    });
+
+                    $('body').addClass('step-two-mob');
+                }
+                if (introguidemob._currentStep == "2") {
+                    $('body').removeAttr('class');
+                }
+
+                if (introguidemob._currentStep == "3") {
+                    $('.introjs-nextbutton').text('Got it!');
+                }
+            });
 
 
-        // document.cookie = " name=homepage;";
-        // cookies = document.cookie;
-        // console.log(cookies); // TODO delete this code
-    }, 0);
+            // document.cookie = " name=homepage;";
+            // cookies = document.cookie;
+            // console.log(cookies); // TODO delete this code
+        }, 0);
+    } else {
+        setTimeout(function () {
+            introguide.start().onchange(function () {
+                if (introguide._currentStep == "3") {
+                    $('body').attr('id', 'remove-bg-tooltipsLayer');
+                    $('.introjs-nextbutton').text('Got it!');
+                }
+            });
+
+
+            // document.cookie = " name=homepage;";
+            // cookies = document.cookie;
+            // console.log(cookies); // TODO delete this code
+        }, 0);
+    }
 
 
     // }
@@ -71,8 +160,8 @@ function homePage() {
 /** Step One  */
 function stepOne() {
     // var cookies = document.cookie;
-
-    // if (cookies.indexOf("stepname=first_step") + 1) {
+    //
+    // if ((cookies.indexOf("stepname=first_step") + 1) || (cookies.indexOf("skipbutton=skipbutton") + 1)) {
     //     console.log('cookie-first');  // TODO delete this code
     //     console.log(cookies);         // TODO delete this code
     //
@@ -111,7 +200,7 @@ function stepOne() {
     });
     setTimeout(function () {
         introguide.start();
-        //
+
         // document.cookie = " stepname=first_step;";
         // cookies = document.cookie;
         //
@@ -127,8 +216,8 @@ function stepOne() {
 function stepTwo() {
     // var cookies = document.cookie;
     // console.log(cookies); //TODO delete this code
-
-    // if (cookies.indexOf("steptwo=two_step;") + 1) {
+    //
+    // if ((cookies.indexOf("steptwo=two_step;") + 1) || (cookies.indexOf("skipbutton=skipbutton") + 1)) {
     //     console.log('cookie-two'); // TODO delete this code
     //     console.log(cookies);      // TODO delete this code
     //
@@ -178,20 +267,13 @@ function stepTwo() {
 
 }
 
-$(document).ready(function () {
-    $('#select_use_items').each(function () {
-        $(this).find('label:nth-of-type(2)').attr('id','protect-information');
-        $(this).find('label:nth-of-type(6)').attr('id','share');
-    });
-});
-
 /** Step Three*/
 function stepThree() {
 
     // var cookies = document.cookie;
     // console.log(cookies); //TODO delete this code
     //
-    // if (cookies.indexOf("stepthree=three_step;") + 1) {
+    // if ((cookies.indexOf("stepthree=three_step;") + 1)|| (cookies.indexOf("skipbutton=skipbutton") + 1)) {
     //     console.log('cookie-three'); //TODO delete this code
     //
     // } else {
@@ -257,7 +339,7 @@ function stepThree() {
         });
     }, 100);
 
-    //
+
     // document.cookie = " stepthree=three_step;";
     // cookies = document.cookie;
     //
@@ -272,10 +354,18 @@ function resultPage() {
     // var cookies = document.cookie;
     // console.log(cookies); //TODO delete this code
     //
-    // if (cookies.indexOf("resultpage=result_page;") + 1) {
+    // if ((cookies.indexOf("resultpage=result_page;") + 1)|| (cookies.indexOf("skipbutton=skipbutton") + 1)) {
     //     console.log('cookie-result-page');  //TODO delete this code
     //
     // } else {
+
+    $('body').attr('id', 'result-page');
+    if($(window).width() > 1024) {
+        var body = $("html, body");
+        body.stop().animate({scrollTop:0}, '300', 'swing', function() {
+
+        });
+    }
 
     var introguide = introJs();
     introguide.setOptions({
@@ -330,18 +420,17 @@ function resultPage() {
 function userGuide() {
     $('body').attr('id', 'user-guide');
 
-    var body = $("html, body");
-    body.stop().animate({scrollTop:0}, '300', 'swing', function() {
-
-    });
-
-
     // var cookies = document.cookie;
-
-    // if (cookies.indexOf("userguide=user_guide") + 1) {
+    //
+    // if ((cookies.indexOf("userguide=user_guide") + 1)|| (cookies.indexOf("skipbutton=skipbutton") + 1)) {
     //     console.log('user-guide'); // TODO delete this code
     //
     // } else {
+
+        var body = $("html, body");
+        body.stop().animate({scrollTop:0}, '300', 'swing', function() {
+
+        });
 
     var introguide = introJs();
     introguide.setOptions({

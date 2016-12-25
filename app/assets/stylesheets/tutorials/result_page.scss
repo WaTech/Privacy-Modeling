@@ -1,3 +1,11 @@
+#result-page {
+  .introjs-tooltipReferenceLayer {
+    @media screen and (min-width: 1024px) {
+      top: 400px !important;
+    }
+  }
+}
+
 .result-step {
   left: 50% !important;
   transform: translateX(-50%);
