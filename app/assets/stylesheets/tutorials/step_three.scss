@@ -13,6 +13,31 @@
     min-height: 300px;
     padding: 28px 20px 35px;
   }
+  
+  .bg-icon-left {
+    @media screen and (max-width: 951px){
+      background: url("../images/arrow_down_icon.svg");
+    }
+  }
+}
+
+.tooltips-right {
+  top: -100px !important;
+
+  @media screen and (max-width: 951px){
+    width: 300px;
+    padding: 28px 15px 0;
+
+    top: -340px !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+}
+
+.share {
+  @media screen and (min-width: 715px) and (max-width: 951px) {
+    left: 25% !important;
+  }
 }
 
 .step-three-hint1,

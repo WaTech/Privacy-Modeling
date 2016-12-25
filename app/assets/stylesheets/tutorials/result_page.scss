@@ -97,30 +97,24 @@
       }
 
       .bg-img {
-        width: 258px;
-        height: 201px;
+        width: 245px;
+        height: 191px;
         margin: 0 auto;
       }
 
       .bg-img-allowed {
         background: url("../images/allow.png");
+        background-size: cover;
       }
 
       .bg-img-limit {
         background: url("../images/limitation.png");
+        background-size: cover;
       }
 
       .bg-img-forbid {
         background: url("../images/forbidden.png");
-      }
-
-      @media screen and (min-width: 400px) and (max-width: 957px) {
-        width: 340px;
-        margin-right: 20px;
-
-        &:last-child {
-          margin-right: 0;
-        }
+        background-size: cover;
       }
 
       @media screen and (min-width: 958px) and (max-width: 1139px){
@@ -137,23 +131,19 @@
       }
 
       .bg-tooltip {
-        @media screen and (min-width: 620px) {
-          width: 215px;
-          height: 120px;
-          background: url('../images/tooltip.png');
+        width: 200px;
+        height: 104px;
+        background: url('../images/tooltip.png');
+        background-size: cover;
 
-          position: absolute;
-          top: 1132px;
-          right: -133px;
-        }
-
-        @media screen and (min-width: 958px) and (max-width: 1139px){
-          display: none;
+        @media screen and (max-width: 1139px) {
+          margin: 15px auto 0;
         }
 
         @media screen and (min-width: 1140px) {
-          top: 361px;
-          right: -72px;
+          position: absolute;
+          top: 358px;
+          right: -55px;
         }
       }
     }

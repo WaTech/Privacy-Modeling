@@ -8,14 +8,21 @@ $(document).ready(function () {
     });
 
     $('#select_use_items').each(function () {
-        $(this).find('label:nth-of-type(2)').attr('id','protect-information');
-        $(this).find('label:nth-of-type(6)').attr('id','share');
+        $(this).find('label:nth-of-type(2)').attr('id', 'protect-information');
+        $(this).find('label:nth-of-type(6)').attr('id', 'share');
     });
 });
 
+jQuery.fn.center = function () {
+    this.css("position", "fixed");
+    this.css("top", ($(window).height() / 2) - (this.outerHeight() / 2));
+    this.css("left", ($(window).width() / 2) - (this.outerWidth() / 2));
+    return this;
+};
+
 
 function homePage() {
-    $('body').attr('class', 'home');
+    $('body').attr('class', 'home tooltips-fixed');
     // var cookies = document.cookie;
     // console.log(cookies); //TODO delete this code
     //
@@ -86,21 +93,21 @@ function homePage() {
             },
             {
                 element: '.legal-disclaimer',
-                intro: '<div class="bg-icon bg-icon-left"></div>' +
+                intro: '<div class="bg-icon arrow_down_icon"></div>' +
                 '<p>Here’s the legal stuff (our lawyer says this is important)</p>',
                 position: 'right',
                 tooltipClass: 'home-tooltips step-legal step-tooltip'
             },
             {
                 element: '.user-guide-button',
-                intro: '<div class="bg-icon bg-icon-left"></div>' +
+                intro: '<div class="bg-icon arrow_down_icon"></div>' +
                 '<p>Consult the user guide at any time for tips on privacy design.</p>',
                 position: 'right',
                 tooltipClass: 'home-tooltips step-guide step-tooltip'
             },
             {
                 element: '.start-over-button',
-                intro: '<div class="bg-icon bg-icon-right"></div>' +
+                intro: '<div class="bg-icon arrow_down_icon"></div>' +
                 '<p>Click to launch the app</p>',
                 position: 'left',
                 tooltipClass: 'home-tooltips step-get-started step-tooltip last-step'
@@ -108,16 +115,15 @@ function homePage() {
         ]
     });
 
-    if($(window).width() <= 768) {
+    if ($(window).width() <= 960) {
         var body = $("html, body");
-        body.stop().animate({scrollTop:0}, '300', 'swing', function() {
+        body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
 
         });
         setTimeout(function () {
             introguidemob.start().onchange(function () {
                 if (introguidemob._currentStep == "1") {
-                    var body = $("html, body");
-                    body.stop().animate({scrollTop:0}, '300', 'swing', function() {
+                    body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
                     });
 
                     $('body').addClass('step-two-mob');
@@ -139,6 +145,10 @@ function homePage() {
     } else {
         setTimeout(function () {
             introguide.start().onchange(function () {
+                if (introguide._currentStep == "2") {
+                    $('body').removeClass('tooltips-fixed');
+                    $('.introjs-tooltip').css('position', 'inherit');
+                }
                 if (introguide._currentStep == "3") {
                     $('body').attr('id', 'remove-bg-tooltipsLayer');
                     $('.introjs-nextbutton').text('Got it!');
@@ -149,6 +159,8 @@ function homePage() {
             // document.cookie = " name=homepage;";
             // cookies = document.cookie;
             // console.log(cookies); // TODO delete this code
+
+            $('.tooltips-fixed').find('.introjs-tooltip').center();
         }, 0);
     }
 
@@ -168,7 +180,7 @@ function stepOne() {
     // } else {
 
     var body = $("html, body");
-    body.stop().animate({scrollTop:0}, '300', 'swing', function() {
+    body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
 
     });
 
@@ -191,7 +203,7 @@ function stepOne() {
 
             {
                 element: '.submit-button',
-                intro: '<div class="bg-icon bg-icon-down"></div>' +
+                intro: '<div class="bg-icon arrow_down_icon"></div>' +
                 '<p>Now, click continue …</p>',
                 position: 'top',
                 tooltipClass: 'step-one-tooltip2 step-tooltip last-step'
@@ -224,7 +236,7 @@ function stepTwo() {
     // } else {
 
     var body = $("html, body");
-    body.stop().animate({scrollTop:0}, '300', 'swing', function() {
+    body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
 
     });
 
@@ -246,7 +258,7 @@ function stepTwo() {
             },
             {
                 element: '.submit-button',
-                intro: '<div class="bg-icon bg-icon-down"></div>' +
+                intro: '<div class="bg-icon arrow_down_icon"></div>' +
                 '<p>Now, click continue...<br>(you must select at least one category)</p>',
                 position: 'top',
                 tooltipClass: 'step-one-tooltip2 step-tooltip last-step'
@@ -278,7 +290,7 @@ function stepThree() {
     //
     // } else {
     var body = $("html, body");
-    body.stop().animate({scrollTop:0}, '300', 'swing', function() {
+    body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
 
     });
 
@@ -300,19 +312,19 @@ function stepThree() {
                 element: '#protect-information',
                 intro: '<div class="bg-icon bg-icon-left"></div>' +
                 '<p>This use means your goal is to shield information from disclosure.</p>',
-                position: 'top',
-                tooltipClass: 'step-tooltip step-three'
+                position: 'right',
+                tooltipClass: 'step-tooltip step-three tooltips-right'
             },
             {
                 element: '#share',
                 intro: '<div class="bg-icon bg-icon-left"></div>' +
                 '<p>Do you intend to share the data with a third party?</p>',
-                position: 'top',
-                tooltipClass: 'step-tooltip step-three'
+                position: 'right',
+                tooltipClass: 'step-tooltip step-three tooltips-right share'
             },
             {
                 element: '.submit-button',
-                intro: '<div class="bg-icon bg-icon-down"></div>' +
+                intro: '<div class="bg-icon arrow_down_icon"></div>' +
                 '<p>Now, click continue... <br>(you must select at least one use)</p>',
                 position: 'top',
                 tooltipClass: 'step-tooltip step-three last-step step-three-hintlast'
@@ -360,10 +372,9 @@ function resultPage() {
     // } else {
 
     $('body').attr('id', 'result-page');
-    if($(window).width() > 1024) {
-        var body = $("html, body");
-        body.stop().animate({scrollTop:0}, '300', 'swing', function() {
-
+    var body = $("html, body");
+    if ($(window).width() > 1024) {
+        body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
         });
     }
 
@@ -392,8 +403,8 @@ function resultPage() {
                 '<h2 class="red">Red</h2>' +
                 '<p>A potential legal prohibition.<br> Click on the “i” see applicable laws.</p>' +
                 '<div class="bg-img bg-img-forbid">' +
-                '<div class="bg-tooltip"></div>' +
                 '</div>' +
+                '<div class="bg-tooltip"></div>' +
                 '</li>' +
                 '</ul>' +
                 '<p>Next, consult the User Guide for suggestions on<br> product design.</p>',
@@ -405,6 +416,13 @@ function resultPage() {
     setTimeout(function () {
         introguide.start();
 
+        if ($(window).width() < 1024) {
+            var scrollBottom = $(document).height() + $(window).height();
+            $('.introjs-skipbutton').on('click', function () {
+                body.stop().animate({scrollTop: scrollBottom}, '300', 'swing', function () {
+                });
+            })
+        }
         // document.cookie = " resultpage=result_page;";
         // cookies = document.cookie;
         //
@@ -427,10 +445,10 @@ function userGuide() {
     //
     // } else {
 
-        var body = $("html, body");
-        body.stop().animate({scrollTop:0}, '300', 'swing', function() {
+    var body = $("html, body");
+    body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
 
-        });
+    });
 
     var introguide = introJs();
     introguide.setOptions({
@@ -484,36 +502,28 @@ function userGuide() {
                 $('body').removeAttr('id');
             }
 
-            if($(window).width() >= 768){
+            if ($(window).width() >= 768) {
                 if (introguide._currentStep == "2") {
                     $('.introjs-nextbutton').text('Okay');
 
-                    var body = $("html, body");
                     body.stop().animate({scrollTop: 2000}, '300', 'swing', function () {
-
                     });
                 }
 
                 if (introguide._currentStep == "1") {
-                    var body = $("html, body");
                     body.stop().animate({scrollTop: 1700}, '300', 'swing', function () {
-
                     });
                 }
 
                 if (introguide._currentStep == "3") {
                     $('.introjs-nextbutton').text('Okay');
 
-                    var body = $("html, body");
                     body.stop().animate({scrollTop: 2300}, '300', 'swing', function () {
-
                     });
                 }
 
                 if (introguide._currentStep == "4") {
-                    var body = $("html, body");
                     body.stop().animate({scrollTop: 2750}, '300', 'swing', function () {
-
                     });
                 }
             }
@@ -537,6 +547,3 @@ function userGuide() {
     // }
 
 }
-
-
-
