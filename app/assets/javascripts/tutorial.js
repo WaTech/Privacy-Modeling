@@ -23,14 +23,14 @@ jQuery.fn.center = function () {
 
 function homePage() {
     $('body').attr('class', 'home tooltips-fixed');
-    // var cookies = document.cookie;
-    // console.log(cookies); //TODO delete this code
-    //
-    // if ((cookies.indexOf("name=homepage") + 1) || (cookies.indexOf("skipbutton=skipbutton") + 1)) {
-    //     console.log('cookie-home'); //TODO delete this code
-    //     console.log(cookies);       //TODO delete this code
-    //
-    // } else {
+    var cookies = document.cookie;
+    console.log(cookies); //TODO delete this code
+
+    if ((cookies.indexOf("name=homepage") + 1) || (cookies.indexOf("skipbutton=skipbutton") + 1)) {
+        console.log('cookie-home'); //TODO delete this code
+        console.log(cookies);       //TODO delete this code
+
+    } else {
     var introguide = introJs();
     var introguidemob = introJs();
     introguide.setOptions({
@@ -138,9 +138,9 @@ function homePage() {
             });
 
 
-            // document.cookie = " name=homepage;";
-            // cookies = document.cookie;
-            // console.log(cookies); // TODO delete this code
+            document.cookie = " name=homepage;";
+            cookies = document.cookie;
+            console.log(cookies); // TODO delete this code
         }, 0);
     } else {
         setTimeout(function () {
@@ -156,28 +156,28 @@ function homePage() {
             });
 
 
-            // document.cookie = " name=homepage;";
-            // cookies = document.cookie;
-            // console.log(cookies); // TODO delete this code
+            document.cookie = " name=homepage;";
+            cookies = document.cookie;
+            console.log(cookies); // TODO delete this code
 
             $('.tooltips-fixed').find('.introjs-tooltip').center();
         }, 0);
     }
 
 
-    // }
+    }
 }
 
 
 /** Step One  */
 function stepOne() {
-    // var cookies = document.cookie;
-    //
-    // if ((cookies.indexOf("stepname=first_step") + 1) || (cookies.indexOf("skipbutton=skipbutton") + 1)) {
-    //     console.log('cookie-first');  // TODO delete this code
-    //     console.log(cookies);         // TODO delete this code
-    //
-    // } else {
+    var cookies = document.cookie;
+
+    if ((cookies.indexOf("stepname=first_step") + 1) || (cookies.indexOf("skipbutton=skipbutton") + 1)) {
+        console.log('cookie-first');  // TODO delete this code
+        console.log(cookies);         // TODO delete this code
+
+    } else {
 
     var body = $("html, body");
     body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
@@ -213,27 +213,27 @@ function stepOne() {
     setTimeout(function () {
         introguide.start();
 
-        // document.cookie = " stepname=first_step;";
-        // cookies = document.cookie;
-        //
-        // console.log(cookies); // TODO delete this code
+        document.cookie = " stepname=first_step;";
+        cookies = document.cookie;
+
+        console.log(cookies); // TODO delete this code
 
     }, 100);
 
-    // }
+    }
 
 }
 
 /** Step Two*/
 function stepTwo() {
-    // var cookies = document.cookie;
-    // console.log(cookies); //TODO delete this code
-    //
-    // if ((cookies.indexOf("steptwo=two_step;") + 1) || (cookies.indexOf("skipbutton=skipbutton") + 1)) {
-    //     console.log('cookie-two'); // TODO delete this code
-    //     console.log(cookies);      // TODO delete this code
-    //
-    // } else {
+    var cookies = document.cookie;
+    console.log(cookies); //TODO delete this code
+
+    if ((cookies.indexOf("steptwo=two_step;") + 1) || (cookies.indexOf("skipbutton=skipbutton") + 1)) {
+        console.log('cookie-two'); // TODO delete this code
+        console.log(cookies);      // TODO delete this code
+
+    } else {
 
     var body = $("html, body");
     body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
@@ -268,27 +268,27 @@ function stepTwo() {
     setTimeout(function () {
         introguide.start();
 
-        // document.cookie = " steptwo=two_step;";
-        // cookies = document.cookie;
-        //
-        // console.log(cookies); // TODO delete this code
+        document.cookie = " steptwo=two_step;";
+        cookies = document.cookie;
+
+        console.log(cookies); // TODO delete this code
     }, 100);
 
 
-    // }
+    }
 
 }
 
 /** Step Three*/
 function stepThree() {
 
-    // var cookies = document.cookie;
-    // console.log(cookies); //TODO delete this code
-    //
-    // if ((cookies.indexOf("stepthree=three_step;") + 1)|| (cookies.indexOf("skipbutton=skipbutton") + 1)) {
-    //     console.log('cookie-three'); //TODO delete this code
-    //
-    // } else {
+    var cookies = document.cookie;
+    console.log(cookies); //TODO delete this code
+
+    if ((cookies.indexOf("stepthree=three_step;") + 1)|| (cookies.indexOf("skipbutton=skipbutton") + 1)) {
+        console.log('cookie-three'); //TODO delete this code
+
+    } else {
     var body = $("html, body");
     body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
 
@@ -349,27 +349,26 @@ function stepThree() {
             }
 
         });
+
+
+        document.cookie = " stepthree=three_step;";
+        cookies = document.cookie;
+
+        console.log(cookies);  // TODO delete this code
     }, 100);
-
-
-    // document.cookie = " stepthree=three_step;";
-    // cookies = document.cookie;
-    //
-    // console.log(cookies);  // TODO delete this code
-
-    // }
+    }
 
 }
 
 /** Result Page*/
 function resultPage() {
-    // var cookies = document.cookie;
-    // console.log(cookies); //TODO delete this code
-    //
-    // if ((cookies.indexOf("resultpage=result_page;") + 1)|| (cookies.indexOf("skipbutton=skipbutton") + 1)) {
-    //     console.log('cookie-result-page');  //TODO delete this code
-    //
-    // } else {
+    var cookies = document.cookie;
+    console.log(cookies); //TODO delete this code
+
+    if ((cookies.indexOf("resultpage=result_page;") + 1)|| (cookies.indexOf("skipbutton=skipbutton") + 1)) {
+        console.log('cookie-result-page');  //TODO delete this code
+
+    } else {
 
     $('body').attr('id', 'result-page');
     var body = $("html, body");
@@ -423,13 +422,13 @@ function resultPage() {
                 });
             })
         }
-        // document.cookie = " resultpage=result_page;";
-        // cookies = document.cookie;
-        //
-        // console.log(cookies);  // TODO delete this code
+        document.cookie = " resultpage=result_page;";
+        cookies = document.cookie;
+
+        console.log(cookies);  // TODO delete this code
     }, 100);
 
-    // }
+    }
 
 }
 
@@ -438,12 +437,12 @@ function resultPage() {
 function userGuide() {
     $('body').attr('id', 'user-guide');
 
-    // var cookies = document.cookie;
-    //
-    // if ((cookies.indexOf("userguide=user_guide") + 1)|| (cookies.indexOf("skipbutton=skipbutton") + 1)) {
-    //     console.log('user-guide'); // TODO delete this code
-    //
-    // } else {
+    var cookies = document.cookie;
+
+    if ((cookies.indexOf("userguide=user_guide") + 1)|| (cookies.indexOf("skipbutton=skipbutton") + 1)) {
+        console.log('user-guide'); // TODO delete this code
+
+    } else {
 
     var body = $("html, body");
     body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
@@ -538,12 +537,12 @@ function userGuide() {
         });
 
 
-        // document.cookie = " userguide=user_guide";
-        // cookies = document.cookie;
-        //
-        // console.log(cookies);  // TODO delete this code
+        document.cookie = " userguide=user_guide";
+        cookies = document.cookie;
+
+        console.log(cookies);  // TODO delete this code
     }, 100);
 
-    // }
+    }
 
 }
