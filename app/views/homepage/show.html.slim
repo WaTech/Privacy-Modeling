@@ -1,11 +1,15 @@
 script type="text/javascript" homePage()
+script type="text/javascript" if (sessionStorage.getItem("Page2Visited")) {
+    sessionStorage.removeItem("Page2Visited");
+    window.location.reload(false);
+  }
 .home-content
   ul.home-container
     li id='step3'
       p
         | This <bold>Privacy Modeling Tool</bold> is designed to help you identify privacy laws based on personal information you wish to use. It offers general guidance on Washington State and Federal law. The tool searches through a database to find the laws which apply to your situation.
       .actions
-        = link_to 'Legal Disclaimer', 'user_guide#legal_disclaimer', class: 'action-button legal-disclaimer', onclick: "setTimeout('location=\"'+href+'\"',300);return false;"
+        = link_to 'Legal Disclaimer', 'user_guide#legal_disclaimer', class: 'action-button legal-disclaimer'
 
     li id='step4'
       p
