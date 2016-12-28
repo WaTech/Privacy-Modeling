@@ -16,7 +16,6 @@ $(document).ready(function () {
     $('.introjs-skipbutton').on('click', function () {
         document.cookie = " skipbutton=skipbutton";
         cookies = document.cookie;
-        console.log(cookies); // TODO delete this code
     });
 
     $('#select_use_items').each(function () {
@@ -25,47 +24,50 @@ $(document).ready(function () {
     });
 
     if (isFirefox || msie > 0 || trident > 0) {
+        var link = $(this).attr("href");
         if ((cookies.indexOf("userguide=user_guide") + 1) || (cookies.indexOf("skipbutton=skipbutton") + 1)) {
             $('.legal-disclaimer').on('click', function (e) {
                 e.preventDefault();
-                var Link = $(this).attr("href");
                 setTimeout(function () {
-                    location.href = Link;
+                    location.href = link;
                 }, 300);
             });
         }
     } else {
         $('.legal-disclaimer').on('click', function (e) {
             e.preventDefault();
-            var Link = $(this).attr("href");
             setTimeout(function () {
-                location.href = Link;
+                location.href = link;
             }, 300);
         });
     }
 
     $('.tooltips-fixed').find('.introjs-bullets a').on('click', function () {
+
         var data = $.parseJSON($(this).attr('data-stepnumber'));
-        if (data == 1 ) {
-            setTimeout(function () {
-                $('.tooltips-fixed').find('.introjs-tooltip').center();
-            }, 370);
+        if (data == 1) {
+            if ($(window).width() <= 960) {
+                $('body').removeClass('step-two-mob');
+                var body = $("html, body");
+                body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
+                });
+
+            } else {
+                setTimeout(function () {
+                    $('.tooltips-fixed').find('.introjs-tooltip').center();
+                }, 370);
+            }
         }
     });
 
 });
 
 
-
 function homePage() {
     $('body').attr('class', 'home tooltips-fixed');
     var cookies = document.cookie;
-    console.log(cookies); //TODO delete this code
 
     if ((cookies.indexOf("name=homepage") + 1) || (cookies.indexOf("skipbutton=skipbutton") + 1)) {
-        console.log('cookie-home'); //TODO delete this code
-        console.log(cookies);       //TODO delete this code
-
     } else {
     var introguide = introJs();
     var introguidemob = introJs();
@@ -73,7 +75,6 @@ function homePage() {
         skipLabel: 'Skip this tutorial',
         nextLabel: 'Next',
         showStepNumbers: false,
-        exitOnOverlayClick: false, // not allow skip tooltip when overlay click
 
         steps: [
             {
@@ -114,7 +115,6 @@ function homePage() {
         skipLabel: 'Skip this tutorial',
         nextLabel: 'Next',
         showStepNumbers: false,
-        exitOnOverlayClick: false, // not allow skip tooltip when overlay click
 
         steps: [
             {
@@ -176,7 +176,6 @@ function homePage() {
 
             document.cookie = " name=homepage;";
             cookies = document.cookie;
-            console.log(cookies); // TODO delete this code
         }, 0);
     } else {
         setTimeout(function () {
@@ -194,7 +193,6 @@ function homePage() {
 
             document.cookie = " name=homepage;";
             cookies = document.cookie;
-            console.log(cookies); // TODO delete this code
 
             $('.tooltips-fixed').find('.introjs-tooltip').center();
         }, 0);
@@ -210,51 +208,45 @@ function stepOne() {
     var cookies = document.cookie;
 
     if ((cookies.indexOf("stepname=first_step") + 1) || (cookies.indexOf("skipbutton=skipbutton") + 1)) {
-        console.log('cookie-first');  // TODO delete this code
-        console.log(cookies);         // TODO delete this code
-
     } else {
 
-    var body = $("html, body");
-    body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
+        var body = $("html, body");
+        body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
 
-    });
+        });
 
-    var introguide = introJs();
-    introguide.setOptions({
-        skipLabel: 'Skip this tutorial',
-        nextLabel: 'Got it!',
-        showStepNumbers: false,
-        exitOnOverlayClick: false,
+        var introguide = introJs();
+        introguide.setOptions({
+            skipLabel: 'Skip this tutorial',
+            nextLabel: 'Got it!',
+            showStepNumbers: false,
 
-        steps: [
-            {
-                element: document.querySelector('.container-categories'),
-                intro: '<h1>What does your organization do? </h1>' +
-                '<p>Select from these 12 categories (you can click more than one).</p>' +
-                '<p>Select “General” if none applies to you.</p>',
-                position: 'top',
-                tooltipClass: 'step-one-tooltip1 step-tooltip'
-            },
+            steps: [
+                {
+                    element: document.querySelector('.container-categories'),
+                    intro: '<h1>What does your organization do? </h1>' +
+                    '<p>Select from these 12 categories (you can click more than one).</p>' +
+                    '<p>Select “General” if none applies to you.</p>',
+                    position: 'top',
+                    tooltipClass: 'step-one-tooltip1 step-tooltip'
+                },
 
-            {
-                element: '.submit-button',
-                intro: '<div class="bg-icon arrow_down_icon"></div>' +
-                '<p>Now, click continue …</p>',
-                position: 'top',
-                tooltipClass: 'step-one-tooltip2 step-tooltip last-step'
-            }
-        ]
-    });
-    setTimeout(function () {
-        introguide.start();
+                {
+                    element: '.submit-button',
+                    intro: '<div class="bg-icon arrow_down_icon"></div>' +
+                    '<p>Now, click continue …</p>',
+                    position: 'top',
+                    tooltipClass: 'step-one-tooltip2 step-tooltip last-step'
+                }
+            ]
+        });
+        setTimeout(function () {
+            introguide.start();
 
-        document.cookie = " stepname=first_step;";
-        cookies = document.cookie;
+            document.cookie = " stepname=first_step;";
+            cookies = document.cookie;
 
-        console.log(cookies); // TODO delete this code
-
-    }, 100);
+        }, 100);
 
     }
 
@@ -263,52 +255,46 @@ function stepOne() {
 /** Step Two*/
 function stepTwo() {
     var cookies = document.cookie;
-    console.log(cookies); //TODO delete this code
 
     if ((cookies.indexOf("steptwo=two_step;") + 1) || (cookies.indexOf("skipbutton=skipbutton") + 1)) {
-        console.log('cookie-two'); // TODO delete this code
-        console.log(cookies);      // TODO delete this code
-
     } else {
 
-    var body = $("html, body");
-    body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
+        var body = $("html, body");
+        body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
 
-    });
+        });
 
-    var introguide = introJs();
-    introguide.setOptions({
-        skipLabel: 'Skip this tutorial',
-        nextLabel: 'Got it!',
-        showStepNumbers: false,
-        exitOnOverlayClick: false,
+        var introguide = introJs();
+        introguide.setOptions({
+            skipLabel: 'Skip this tutorial',
+            nextLabel: 'Got it!',
+            showStepNumbers: false,
 
-        steps: [
-            {
-                element: '.container-categories',
-                intro: '<h1>You can select 31 different types of user data</h1>' +
-                '<p>Go ahead and select a few categories for a trial run … then click \'continue\' at the bottom.</p>' +
-                '<p>(make sure you scroll down)</p>',
-                position: 'top',
-                tooltipClass: 'step-one-tooltip1 step-tooltip step-two-tooltip1'
-            },
-            {
-                element: '.submit-button',
-                intro: '<div class="bg-icon arrow_down_icon"></div>' +
-                '<p>Now, click continue...<br>(you must select at least one category)</p>',
-                position: 'top',
-                tooltipClass: 'step-one-tooltip2 step-tooltip last-step'
-            }
-        ]
-    });
-    setTimeout(function () {
-        introguide.start();
+            steps: [
+                {
+                    element: '.container-categories',
+                    intro: '<h1>You can select 31 different types of user data</h1>' +
+                    '<p>Go ahead and select a few categories for a trial run … then click \'continue\' at the bottom.</p>' +
+                    '<p>(make sure you scroll down)</p>',
+                    position: 'top',
+                    tooltipClass: 'step-one-tooltip1 step-tooltip step-two-tooltip1'
+                },
+                {
+                    element: '.submit-button',
+                    intro: '<div class="bg-icon arrow_down_icon"></div>' +
+                    '<p>Now, click continue...<br>(you must select at least one category)</p>',
+                    position: 'top',
+                    tooltipClass: 'step-one-tooltip2 step-tooltip last-step'
+                }
+            ]
+        });
+        setTimeout(function () {
+            introguide.start();
 
-        document.cookie = " steptwo=two_step;";
-        cookies = document.cookie;
+            document.cookie = " steptwo=two_step;";
+            cookies = document.cookie;
 
-        console.log(cookies); // TODO delete this code
-    }, 100);
+        }, 100);
 
 
     }
@@ -319,88 +305,85 @@ function stepTwo() {
 function stepThree() {
 
     var cookies = document.cookie;
-    console.log(cookies); //TODO delete this code
 
     if ((cookies.indexOf("stepthree=three_step;") + 1) || (cookies.indexOf("skipbutton=skipbutton") + 1)) {
-        console.log('cookie-three'); //TODO delete this code
-
     } else {
-    var body = $("html, body");
-    body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
 
-    });
-
-    $('body').addClass('bg-tooltipsLayer');
-
-    var introguide = introJs();
-    introguide.setOptions({
-        skipLabel: 'Skip this tutorial',
-        nextLabel: 'Next',
-        showStepNumbers: false,
-
-        steps: [
-            {
-                element: '.container-categories',
-                intro: '<h1>Now indicate how you intend to use the data in your product or service.</h1>' +
-                '<p>You can click on more than one.</p>',
-                position: 'top',
-                tooltipClass: 'step-tooltip step-three step-three-hint1'
-            },
-            {
-                element: '#protect-information',
-                intro: '<div class="bg-icon bg-icon-left"></div>' +
-                '<p>This use means your goal is to shield information from disclosure.</p>',
-                position: 'right',
-                tooltipClass: 'step-tooltip step-three tooltips-right'
-            },
-            {
-                element: '#share',
-                intro: '<div class="bg-icon bg-icon-left"></div>' +
-                '<p>Do you intend to share the data with a third party?</p>',
-                position: 'right',
-                tooltipClass: 'step-tooltip step-three tooltips-right share'
-            },
-            {
-                element: '.submit-button',
-                intro: '<div class="bg-icon arrow_down_icon"></div>' +
-                '<p>Now, click continue... <br>(you must select at least one use)</p>',
-                position: 'top',
-                tooltipClass: 'step-tooltip step-three last-step step-three-hintlast'
-            }
-        ]
-    });
-
-    setTimeout(function () {
-        introguide.start().onchange(function () {
-
-            if (introguide._currentStep == "1") {
-                $('body').attr('id', 'remove-bg-tooltipsLayer');
-                $('.introjs-nextbutton').text('Okay');
-
-                $('.introjs-bullets ul li a').on('click', function () {
-                    var data = $.parseJSON($(this).attr('data-stepnumber'));
-                    if (data == 1 ) {
-                        $('body').removeAttr('id');
-                    }
-                })
-            }
-
-            if (introguide._currentStep == "2") {
-                $('.introjs-nextbutton').text('Got it!');
-            }
-
-            if (introguide._currentStep == "3") {
-                $('body').removeAttr('id');
-            }
-
+        var body = $("html, body");
+        body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
         });
 
+        $('body').addClass('bg-tooltipsLayer');
 
-        document.cookie = " stepthree=three_step;";
-        cookies = document.cookie;
+        var introguide = introJs();
+        introguide.setOptions({
+            skipLabel: 'Skip this tutorial',
+            nextLabel: 'Next',
+            showStepNumbers: false,
 
-        console.log(cookies);  // TODO delete this code
-    }, 100);
+            steps: [
+                {
+                    element: '.container-categories',
+                    intro: '<h1>Now indicate how you intend to use the data in your product or service.</h1>' +
+                    '<p>You can click on more than one.</p>',
+                    position: 'top',
+                    tooltipClass: 'step-tooltip step-three step-three-hint1'
+                },
+                {
+                    element: '#protect-information',
+                    intro: '<div class="bg-icon bg-icon-left"></div>' +
+                    '<p>This use means your goal is to shield information from disclosure.</p>',
+                    position: 'right',
+                    tooltipClass: 'step-tooltip step-three tooltips-right'
+                },
+                {
+                    element: '#share',
+                    intro: '<div class="bg-icon bg-icon-left"></div>' +
+                    '<p>Do you intend to share the data with a third party?</p>',
+                    position: 'right',
+                    tooltipClass: 'step-tooltip step-three tooltips-right share'
+                },
+                {
+                    element: '.submit-button',
+                    intro: '<div class="bg-icon arrow_down_icon"></div>' +
+                    '<p>Now, click continue... <br>(you must select at least one use)</p>',
+                    position: 'top',
+                    tooltipClass: 'step-tooltip step-three last-step step-three-hintlast'
+                }
+            ]
+        });
+
+        setTimeout(function () {
+            introguide.start().onchange(function () {
+
+                if (introguide._currentStep == "1") {
+                    $('body').attr('id', 'remove-bg-tooltipsLayer');
+                    $('.introjs-nextbutton').text('Okay');
+
+                    $('.introjs-bullets ul li a').on('click', function () {
+                        var data = $.parseJSON($(this).attr('data-stepnumber'));
+                        if (data == 1) {
+                            $('body').removeAttr('id');
+                        }
+                    })
+                }
+
+                if (introguide._currentStep == "2") {
+                    $('.introjs-nextbutton').text('Got it!');
+                }
+
+                if (introguide._currentStep == "3") {
+                    $('body').removeAttr('id');
+                }
+
+            });
+
+
+            document.cookie = " stepthree=three_step;";
+            cookies = document.cookie;
+
+            console.log(cookies);  // TODO delete this code
+        }, 100);
     }
 
 }
@@ -408,70 +391,66 @@ function stepThree() {
 /** Result Page*/
 function resultPage() {
     var cookies = document.cookie;
-    console.log(cookies); //TODO delete this code
 
     if ((cookies.indexOf("resultpage=result_page;") + 1) || (cookies.indexOf("skipbutton=skipbutton") + 1)) {
-        console.log('cookie-result-page');  //TODO delete this code
-
     } else {
 
-    $('body').attr('id', 'result-page');
-    var body = $("html, body");
-    if ($(window).width() > 1024) {
-        body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
-        });
-    }
-
-    var introguide = introJs();
-    introguide.setOptions({
-        skipLabel: 'Skip this tutorial',
-        doneLabel: 'Next',
-        showStepNumbers: false,
-        showBullets: false,
-
-        steps: [
-            {
-                intro: '<h1>The Result Matrix produces one, two or three levels <br> depending on your search.</h1>' +
-                '<ul class="hint-result">' +
-                '<li>' +
-                '<h2 class="green">Green</h2>' +
-                '<p>Your search did not find a specific privacy law directly on point.</p>' +
-                '<div class="bg-img bg-img-allowed"></div>' +
-                '</li>' +
-                '<li>' +
-                '<h2 class="yellow">Yellow</h2>' +
-                '<p>Legal restrictions may apply.<br> Click on the “i” see applicable laws.</p>' +
-                '<div class="bg-img bg-img-limit"></div>' +
-                '</li>' +
-                '<li>' +
-                '<h2 class="red">Red</h2>' +
-                '<p>A potential legal prohibition.<br> Click on the “i” see applicable laws.</p>' +
-                '<div class="bg-img bg-img-forbid">' +
-                '</div>' +
-                '<div class="bg-tooltip"></div>' +
-                '</li>' +
-                '</ul>' +
-                '<p>Next, consult the User Guide for suggestions on<br> product design.</p>',
-                position: 'top',
-                tooltipClass: 'result-step'
-            }
-        ]
-    });
-    setTimeout(function () {
-        introguide.start();
-
-        if ($(window).width() < 1024) {
-            var scrollBottom = $(document).height() + $(window).height();
-            $('.introjs-skipbutton').on('click', function () {
-                body.stop().animate({scrollTop: scrollBottom}, '300', 'swing', function () {
-                });
-            })
+        $('body').attr('id', 'result-page');
+        var body = $("html, body");
+        if ($(window).width() > 1024) {
+            body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
+            });
         }
-        document.cookie = " resultpage=result_page;";
-        cookies = document.cookie;
 
-        console.log(cookies);  // TODO delete this code
-    }, 100);
+        var introguide = introJs();
+        introguide.setOptions({
+            skipLabel: 'Skip this tutorial',
+            doneLabel: 'Next',
+            showStepNumbers: false,
+            showBullets: false,
+
+            steps: [
+                {
+                    intro: '<h1>The Result Matrix produces one, two or three levels <br> depending on your search.</h1>' +
+                    '<ul class="hint-result">' +
+                    '<li>' +
+                    '<h2 class="green">Green</h2>' +
+                    '<p>Your search did not find a specific privacy law directly on point.</p>' +
+                    '<div class="bg-img bg-img-allowed"></div>' +
+                    '</li>' +
+                    '<li>' +
+                    '<h2 class="yellow">Yellow</h2>' +
+                    '<p>Legal restrictions may apply.<br> Click on the “i” see applicable laws.</p>' +
+                    '<div class="bg-img bg-img-limit"></div>' +
+                    '</li>' +
+                    '<li>' +
+                    '<h2 class="red">Red</h2>' +
+                    '<p>A potential legal prohibition.<br> Click on the “i” see applicable laws.</p>' +
+                    '<div class="bg-img bg-img-forbid">' +
+                    '</div>' +
+                    '<div class="bg-tooltip"></div>' +
+                    '</li>' +
+                    '</ul>' +
+                    '<p>Next, consult the User Guide for suggestions on<br> product design.</p>',
+                    position: 'top',
+                    tooltipClass: 'result-step'
+                }
+            ]
+        });
+        setTimeout(function () {
+            introguide.start();
+
+            if ($(window).width() < 1024) {
+                var scrollBottom = $(document).height() + $(window).height();
+                $('.introjs-skipbutton').on('click', function () {
+                    body.stop().animate({scrollTop: scrollBottom}, '300', 'swing', function () {
+                    });
+                })
+            }
+            document.cookie = " resultpage=result_page;";
+            cookies = document.cookie;
+
+        }, 100);
 
     }
 
@@ -481,115 +460,109 @@ function resultPage() {
 /** User Guide */
 function userGuide() {
     $('body').attr('id', 'user-guide');
-
     sessionStorage.setItem("Page2Visited", "True");
-    console.log(sessionStorage);  // TODO delete this code
-
     var cookies = document.cookie;
 
     if ((cookies.indexOf("userguide=user_guide") + 1) || (cookies.indexOf("skipbutton=skipbutton") + 1)) {
-        console.log('user-guide'); // TODO delete this code
-
     } else {
 
-    var body = $("html, body");
-    body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
+        var body = $("html, body");
+        body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
 
-    });
+        });
 
-    var introguide = introJs();
-    introguide.setOptions({
-        skipLabel: 'Skip this tutorial',
-        nextLabel: 'Next',
-        showStepNumbers: false,
-        doneLabel: 'Woohoo!',
+        var introguide = introJs();
+        introguide.setOptions({
+            skipLabel: 'Skip this tutorial',
+            nextLabel: 'Next',
+            showStepNumbers: false,
+            doneLabel: 'Woohoo!',
 
-        steps: [
-            {
-                intro: '<p>We want to help you get started designing your product or service by flagging a few common issues.</p>',
-                position: 'top',
-                tooltipClass: 'step-tooltip guide-step-one'
-            },
-            {
-                element: '#section-two',
-                intro: '<div class="bg-icon bg-icon-top"></div>' +
-                '<p>How did you collect your information? This may determine whether it can be used at all.</p>',
-                position: 'bottom',
-                tooltipClass: 'step-tooltip guide-step'
-            },
+            steps: [
+                {
+                    intro: '<p>We want to help you get started designing your product or service by flagging a few common issues.</p>',
+                    position: 'top',
+                    tooltipClass: 'step-tooltip guide-step-one'
+                },
+                {
+                    element: '#section-two',
+                    intro: '<div class="bg-icon bg-icon-top"></div>' +
+                    '<p>How did you collect your information? This may determine whether it can be used at all.</p>',
+                    position: 'bottom',
+                    tooltipClass: 'step-tooltip guide-step'
+                },
 
-            {
-                element: '#section-three',
-                intro: '<div class="bg-icon bg-icon-top"></div>' +
-                '<p>Washington State has a strong Public Records Act. So do other states. Make sure you design your product or service with public disclosure requirement in mind.</p>',
-                position: 'bottom',
-                tooltipClass: 'step-tooltip guide-step'
-            },
+                {
+                    element: '#section-three',
+                    intro: '<div class="bg-icon bg-icon-top"></div>' +
+                    '<p>Washington State has a strong Public Records Act. So do other states. Make sure you design your product or service with public disclosure requirement in mind.</p>',
+                    position: 'bottom',
+                    tooltipClass: 'step-tooltip guide-step'
+                },
 
-            {
-                element: '#section-four',
-                intro: '<div class="bg-icon bg-icon-top"></div>' +
-                '<p>Privacy modeling looks up specific privacy laws in our database. Your organization may have an internal policy or another law that may prevent the possible uses indicated by this tool.</p>',
-                position: 'bottom',
-                tooltipClass: 'step-tooltip guide-step'
-            },
+                {
+                    element: '#section-four',
+                    intro: '<div class="bg-icon bg-icon-top"></div>' +
+                    '<p>Privacy modeling looks up specific privacy laws in our database. Your organization may have an internal policy or another law that may prevent the possible uses indicated by this tool.</p>',
+                    position: 'bottom',
+                    tooltipClass: 'step-tooltip guide-step'
+                },
 
-            {
-                intro: '<div class="bg-icon bg-icon-check"></div>' +
-                '<h1>Your tutorial is complete!</h1>',
-                position: 'bottom',
-                tooltipClass: 'guide-last-step'
-            }
-        ]
-    });
-    setTimeout(function () {
-        introguide.start().onchange(function () {
-            if ((introguide._currentStep == "1") || (introguide._currentStep == "3")) {
-                $('.introjs-nextbutton').text('Got it!');
-                $('body').removeAttr('id');
-            }
-
-            if ($(window).width() >= 768) {
-                if (introguide._currentStep == "2") {
-                    $('.introjs-nextbutton').text('Okay');
-
-                    body.stop().animate({scrollTop: 2000}, '300', 'swing', function () {
-                    });
+                {
+                    intro: '<div class="bg-icon bg-icon-check"></div>' +
+                    '<h1>Your tutorial is complete!</h1>',
+                    position: 'bottom',
+                    tooltipClass: 'guide-last-step'
+                }
+            ]
+        });
+        setTimeout(function () {
+            introguide.start().onchange(function () {
+                if ((introguide._currentStep == "1") || (introguide._currentStep == "3")) {
+                    $('.introjs-nextbutton').text('Got it!');
+                    $('body').removeAttr('id');
                 }
 
-                if (introguide._currentStep == "1") {
-                    body.stop().animate({scrollTop: 1700}, '300', 'swing', function () {
-                    });
+                if ($(window).width() >= 768) {
+                    if (introguide._currentStep == "2") {
+                        $('.introjs-nextbutton').text('Okay');
+
+                        body.stop().animate({scrollTop: 2000}, '300', 'swing', function () {
+                        });
+                    }
+
+                    if (introguide._currentStep == "1") {
+                        body.stop().animate({scrollTop: 1700}, '300', 'swing', function () {
+                        });
+                    }
+
+                    if (introguide._currentStep == "3") {
+                        $('.introjs-nextbutton').text('Okay');
+
+                        body.stop().animate({scrollTop: 2300}, '300', 'swing', function () {
+                        });
+                    }
+
+                    if (introguide._currentStep == "4") {
+                        body.stop().animate({scrollTop: 2750}, '300', 'swing', function () {
+                        });
+                    }
+                }
+                if (introguide._currentStep == "2") {
+                    $('.introjs-nextbutton').text('Okay');
                 }
 
                 if (introguide._currentStep == "3") {
                     $('.introjs-nextbutton').text('Okay');
-
-                    body.stop().animate({scrollTop: 2300}, '300', 'swing', function () {
-                    });
                 }
 
-                if (introguide._currentStep == "4") {
-                    body.stop().animate({scrollTop: 2750}, '300', 'swing', function () {
-                    });
-                }
-            }
-            if (introguide._currentStep == "2") {
-                $('.introjs-nextbutton').text('Okay');
-            }
-
-            if (introguide._currentStep == "3") {
-                $('.introjs-nextbutton').text('Okay');
-            }
-
-        });
+            });
 
 
-        document.cookie = " userguide=user_guide";
-        cookies = document.cookie;
+            document.cookie = " userguide=user_guide";
+            cookies = document.cookie;
 
-        console.log(cookies);  // TODO delete this code
-    }, 100);
+        }, 100);
 
     }
 
