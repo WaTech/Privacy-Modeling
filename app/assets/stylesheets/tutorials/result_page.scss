@@ -132,7 +132,7 @@
 
       .bg-tooltip {
         width: 200px;
-        height: 104px;
+        height: 120px;
         background: url('../images/tooltip.png');
         background-size: cover;
 
@@ -142,7 +142,7 @@
 
         @media screen and (min-width: 1140px) {
           position: absolute;
-          top: 358px;
+          top: 342px;
           right: -55px;
         }
       }

@@ -22,7 +22,6 @@
   }
 }
 
-
 .home {
   .introjs-tooltipReferenceLayer {
     @media screen and (max-width: 960px) {
@@ -32,11 +31,17 @@
 }
 
 .step-two-mob {
-  .introjs-tooltipReferenceLayer {
-    @media screen and (max-width: 960px) {
+  @media screen and (max-width: 960px) {
+    .introjs-tooltipReferenceLayer {
       top: 115px !important;
+      left: 50% !important;
     }
-}
+
+    .home-tooltips {
+      min-height: 300px;
+      padding: 42px 20px 65px;
+    }
+  }
 }
 
 .home-tooltips {
@@ -103,7 +108,9 @@
     width: 258px;
     min-width: 258px;
     padding: 31px 20px 0;
-    top: -345px !important;
+
+    top: -390px !important;
+    min-height: 340px;
   }
 
   @media screen and (min-width: 961px) and (max-width: 1200px) {

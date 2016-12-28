@@ -26,11 +26,11 @@
 
   @media screen and (max-width: 951px){
     width: 300px;
-    padding: 28px 15px 0;
-
-    top: -340px !important;
     left: 50% !important;
     transform: translateX(-50%);
+
+    padding: 28px 15px 45px;
+    top: -390px !important;
   }
 }
 
