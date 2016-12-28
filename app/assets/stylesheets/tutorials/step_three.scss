@@ -32,6 +32,10 @@
     padding: 28px 15px 45px;
     top: -390px !important;
   }
+
+  @media screen and (max-width: 569px) {
+    width: 260px;
+  }
 }
 
 .share {
@@ -44,6 +48,10 @@
 .step-three-hintlast {
   left: 50% !important;
   transform: translateX(-50%);
+}
+
+.step-three-hint1 {
+  min-height: 325px;
 }
 
 .step-three-hintlast {
