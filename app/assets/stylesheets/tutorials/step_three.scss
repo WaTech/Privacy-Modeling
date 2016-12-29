@@ -30,7 +30,10 @@
     transform: translateX(-50%);
 
     padding: 28px 15px 45px;
-    top: -410px !important;
+    top: -430px !important;
+
+    height: auto !important;
+    min-height: 100px !important;
   }
 
   @media screen and (max-width: 569px) {
@@ -48,7 +51,7 @@
   }
 
   @media screen and (max-width: 951px) {
-    top: -390px !important;
+    top: -400px !important;
   }
 }
 
@@ -110,10 +113,6 @@
 .protect-information,
 .share {
   .introjs-tooltipbuttons {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
 
     @media screen and (min-width: 952px) {
       -webkit-box-orient: horizontal;
@@ -129,6 +128,31 @@
       .introjs-prevbutton {
         margin: 0;
       }
+    }
+
+    .introjs-prevbutton {
+      margin: 10px 0 0 0;
+    }
+  }
+}
+
+.back-btn {
+  .protect-information,
+  .share {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+
+  @media screen and (max-width: 951px) {
+    .protect-information {
+      top: -395px !important;
+    }
+
+    .share {
+      top: -365px !important;
     }
   }
 }
