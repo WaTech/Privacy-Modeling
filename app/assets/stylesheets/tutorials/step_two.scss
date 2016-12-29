@@ -5,3 +5,35 @@
     min-height: 380px;
   }
 }
+
+.step-two-tooltip2 {
+  height: 300px;
+
+  .introjs-prevbutton {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    border: none;
+    background-image: none;
+    text-shadow: none;
+
+    width: 160px;
+    height: 40px;
+
+    border-radius: 100px;
+    padding: 0;
+
+    text-align: center;
+    color: #fff;
+    background: #ABAFB7;
+
+    font: 700 18px/2.3 'Rambla', sans-serif;
+    letter-spacing: 1px;
+
+    &:hover {
+      box-shadow: none;
+      background: darken(#ABAFB7, 5%);
+    }
+  }
+}

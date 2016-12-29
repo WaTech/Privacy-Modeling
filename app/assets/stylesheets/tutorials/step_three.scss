@@ -8,14 +8,14 @@
     margin-top: 5px;
   }
 
-  @media screen and (max-width: 557px){
+  @media screen and (max-width: 557px) {
     width: 260px;
     min-height: 300px;
     padding: 28px 20px 35px;
   }
-  
+
   .bg-icon-left {
-    @media screen and (max-width: 951px){
+    @media screen and (max-width: 951px) {
       background: url("../images/arrow_down_icon.svg");
     }
   }
@@ -24,13 +24,13 @@
 .tooltips-right {
   top: -100px !important;
 
-  @media screen and (max-width: 951px){
+  @media screen and (max-width: 951px) {
     width: 300px;
     left: 50% !important;
     transform: translateX(-50%);
 
     padding: 28px 15px 45px;
-    top: -390px !important;
+    top: -410px !important;
   }
 
   @media screen and (max-width: 569px) {
@@ -41,6 +41,14 @@
 .share {
   @media screen and (min-width: 715px) and (max-width: 951px) {
     left: 25% !important;
+  }
+
+  @media screen and (max-width: 951px) {
+    min-height: 305px;
+  }
+
+  @media screen and (max-width: 951px) {
+    top: -390px !important;
   }
 }
 
@@ -55,8 +63,72 @@
 }
 
 .step-three-hintlast {
-  height: 230px;
-  @media screen and (max-width: 557px) {
-    min-height: 230px;
+  height: 295px;
+  min-height: 295px;
+
+}
+
+.protect-information {
+  @media screen and (max-width: 951px) {
+    min-height: 325px;
+  }
+}
+
+.protect-information,
+.share,
+.step-three-hintlast {
+
+  .introjs-prevbutton {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    border: none;
+    background-image: none;
+    text-shadow: none;
+
+    width: 160px;
+    height: 40px;
+
+    border-radius: 100px;
+    padding: 0;
+
+    text-align: center;
+    color: #fff;
+    background: #ABAFB7;
+
+    font: 700 18px/2.3 'Rambla', sans-serif;
+    letter-spacing: 1px;
+
+    &:hover {
+      box-shadow: none;
+      background: darken(#ABAFB7, 5%);
+    }
+  }
+}
+
+.protect-information,
+.share {
+  .introjs-tooltipbuttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    @media screen and (min-width: 952px) {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: initial;
+      -ms-flex-direction: row;
+      flex-direction: row;
+
+      -ms-flex-pack: distribute;
+      -webkit-justify-content: space-around;
+      -moz-justify-content: space-around;
+      justify-content: space-around;
+
+      .introjs-prevbutton {
+        margin: 0;
+      }
+    }
   }
 }
