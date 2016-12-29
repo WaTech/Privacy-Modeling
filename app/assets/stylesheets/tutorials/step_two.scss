@@ -8,6 +8,9 @@
 
 .step-two-tooltip2 {
   height: 300px;
+  @media screen and (max-width: 557px) {
+    min-height: 325px;
+  }
 
   .introjs-prevbutton {
     display: inline-block;
