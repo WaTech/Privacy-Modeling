@@ -227,7 +227,10 @@ function homePage() {
 /** Step One  */
 function stepOne() {
     var cookies = document.cookie;
-    sessionStorage.setItem("Page2Visited", "True");
+    console.log(sessionStorage);
+    sessionStorage.setItem("Page3Visited", "True");
+
+    console.log(sessionStorage);
 
     if ((cookies.indexOf("stepname=first_step") + 1) || (cookies.indexOf("skipbutton=skipbutton") + 1)) {
     } else {
@@ -488,7 +491,9 @@ function resultPage() {
 /** User Guide */
 function userGuide() {
     $('body').attr('id', 'user-guide');
+    console.log(sessionStorage);
     sessionStorage.setItem("Page2Visited", "True");
+    console.log(sessionStorage);
     var cookies = document.cookie;
 
     if ((cookies.indexOf("userguide=user_guide") + 1) || (cookies.indexOf("skipbutton=skipbutton") + 1)) {
