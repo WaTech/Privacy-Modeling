@@ -40,3 +40,14 @@
     }
   }
 }
+
+.back-btn {
+  .step-two-tooltip2 {
+    height: 230px;
+
+    @media screen and (max-width: 557px) {
+      min-height: 260px;
+      height: 260px;
+    }
+  }
+}

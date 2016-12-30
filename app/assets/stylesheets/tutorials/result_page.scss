@@ -15,14 +15,14 @@
   h1 {
     font: 700 23px/23px 'Rambla', sans-serif;
 
-    @media screen and (min-width: 768px){
+    @media screen and (min-width: 768px) {
       font: 700 30px/36px 'Rambla', sans-serif;
     }
   }
 
   p {
     font: 400 16px 'Rambla', sans-serif;
-    @media screen and (min-width: 768px){
+    @media screen and (min-width: 768px) {
       font: 400 20px 'Rambla', sans-serif;
 
     }
@@ -50,7 +50,7 @@
     margin: 0 !important;
   }
 
-  @media screen and (min-width: 601px)and (max-width: 767px) {
+  @media screen and (min-width: 601px) and (max-width: 767px) {
     margin-top: 140px !important;
   }
 
@@ -117,7 +117,7 @@
         background-size: cover;
       }
 
-      @media screen and (min-width: 958px) and (max-width: 1139px){
+      @media screen and (min-width: 958px) and (max-width: 1139px) {
         width: 300px;
       }
 
@@ -127,6 +127,11 @@
 
         &:last-child {
           margin-right: 0;
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+          width: 347px;
         }
       }
 
@@ -142,8 +147,8 @@
 
         @media screen and (min-width: 1140px) {
           position: absolute;
-          top: 368px;
-          right: -55px;
+          top: 343px;
+          right: -64px;
         }
       }
     }

@@ -63,6 +63,10 @@
 
 .step-three-hint1 {
   min-height: 325px;
+
+  .introjs-prevbutton {
+    display: none !important;
+  }
 }
 
 .step-three-hintlast {
@@ -112,6 +116,12 @@
 
 .protect-information,
 .share {
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+
   .introjs-tooltipbuttons {
 
     @media screen and (min-width: 952px) {
@@ -146,6 +156,11 @@
     -ms-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
+  }
+
+  .step-three-hintlast {
+    height: 250px;
+    min-height: 250px;
   }
 
   @media screen and (max-width: 951px) {
