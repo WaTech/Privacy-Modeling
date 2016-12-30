@@ -38,6 +38,9 @@ p {
       &.active {
         background-color: #00a7cd;
       }
+      &:focus {
+        outline: none;
+      }
     }
   }
 }
