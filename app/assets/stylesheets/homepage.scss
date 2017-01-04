@@ -93,47 +93,40 @@
       &:last-child {
         background-color: #46b749;
         color: white;
+        display: block;
+        text-align: center;
 
-        display: flex;
-        display: -webkit-box;
-        display: -ms-flexbox;
-
-
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-
-        padding-bottom: 30px;
+        .take-tutorial {
+          display: block;
+          text-decoration: underline;
+          cursor: pointer;
+        }
 
         a {
           color: #fff;
         }
+      }
 
-        .start-over-button {
-          border: 2px solid #fff;
-          color: white;
-          margin: 0 auto;
+      .start-over-button {
+        border: 2px solid #fff;
+        color: white;
+        margin: 0 auto;
 
-          display: inline-block;
-          width: 200px;
-          height: 50px;
-          text-align: center;
+        display: inline-block;
+        width: 200px;
+        height: 50px;
+        text-align: center;
 
-          text-decoration: none;
-          font-size: 20px;
-          font-weight: 600;
-          line-height: 2.3;
-          letter-spacing: 0.63px;
-          text-transform: uppercase;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 2.3;
+        letter-spacing: 0.63px;
+        text-transform: uppercase;
 
-          &:hover {
-            background: #fff;
-            color: #46b749;
-          }
+        &:hover {
+          background: #fff;
+          color: #46b749;
         }
       }
 
@@ -141,6 +134,11 @@
         height: 540px;
         margin-bottom: 20px;
         padding: 15px 20px 75px;
+
+        .start-over-button {
+          margin-top: 230px;
+          margin-bottom: 185px;
+        }
       }
 
       @media screen and (min-width: 440px) {
@@ -148,12 +146,22 @@
         height: 467px;
         margin: 0 auto 20px;
         padding: 30px 32px 75px;
+
+        .start-over-button {
+          margin-top: 180px;
+          margin-bottom: 135px;
+        }
       }
 
       @media screen and (min-width: 950px) {
         width: 32.68%;
         height: 550px;
         margin-right: 9px;
+
+        .start-over-button {
+          margin-top: 222px;
+          margin-bottom: 177px;
+        }
 
         &:last-child {
           margin-right: 0;
@@ -163,6 +171,11 @@
       @media screen and (min-width: 1200px) {
         width: 384px;
         height: 467px;
+
+        .start-over-button {
+          margin-top: 180px;
+          margin-bottom: 135px;
+        }
       }
     }
 

@@ -2,6 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on 'turbolinks:load', ->
+  $('header a').on 'click', ->
+    location.reload()
+
   $('.list').masonry
     'itemSelector': '.block'
     'columnWidth': 218
