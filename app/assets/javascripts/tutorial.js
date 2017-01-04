@@ -11,12 +11,6 @@ jQuery.fn.center = function () {
 };
 
 $(document).ready(function () {
-    var cookies = document.cookie;
-
-    $('.introjs-skipbutton').on('click', function () {
-        document.cookie = " skipbutton=skipbutton";
-        cookies = document.cookie;
-    });
 
     $('#select_use_items').each(function () {
         $(this).find('label:nth-of-type(2)').attr('id', 'protect-information');
@@ -87,7 +81,6 @@ $(document).ready(function () {
     // remove cookies and start tutorial
     $('.take-tutorial').on('click', function (e) {
         e.preventDefault();
-        console.log('test');
 
         function deleteAllCookies() {
             var cookies = document.cookie.split(";");
@@ -101,7 +94,15 @@ $(document).ready(function () {
         }
         deleteAllCookies();
         homePage();
-    })
+    });
+
+
+    // skip tutorial, when click on skip-button
+    var cookies = document.cookie;
+    $('.introjs-skipbutton').on('click', function () {
+        document.cookie = " skipbutton=skipbutton";
+        cookies = document.cookie;
+    });
 
 });
 
@@ -118,6 +119,8 @@ function homePage() {
 
     if ((cookies.indexOf("name=homepage") + 1) || (cookies.indexOf("skipbutton=skipbutton") + 1)) {
     } else {
+        $('.take-tutorial').css('pointer-events', 'none');
+
         var introguide = introJs();
         var introguidemob = introJs();
         introguide.setOptions({
@@ -224,6 +227,10 @@ function homePage() {
                     }
                 });
 
+                $('.introjs-skipbutton').on('click', function () {
+                    document.cookie = " skipbutton=skipbutton";
+                    cookies = document.cookie;
+                });
 
                 document.cookie = " name=homepage;";
                 cookies = document.cookie;
@@ -241,6 +248,10 @@ function homePage() {
                     }
                 });
 
+                $('.introjs-skipbutton').on('click', function () {
+                    document.cookie = " skipbutton=skipbutton";
+                    cookies = document.cookie;
+                });
 
                 document.cookie = " name=homepage;";
                 cookies = document.cookie;
@@ -436,7 +447,6 @@ function stepThree() {
                 }
 
             });
-
 
             document.cookie = " stepthree=three_step;path=/";
             cookies = document.cookie;
