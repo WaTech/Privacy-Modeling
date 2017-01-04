@@ -119,10 +119,10 @@ function homePage() {
 
     if ((cookies.indexOf("name=homepage") + 1) || (cookies.indexOf("skipbutton=skipbutton") + 1)) {
     } else {
-        $('.take-tutorial').css('pointer-events', 'none');
 
         var introguide = introJs();
         var introguidemob = introJs();
+
         introguide.setOptions({
             skipLabel: 'Skip this tutorial',
             nextLabel: 'Next',
@@ -211,6 +211,8 @@ function homePage() {
 
             });
             setTimeout(function () {
+                $('.take-tutorial').css({'pointer-events': 'none', 'color': 'rgba(255, 255, 255, 0.5)'});
+
                 introguidemob.start().onchange(function () {
                     if (introguidemob._currentStep == "1") {
                         body.stop().animate({scrollTop: 0}, '300', 'swing', function () {
@@ -230,6 +232,7 @@ function homePage() {
                 $('.introjs-skipbutton').on('click', function () {
                     document.cookie = " skipbutton=skipbutton";
                     cookies = document.cookie;
+                    $('.take-tutorial').css({'pointer-events': 'auto', 'color': '#fff'});
                 });
 
                 document.cookie = " name=homepage;";
@@ -237,6 +240,8 @@ function homePage() {
             }, 0);
         } else {
             setTimeout(function () {
+                $('.take-tutorial').css({'pointer-events': 'none', 'color': 'rgba(255, 255, 255, 0.5)'});
+
                 introguide.start().onchange(function () {
                     if (introguide._currentStep == "2") {
                         $('body').removeClass('tooltips-fixed');
@@ -251,6 +256,7 @@ function homePage() {
                 $('.introjs-skipbutton').on('click', function () {
                     document.cookie = " skipbutton=skipbutton";
                     cookies = document.cookie;
+                    $('.take-tutorial').css({'pointer-events': 'auto', 'color': '#fff'});
                 });
 
                 document.cookie = " name=homepage;";
