@@ -65,4 +65,4 @@ When contributing to this repository, please first discuss the change you wish t
 ## Authors
 
 ## License
-The Privacy Modeling Tool is open-sourced software licensed under the MIT license.
+The Privacy Modeling Tool is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
