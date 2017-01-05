@@ -1,7 +1,8 @@
 ![Privacy Modeling Tool](http://watech.herokuapp.com/images/privacy_modeling_logo.png)
 # Privacy Modeling Tool
 
-## About Privacy Modeling Tool
+## About 
+One Paragraph of project description goes here
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -60,6 +61,8 @@ open http://localhost:3000
 
 ## Contributing
 When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
+
+## Authors
 
 ## License
 The Privacy Modeling Tool is open-sourced software licensed under the MIT license.
