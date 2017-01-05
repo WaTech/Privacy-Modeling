@@ -12,6 +12,13 @@ jQuery.fn.center = function () {
 
 $(document).ready(function () {
 
+    // skip tutorial, when click on skip-button
+    var cookies = document.cookie;
+    $('.introjs-skipbutton').on('click', function () {
+        document.cookie = " skipbutton=skipbutton";
+        cookies = document.cookie;
+    });
+
     $('#select_use_items').each(function () {
         $(this).find('label:nth-of-type(2)').attr('id', 'protect-information');
         $(this).find('label:nth-of-type(6)').attr('id', 'share');
@@ -75,13 +82,6 @@ $(document).ready(function () {
                 }, 370);
             }
         }
-    });
-
-    // skip tutorial, when click on skip-button
-    var cookies = document.cookie;
-    $('.introjs-skipbutton').on('click', function () {
-        document.cookie = " skipbutton=skipbutton";
-        cookies = document.cookie;
     });
 
 });
@@ -571,7 +571,7 @@ function userGuide() {
                 {
                     element: '#section-three',
                     intro: '<div class="bg-icon bg-icon-top"></div>' +
-                    '<p>Washington State has a strong Public Records Act. So do other states. Make sure you design your product or service with public disclosure requirement in mind.</p>',
+                    '<p>Washington State has a strong Public Records Act. So do other states. Make sure you design your product or service with public disclosure requirements in mind.</p>',
                     position: 'bottom',
                     tooltipClass: 'step-tooltip guide-step'
                 },
