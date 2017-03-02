@@ -257,7 +257,6 @@ body {
 
             &:hover {
               opacity: 0.9;
-
             }
           }
         }
@@ -311,6 +310,15 @@ body {
 
       .contact-us {
         margin-top: 0;
+      }
+    }
+
+    a {
+      color: #424141;
+      font-weight: 600;
+
+      &:hover {
+        opacity: 0.9;
       }
     }
   }
